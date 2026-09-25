@@ -35,3 +35,16 @@ Reply with a HANDOFF ENTRY so the next agent knows what you did:
  "changed": ["clip 8 take 2, 6.41 s"], "ids": {"files": "clip8_vo_take2.mp3"},
  "credits_spent": 0, "result": "ok", "next": ["render clip 8 in Melius with this take, 7 s"]}
 ```
+
+## Voice research, 25 Sep 2026 (ElevenLabs docs + connector)
+
+- The locked voice `625jGFaa0zTLtQfxwc6Q` shows in the ElevenLabs account as **"Veda Sky - Customer Care Agent"** (same voice; Melius calls it "Friendly, Warm and Clear"). It is a Professional Voice Clone from the Voice Library.
+- ElevenLabs says PVCs are not fully optimized for eleven_v3, and library voices vary more on v3. Expect some drift between takes, so always make several takes and keep the one that passes the checks.
+- Stability: **Natural** (the default). Don't use Creative, which can hallucinate, or Robust, which sounds flatter and closer to v2.
+- Set the language to English (`language_code: en`).
+- Control pacing only with punctuation. v3 does not support `<break>`.
+  - Commas and periods: pause.
+  - Ellipsis (…): longer pause.
+  - Em dash: short beat.
+- Keep audio tags out of production lines. They can change her voice character.
+- Through the connector, use `creative_generate_speech`, model `eleven_v3`, this voice, the plain line and 4 takes. Never repeat the call to retry; each call is charged.

@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.3",
-  "updated_at": "2026-09-25T23:59:07+03:00",
+  "version": "1.0.4",
+  "updated_at": "2026-09-26T00:20:05+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -123,9 +123,11 @@
       "model": "eleven_v3",
       "voice_name": "Veda Sky - Friendly, Warm and Clear",
       "voice_id": "625jGFaa0zTLtQfxwc6Q",
-      "settings": "platform defaults; do not change stability/similarity/style; no speed change",
+      "settings": "eleven_v3 stability = Natural (the default); do not use Creative (hallucinations) or Robust (flatter, v2-like); language_code en; no speed change",
       "text": "the plain script line only: no audio tags, no <break>, no voice description, no stage directions",
-      "language": "English"
+      "language": "English",
+      "voice_name_in_elevenlabs_account": "Veda Sky - Customer Care Agent (same voice_id; Melius labels it 'Friendly, Warm and Clear')",
+      "voice_type": "Professional Voice Clone from the ElevenLabs Voice Library (not owned by this project)"
     },
     "rejected": [
       "eleven_multilingual_v2 (user: did not match)",
@@ -143,7 +145,20 @@
       "Kalamaja": "KAH-lah-mah-yah",
       "Raekoja plats": "RYE-koh-yah plahts"
     },
-    "delivery": "warm, clear, relaxed, friendly; talking to one friend; no announcer energy"
+    "delivery": "warm, clear, relaxed, friendly; talking to one friend; no announcer energy",
+    "research_2026_09_25": {
+      "source": "ElevenLabs docs: TTS best practices + Prompting Eleven v3; connector model schema",
+      "findings": [
+        "ElevenLabs states PVCs are not fully optimized for eleven_v3 and library voices vary more on v3 than on v2: this explains the take-to-take drift and why same-speaker checks are needed",
+        "v3 stability modes: Creative = expressive but prone to hallucinations; Natural = closest to the original recording; Robust = most stable but less responsive, similar to v2",
+        "v3 has no SSML <break>; pacing comes from punctuation: commas and periods = pauses, ellipses = longer weighted pause, em dash = short beat",
+        "audio tags ([sighs], [laughs softly]) work but can shift the voice character; keep them out of production lines unless tested against the master",
+        "the connector's eleven_v3 TTS node exposes only voice and language_code; stability cannot be set there, so connector takes use the default (Natural)",
+        "eleven_v4 appears in the connector but this workspace has no access grant yet",
+        "the ElevenLabs workspace has no Agents and no knowledge-base documents"
+      ],
+      "decision": "keep Veda Sky + eleven_v3 Natural (switching voice or model would break match with the 3 approved reels); generate 4 variations per call and keep the one that passes duration + same-speaker checks"
+    }
   },
   "timing": {
     "why": "Every lip-sync failure so far came from footage and voice being made for different recordings. The mouth must be generated FROM the final voice file.",
@@ -458,10 +473,11 @@
       ]
     },
     "elevenlabs": {
-      "used_via": "Melius audio nodes (Melius manages the ElevenLabs account)",
+      "used_via": "Melius audio nodes, or directly through the ElevenLabs connector on the user's paid account (voice 625jGFaa0zTLtQfxwc6Q is reachable there)",
       "settings": "see voice.recipe",
       "brief": "project/briefs/elevenlabs_brief.md",
-      "direct_use": "If generating directly in ElevenLabs, use the same voice and model, plain text, default settings; export MP3 44.1 kHz; name files clip<N>_vo_take<k>.mp3; log the take in changelog."
+      "direct_use": "If generating directly in ElevenLabs, use the same voice and model, plain text, default settings; export MP3 44.1 kHz; name files clip<N>_vo_take<k>.mp3; log the take in changelog.",
+      "connector_notes": "creative_generate_speech with model eleven_v3, voice 625jGFaa0zTLtQfxwc6Q, language_code en, plain line text, generations_count 4; never repeat a call to retry (charges again)"
     },
     "metricool": {
       "brand_id": 7082564,
@@ -699,6 +715,23 @@
       "result": "ok",
       "next": [
         "Top up Melius, then run T1 (Pirita test)"
+      ]
+    },
+    {
+      "when": "2026-09-26T00:20:05+03:00",
+      "agent": "Claude",
+      "app": "elevenlabs",
+      "task": "Voice research via ElevenLabs connector and docs",
+      "changed": [
+        "voice.recipe: noted PVC type, stability Natural, language_code en",
+        "voice.research_2026_09_25 added",
+        "apps.elevenlabs: direct connector use documented"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "Optional: 1 test line in ElevenLabs direct (4 takes) to compare cost/quality vs Melius"
       ]
     }
   ]
