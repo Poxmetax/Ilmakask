@@ -1,0 +1,640 @@
+{
+  "_schema": "influencer-project-passport/1.0",
+  "_protocol": {
+    "purpose": "Single source of truth for every agent and app working on this project (Claude, Melius agent Mel, ElevenLabs, Metricool, humans). Read it before any task; append what you changed at the end.",
+    "canonical_location": "https://github.com/Poxmetax/Ilmakask/blob/main/project/ilma_kask.project.json",
+    "raw_url_for_agents": "https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.project.json",
+    "public_notice": "The repository is public. Never put passwords, API keys, signed media URLs, emails, payment or personal data in this file.",
+    "at_task_start": [
+      "Load the newest version of this file (raw URL). Read _protocol, open_tasks, the last 10 changelog entries, and the sections for your app.",
+      "Copy identity.anchor_paragraph, quality_lock and voice settings VERBATIM. Never paraphrase or re-describe them; drift comes from paraphrasing.",
+      "If the task spends credits or money, quote the cost from apps.<app>.costs before running and stop if it exceeds budget.per_step_cap or the user's quote."
+    ],
+    "at_task_end": [
+      "Append ONE entry to changelog (never edit or delete old entries) and bump version (patch +1).",
+      "Update the affected objects (clips[].status, node ids, open_tasks) in place.",
+      "If you cannot write files (Mel inside Melius, ElevenLabs), print the entry as a fenced JSON block headed 'HANDOFF ENTRY' so the user can paste it to an agent that can write (Claude: `python project/project_state.py log --from-json entry.json`)."
+    ],
+    "changelog_entry_format": {
+      "when": "ISO-8601 with timezone",
+      "agent": "who (Claude, Mel, human name)",
+      "app": "melius|elevenlabs|metricool|stan|github|claude",
+      "task": "one line",
+      "changed": [
+        "what changed, one item per line"
+      ],
+      "ids": {
+        "node/post ids created or edited": "..."
+      },
+      "credits_spent": 0,
+      "result": "ok|failed|needs review",
+      "next": [
+        "what the next agent should do"
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "updated_at": "2026-09-25T21:00:00+03:00",
+  "updated_by": "Claude (Cowork) for Poxed",
+  "project": {
+    "name": "Ilma Kask",
+    "handle": "@ilmakask",
+    "platform": "Instagram (Creator account)",
+    "niche": "Outdoor strength, daylight and sauna for dark northern weeks, filmed in real Estonian places",
+    "language": "English",
+    "timezone": "Europe/Tallinn",
+    "catchphrase": "The weather is the coach.",
+    "disclosure": {
+      "caption_line": "AI-generated character · real places",
+      "instagram_ai_label": true,
+      "bio": "Real Estonian places · AI-generated character",
+      "why": "EU AI Act Art. 50 (from 2 Aug 2026) + platform rules; never imply she is a real human"
+    },
+    "product": {
+      "name": "The Weather Week",
+      "store": "https://stan.store/Ilmakask",
+      "price": "USD 10 launch until 2026-10-25, then USD 13 (manual change)",
+      "lead_magnet": "The First Seven (free)",
+      "autodm_keyword": "BOARD"
+    }
+  },
+  "identity": {
+    "locked": true,
+    "face_anchor": {
+      "melius_node": "42fc7de6-dfee-4a99-aa2a-57c125a3b664",
+      "github": "ref/ilma_face_anchor_ref.jpg",
+      "rule": "attach as reference_image to every generation; identity only, never its lighting"
+    },
+    "anchor_paragraph": "European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, [HAIR STATE FOR THIS SCENE], tucked behind one ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.",
+    "anchor_paragraph_note": "Paste verbatim. Only [HAIR STATE FOR THIS SCENE] changes (e.g. 'down, blowing in the wind', 'loose under a rust beanie', 'soft side part'). Colour, length, brows, freckles, earrings never change.",
+    "signature_anchors": [
+      "light-brown freckles across nose bridge and upper cheeks, visible every frame",
+      "straight thick ash-brown brows clearly darker than the hair",
+      "exactly one small plain gold hoop in each ear"
+    ],
+    "hair": {
+      "colour": "cool platinum ice-blonde",
+      "forbidden_drift": [
+        "golden",
+        "yellow",
+        "warm blonde",
+        "grey"
+      ],
+      "length": "very long, straight",
+      "styling_allowed": [
+        "down",
+        "tucked behind one ear",
+        "loose under a beanie",
+        "low braid"
+      ]
+    },
+    "eyes": "light blue-grey, muted, never saturated, no contact-lens look",
+    "skin": "fair, real texture, visible pores, no smoothing, no beauty filter",
+    "body": {
+      "build": "slim athletic, toned but not bulky, NOT too thin",
+      "height_cm": 172,
+      "hands": "five fingers; keep hands out of frame unless the shot needs them (hands and fingers melt first)"
+    },
+    "makeup": "minimal natural (no-makeup look after sauna)",
+    "wardrobe_rules": [
+      "all clothing completely plain: no logos, letters, badges, patches",
+      "outfits per scene live in clips[].prompt; reuse them for re-renders",
+      "nothing around the neck in the Noblessner scene (user decision)"
+    ],
+    "never": [
+      "real-person likeness",
+      "minor-looking",
+      "text on clothing",
+      "two earrings in one ear",
+      "golden hair"
+    ]
+  },
+  "voice": {
+    "locked": true,
+    "master": {
+      "description": "The voice heard in the approved Balti Jaama Turg market reel (clip 4). Every reel must sound like this.",
+      "melius_video_node": "9385d68b-35ff-497a-803b-4d3ae63678c9",
+      "melius_vo_node": "9b652063-a0e9-4f36-a281-29a0561294d2",
+      "melius_vo_version": "4d257bf8-b24b-46ed-a37c-27e0d1893657",
+      "duration_ms": 8072
+    },
+    "recipe": {
+      "engine": "ElevenLabs",
+      "model": "eleven_v3",
+      "voice_name": "Veda Sky - Friendly, Warm and Clear",
+      "voice_id": "625jGFaa0zTLtQfxwc6Q",
+      "settings": "platform defaults; do not change stability/similarity/style; no speed change",
+      "text": "the plain script line only: no audio tags, no <break>, no voice description, no stage directions",
+      "language": "English"
+    },
+    "rejected": [
+      "eleven_multilingual_v2 (user: did not match)",
+      "trailing <break> padding (adds unpredictable length)",
+      "letting a video model invent the voice without an audio reference"
+    ],
+    "take_selection": [
+      "v3 varies take to take: generate, then check duration fits the planned clip (vo + 0.4 s <= clip length)",
+      "same-speaker check: stitch [market clip + new clip] and ask a listener model for a 1-10 similarity score; keep only 9-10, re-roll otherwise (a re-roll costs ~120 credits)"
+    ],
+    "pronunciation": {
+      "Hüva leili": "caption only, never spoken",
+      "Nõmme": "NUHM-meh (if ever spoken)",
+      "Pirita": "PEE-ree-tah",
+      "Kalamaja": "KAH-lah-mah-yah",
+      "Raekoja plats": "RYE-koh-yah plahts"
+    },
+    "delivery": "warm, clear, relaxed, friendly; talking to one friend; no announcer energy"
+  },
+  "timing": {
+    "why": "Every lip-sync failure so far came from footage and voice being made for different recordings. The mouth must be generated FROM the final voice file.",
+    "rules": [
+      "1. Write the line: 2.3-2.6 spoken words per second of speech (6 s clip ~ 13-15 words).",
+      "2. Generate the final VO FIRST (voice.recipe). Measure its duration D (ms) from the audio node.",
+      "3. Clip length = ceil(D/1000 + 0.4) whole seconds (Seedance takes integers 3-15). Resulting silent tail 0.4-1.0 s; if the tail would exceed 1.2 s, trim or re-roll the take.",
+      "4. Render the video WITH that exact VO wired as the audio input (native lip sync). Never render first and re-sync a different or re-rolled VO later.",
+      "5. Shot breakdown in the prompt uses the VO's own phrase times (run `python project/project_state.py beats --clip N` or estimate by characters) and ends with 'closed-mouth hold' for the tail.",
+      "6. If VO > clip length the last word is cut; if VO < original speech in re-used footage the mouth keeps moving without sound. Both are rejects.",
+      "7. Post-lip-sync (Kling etc.) is only a rescue for a few frames, and only when the new VO starts and ends within ±0.2 s of the speech in the footage."
+    ],
+    "lead_in_s": [
+      0.15,
+      0.4
+    ],
+    "tail_s": [
+      0.4,
+      1.0
+    ],
+    "wps": [
+      2.3,
+      2.6
+    ],
+    "qc": [
+      "voice starts within 0.4 s of first lip movement",
+      "lips never move while no voice is heard",
+      "no voice while lips are closed",
+      "last word complete",
+      "closed-mouth hold at the end"
+    ]
+  },
+  "physics": {
+    "gravity_and_weight": [
+      "Everything has weight: held bags pull the forearm down and swing a little then settle; a lifted object rises slower than it falls.",
+      "Walking: heel then toe, weight transfers with each step, head and shoulders dip 1-2 cm per step, the handheld frame bobs in rhythm; feet never slide, no gliding.",
+      "Hair: long platinum hair hangs straight when still, swings with a head turn and settles after about half a second; strands follow the stated wind direction only.",
+      "Fabric: heavy wool swings slowly and creases at elbows; nylon shells rustle and crease; knit collars sit, they do not float.",
+      "Boardwalk planks dip a few millimetres under each step; wet cobbles and paving show reflections that move with the camera.",
+      "Breathing: small chest rise; after exertion faster for the first seconds, then settles.",
+      "Cold: breath vapour only at about 5 °C or below; steam off hair/skin after sauna rises and drifts downwind and fades within a second.",
+      "Water and rain: drizzle falls straight or with the stated wind; droplets bead on waxed fabric; puddles ripple on impact.",
+      "Camera: genuine handheld phone, small shake, one autofocus breath allowed; never a gimbal, never a crane."
+    ],
+    "one_rule_per_clip": "Name the single physics rule the clip lives or dies by in TOP PRIORITY."
+  },
+  "lighting": {
+    "method": [
+      "Decide place, date and time; find where the sun or main light is; decide which way she faces; therefore which cheek is lit.",
+      "Write KEY (source, side of frame, colour temperature), FILL (sky/ambient), BOUNCE (colour from the biggest nearby surface onto a named body part).",
+      "Shadows: contact shadows under what she touches, all shadows fall the same direction as the scene's own shadows.",
+      "She is never brighter than the environment; light is constant for the whole take (not a time-lapse).",
+      "Always 'discard reference lighting': the face anchor is a studio image and its light must not leak in."
+    ],
+    "template": "RELIGHT: discard reference lighting. Key: [SOURCE] from [SIDE], [WARM/COOL]. Fill: [SKY/AMBIENT]. Bounce: [COLOUR] from [SURFACE] onto her [CHEEK/JAW/CHIN]. Shadows fall [DIRECTION] like the scene's shadows. Never brighter than the environment; light constant."
+  },
+  "quality_lock": {
+    "melius_node": "ead3f832-bf83-49ff-b0cf-82487abd3f3d",
+    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Framing: tight vertical framing from mid-chest up for the whole take. Her fingers, the phone and her feet are never in frame. Only her head, neck, shoulders and upper chest (plus any prop named above), with the real place behind her.\n- Skin: unretouched phone footage. Her light-brown freckles are clearly visible across the nose bridge and upper cheeks in every frame, with real skin texture, fine pores and slight natural unevenness; no smoothing, no beauty filter, no waxy look.\n- Ears: her platinum hair is tucked behind one ear so ONE small plain gold hoop earring is clearly visible on that ear; exactly one hoop per ear, never doubled, never a stud, cuff or second ring.\n- Brows: ash-brown, clearly darker than her platinum hair, in every frame. Hair stays cool platinum, never golden.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Movement: only when the action says she walks, her head and shoulders dip gently with each step and the frame shakes slightly with each footfall, never gliding. When she stands or the phone is propped, only small breathing movement and natural head motion.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small, far away and soft-focus, with stable bodies that never merge into walls or objects; buildings and walls are rigid and never shift or bend.\n- Camera: genuine phone footage, small natural shake; not a gimbal.\n- Identity: her face stays identical to the identity reference from the first to the last frame; no morphing.",
+    "rule": "wire as a text input into every video node (Melius appends it to the prompt)"
+  },
+  "prompt_template_talking_clip": "Vertical 9:16 handheld phone [selfie|companion-held|propped] video, one continuous [N]-second take, photorealistic, modern flagship phone [front camera held at arm's length (phone and arm out of frame)|held by a friend|propped on a ledge]. Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [identity.anchor_paragraph VERBATIM]\nOutfit visible in frame: [PLAIN OUTFIT]. No logos, no text.\n\nPLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.\n\nACTION: [one action]. On \"[phrase 1]\" [beat]; on \"[phrase 2]\" [beat]. After the last word her lips close and stay closed. Natural blinks. [ONE PHYSICS RULE].\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\n[lighting.template filled]\n\nBACKGROUND LIFE: [locations.<id>.crowd].\n\nAmbient sound: [locations.<id>.sound], ducked well under her voice.\n\nSHOT BREAKDOWN: [beats from timing rule 5, ending with closed-mouth hold].",
+  "locations": {
+    "town_hall_square": {
+      "name": "Raekoja plats (Town Hall Square), Tallinn",
+      "plate_node": "ab212c04-b15f-4bb7-a73d-5492b41ad799",
+      "light": "soft overcast from above, slightly frame-left; warm ochre bounce from painted facades onto the cheek",
+      "time": "autumn morning",
+      "sound": "soft footsteps on cobbles, distant unintelligible voices, pigeons",
+      "crowd": "a few people far behind, soft-focus"
+    },
+    "patkuli": {
+      "name": "Patkuli viewing platform and stairs, Toompea",
+      "plate_node": "14ec1c30-9904-4026-be96-558a5a6fcc25",
+      "light": "low evening sun, rim light; cool sky fill",
+      "time": "evening",
+      "sound": "steady wind, distant gulls, faint city hum",
+      "crowd": "none or 1-2 distant"
+    },
+    "nomme_harku": {
+      "name": "Nõmme–Harku lit trail, Tallinn",
+      "plate_node": null,
+      "light": "warm sodium/LED trail lamps as key from above-side, deep blue dusk fill; night-mode noise only in the sky",
+      "time": "dusk/night",
+      "sound": "breeze in pines, gravel steps, one distant bird",
+      "crowd": "none"
+    },
+    "balti_jaama_turg": {
+      "name": "Balti Jaama Turg (Baltic Station Market), Kopli 1",
+      "plate_node": "3a953784-daf9-4c6a-8eba-a4784d8422fb",
+      "light": "soft window daylight frame-right, even overhead hall fill, warm amber bounce from wooden counters",
+      "time": "daytime",
+      "sound": "unintelligible market murmur, crate thud, paper crinkle",
+      "crowd": "shoppers soft-focus; portrait-mode blur so no text is readable",
+      "permission": "private business: ask permission for commercial filming of real plates"
+    },
+    "viru_raba": {
+      "name": "Viru raba boardwalk, Lahemaa National Park",
+      "plate_node": "5477f5be-232b-4b81-b9ad-9e0ec7dacfb8",
+      "light": "low early sun behind her left shoulder (gold rim on beanie/shoulders), pale sky fill, rust-red bounce from bog moss onto the jaw",
+      "time": "early morning mist",
+      "sound": "hollow boardwalk footsteps, wind in heather, one bird call",
+      "crowd": "none"
+    },
+    "noblessner": {
+      "name": "Noblessner seafront promenade, Tallinn",
+      "plate_node": "2e70d54f-f833-457e-8085-484268d1abd7",
+      "light": "warm amber promenade lamp key frame-right, deep blue-hour sky fill from above-left, cool blue bounce from wet paving onto the chin",
+      "time": "blue hour",
+      "sound": "small waves on stone, harbour hum, distant footsteps",
+      "crowd": "2-3 distant walkers, one with a dog"
+    },
+    "kalamaja": {
+      "name": "Kalamaja wooden-house streets (Kalevi 29, Leigeri 5 plates)",
+      "plate_node": [
+        "8221cee6-8a96-460e-bb18-0dc97d3e6b25",
+        "044b08fa-8c4c-4bad-b12c-02ff059747b0"
+      ],
+      "light": "flat grey drizzle light, soft top key, reflections on wet asphalt",
+      "time": "day, light drizzle",
+      "sound": "rain on a waxed hood, steps on wet asphalt",
+      "crowd": "none or 1 distant"
+    },
+    "pirita": {
+      "name": "Pirita beach promenade, Tallinn",
+      "plate_node": "0b007f0b-91c9-410b-b260-e9211ca606a8",
+      "light": "bright overcast key with a brighter patch over the sea at frame-left, cool silver bounce from the sea",
+      "time": "windy autumn afternoon",
+      "sound": "wind on the mic, waves",
+      "crowd": "two tiny distant walkers with a dog"
+    }
+  },
+  "clips": [
+    {
+      "id": 1,
+      "date": "2026-09-30",
+      "place_id": "town_hall_square",
+      "queue": "2026-09-30_reel_town-hall-square",
+      "script": "Ten minutes outside before nine. Real sky, not a window. Grey sky still counts.",
+      "tip": "daylight before 9",
+      "status": "REWORK: lip timing wrong (mouth moves without voice). Re-render natively, planned 7 s",
+      "melius": {
+        "seedance": "e1b86a4e-ad2e-48c4-abad-67f815702954",
+        "vo": "8b4688b6-3e66-459a-969f-b865c27e54c0",
+        "vo_ms": 6452,
+        "plan_duration_s": 7
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 7-second take, photorealistic, modern flagship phone front camera held at arm's length (the phone and arm are out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing, no beauty filter, no colour grade.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face with high rounded cheekbones and a gently tapered jaw; straight nose with a softly rounded tip; naturally full lips in a soft rose-nude tone; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, soft side part, tucked behind her left ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: collar of a plain camel double-breasted wool coat open over a plain cream chunky knit. No logos, no text.\n\nPLACE (from @[Tallinn_-_Town_Hall_Square_(Raekoja_plats)]{ab212c04-b15f-4bb7-a73d-5492b41ad799}): Tallinn Town Hall Square, Old Town, Estonia, behind her: the Gothic Town Hall with its slim tower and the colourful medieval merchant houses with red roofs, wet grey cobblestones. Autumn morning, soft overcast sky. No readable signs, no text.\n\nACTION: she walks slowly across the square, talking to the lens like telling a friend a tiny habit; her head and shoulders dip gently with each step. On \"Ten minutes outside before nine\" she glances up at the sky; on \"Real sky, not a window\" a small head tilt toward the square; on \"Grey sky still counts\" a warm half-smile. After the last word her lips close and she simply keeps walking. Natural blinks. A light breeze from frame-right moves loose strands the same way throughout.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced. No other speech, no music.\n\nLIGHT: soft diffuse overcast light from above and slightly frame-left, matched to the square; warm ochre bounce from the painted facades on her cheek; she is never brighter than the environment; light constant.\n\nBACKGROUND LIFE: a few people far behind her going about their business, small and soft-focus, faces never sharp; pigeons on the cobbles. Nobody crosses in front of her.\n\nAmbient sound: soft footsteps on cobbles, distant unintelligible voices, ducked under her voice."
+    },
+    {
+      "id": 2,
+      "date": "2026-10-06",
+      "place_id": "patkuli",
+      "queue": "2026-10-06_reel_patkuli-stairs",
+      "script": "Stair repeats: strong going up, easy coming down. The walk down is your rest. Don't rush it.",
+      "tip": "stair intervals",
+      "status": "APPROVED + SCHEDULED (Metricool 381959592)",
+      "melius": {
+        "seedance": "e7396821-1ec6-44d5-a40e-485927a32c10",
+        "final_stitch": "0da7cb40-83f2-4ca9-b639-88f70817bd07",
+        "vo": "40f05dbf-41d4-4cf1-8209-e6a853eaf97f",
+        "fix_note": "b4919227-c8a1-4cf5-a3eb-45f4577a14ee"
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous take, photorealistic, clean modern flagship phone front camera held at arm's length (phone and fingers out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nTOP PRIORITY: 1. Face and identity match the reference 100% for the entire take. 2. Lip-sync exactly to the provided audio; English only. 3. Light logic: she faces south toward the phone; low late-afternoon sun from the south-west lights her face from frame-left; the Old Town roofs and the harbour behind her (north) catch the same sun. 4. She has just done stair repeats: slightly faster breathing, light flush on her cheeks. 5. Two or three tourists at the far railing, tiny and soft-focus, faces never visible.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, in a high ponytail with platinum strands loose at the temples, ears uncovered; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain charcoal zip-neck fleece under an open plain dark olive shell jacket. No logos, no text.\n\nPLACE (from @[1920px-Vanalinn_Patkuli_platvormilt_2013]{14ec1c30-9904-4026-be96-558a5a6fcc25}): the Patkuli viewing platform on Toompea hill, Tallinn, Estonia. Behind her, far below: the real view north over red-tiled Old Town roofs, medieval stone towers, a tall church spire and the harbour. Late October afternoon. No readable signs, no text.\n\nACTING (unspoken direction): stop someone from wrecking their knees trying to look tough; she used to sprint the downs and paid for it; make \"easy down\" feel like the smart move, not the lazy one; breath still high, so keep it light, a friend who learned the hard way, not a coach barking; eyes check the lens.\nShe stands at the parapet (not walking), small breathing bob. «Stair repeats:» a breath, small nod. «strong going up, easy coming down.» her eyes and chin rise then dip in time with the words. «The walk down is your rest.» the phone lowers slightly so more of the roofs and spire appear behind her. «Don't rush it.» warm smile, one slow nod. After the last word her lips close and she holds. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, perfectly lip-synced. Delivery warm, a little breathless at the start, settling. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low warm sun from frame-left at face height. Fill: cool autumn sky from above. Bounce: warm terracotta from the stone parapet onto her jaw. Never brighter than the environment; light constant.\nPhysics: chest rises visibly for the first two seconds then settles; steady wind from behind her lifts the ponytail and loose strands forward past her cheek.\nComposition: face upper-middle third, spire and roofs behind her right shoulder. Single take, no on-screen text.\nAudio: the provided voice plus ducked wind, distant gulls, faint city hum. No music.\nShot breakdown: 0-3 s rule and nod; 3-5.5 s the phone lowers, the view on \"your rest\"; 5.5-9 s \"Don't rush it\", slow nod, hold.",
+      "fix_note": "FIX FOR THIS TAKE (highest priority): the charcoal fleece and the olive shell jacket are completely unbranded: no chest logo, no small white logo, no emblem, no patch, no print anywhere on either garment. Her fingers and the phone never enter the frame, including the very first second."
+    },
+    {
+      "id": 3,
+      "date": "2026-10-02",
+      "place_id": "nomme_harku",
+      "queue": "2026-10-02_reel_nomme-lit-loop",
+      "script": "This loop stays lit all night. So too dark isn't a reason anymore. Walk it if running feels like a fight.",
+      "tip": "lit trails remove the dark excuse",
+      "status": "REWORK: lip timing. Re-render natively, planned 8 s",
+      "melius": {
+        "seedance": "3e69a9cc-dbbb-4992-b3e2-15b492f93d36",
+        "vo": "aa197573-1f14-4ee5-9c29-63c2d1d3e1a8",
+        "vo_ms": 7576,
+        "plan_duration_s": 8
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 8-second take, photorealistic, flagship phone night mode, phone held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Mild natural noise only in the dark sky; real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, in a high ponytail with a thin plain headband, ears uncovered; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain dark olive shell zipped over a plain charcoal fleece, a thin plain reflective strip on the shoulder. No logos, no text.\n\nPLACE: the lit Nõmme–Harku health trail in Tallinn, Estonia: a wide packed-gravel path through tall straight Scots pines on sandy ground, slim trail lamps on poles along one side, the trail curving away into the dark trees behind her. Dusk: deep blue sky with a little light low behind the pines; the trail lamps are ON. About 8°C, no breath vapour. No signs, no text.\n\nACTION: she walks briskly, head and shoulders dipping with each step, ponytail swinging; lamplight slides across her face as she passes a lamp. On \"This loop stays lit all night\" she glances up at the lamp; on \"so too dark isn't a reason anymore\" a small raised-eyebrow look at the lens; on \"Walk it if running feels like a fight\" an easy laugh in the eyes. After the last word her lips close. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced. No other speech, no music.\n\nLIGHT: key from the trail lamp at frame-right lighting her face from the side and front; cool blue dusk fill; never brighter than the environment; dusk constant, no time-lapse.\n\nBACKGROUND LIFE: one tiny distant runner with a headlamp far behind, fading into the trees.\n\nAmbient sound: gravel footsteps, breeze in the pines, ducked under her voice."
+    },
+    {
+      "id": 4,
+      "date": "2026-10-12",
+      "place_id": "balti_jaama_turg",
+      "queue": "2026-10-12_reel_balti-jaam-market",
+      "script": "Protein at the first real meal. Rye bread counts. Frozen berries count. Defaults, not a diet.",
+      "tip": "food defaults",
+      "status": "APPROVED + SCHEDULED (Metricool 381959728). VOICE MASTER: this clip's voice is the reference for every reel",
+      "melius": {
+        "seedance": "9385d68b-35ff-497a-803b-4d3ae63678c9",
+        "seedance_version": "6bfddc7c-4d39-40f9-8176-d26ce001708b",
+        "vo": "9b652063-a0e9-4f36-a281-29a0561294d2",
+        "vo_version": "4d257bf8-b24b-46ed-a37c-27e0d1893657",
+        "vo_ms": 8072,
+        "fix_note": "e9dc01d5-1f36-43c4-b3e2-ee2e8b255323"
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous take, photorealistic, clean modern flagship phone front camera held at arm's length (phone out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nTOP PRIORITY: 1. Face and identity match the reference 100% for the entire take. 2. Lip-sync exactly to the provided audio; English only. 3. Busy market life behind her: shoppers and stallholders doing their own business, small and soft-focus, faces never sharp, nobody passing in front of her. 4. The paper bag with a dark rye loaf exists from frame one and never changes. 5. Relit by mixed daylight and warm stall light, never pasted.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, down, tucked behind her left ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: a plain camel overcoat open over a plain cream sweater. PROP: a plain brown paper grocery bag held in the crook of her left arm against her chest, the top of a dark brown Estonian rye loaf visible above the paper; her hand stays hidden behind the bag, fingers never visible. The bag is present from frame one and never appears, disappears or changes design. No logos, no text on anything.\n\nPLACE (from @[1280px-Balti_jaama_turg_2018_02]{3a953784-daf9-4c6a-8eba-a4784d8422fb}): the ground-floor fruit and vegetable street of Balti Jaama Turg (Baltic Station Market), Kopli 1, Tallinn, Estonia, behind her: stalls with crates of tomatoes, apples and root vegetables on wooden counters, limestone walls. Absolutely no readable text: no price cards, no signs, no brand names.\n\nACTING (unspoken direction): take the stress out of winter eating in one breath; she is tired of \"clean eating\" lists nobody keeps; make ordinary food feel like enough; one preachy word and it becomes a diet ad, so keep it light, almost amused; eyes check the lens after each line.\nShe stands still in the aisle, subtle micro-sway. «Protein at the first real meal.» straightforward. «Rye bread counts.» she lifts the bag an inch with her arm and glances down at the loaf; the paper crinkles. «Frozen berries count.» a small grin. «Defaults, not a diet.» warm, final, a slow nod. After the last word her lips close and she holds. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, perfectly lip-synced. Delivery warm, a little playful on \"Frozen berries count.\" No other voices, no music.\n\nRELIGHT: discard reference lighting. Key: soft daylight from tall windows at frame-right. Fill: even overhead hall light. Bounce: warm amber from the wooden counters and orange produce onto her chin. Never brighter than the environment; light constant.\nPhysics: the bag's weight pulls slightly on her arm; hair shifts with her head turn; one autofocus breath when a shopper passes far behind her.\nBackground life: shoppers browsing, a stallholder arranging apples, someone carrying a crate at mid-distance, all soft-focus, natural pace, never frozen or duplicated.\nComposition: face upper-middle third, the market aisle receding behind her. Single take, no on-screen text.\nAudio: the provided voice plus ducked unintelligible market murmur, a crate thud, paper crinkle. No music.\nShot breakdown: 0-2 s protein line; 2-4.5 s the bag lift on \"Rye bread counts\", berries grin; 4.5-9 s \"Defaults, not a diet\", nod, hold.",
+      "fix_note": "FIX FOR THIS TAKE (highest priority): shallow depth of field like phone portrait mode. She is sharp; the market behind her is strongly blurred into soft colour shapes, so no price card, label, sign, number or letter can be read anywhere, and background people are soft indistinct shapes with no visible faces or hands."
+    },
+    {
+      "id": 5,
+      "date": "2026-10-10",
+      "place_id": "viru_raba",
+      "queue": "2026-10-10_reel_viru-bog",
+      "script": "Easy most days, long once a week. The bog doesn't care about your pace.",
+      "tip": "easy most days, long once a week",
+      "status": "REWORK: lip timing. New native render node created, planned 6 s",
+      "melius": {
+        "seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627",
+        "vo": "212e04f5-4669-4b0d-865c-4b8ea6280bd5",
+        "vo_ms": 5433,
+        "plan_duration_s": 6
+      },
+      "prompt": "Vertical 9:16 handheld phone video, one continuous 6-second take, photorealistic, modern flagship phone held by a friend walking backward a step ahead of her (phone and hands out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, loose over her shoulders under the beanie, one side tucked behind her ear; exactly ONE small plain gold hoop earring in each ear; no makeup.\nOutfit visible in frame: plain moss-green waterproof shell zipped to the collarbone over a plain grey merino base layer, plain rust knit beanie. No logos, no text.\n\nPLACE (from @[1280px-Päikesetõus_Viru_rabas]{5477f5be-232b-4b81-b9ad-9e0ec7dacfb8}): the wooden boardwalk across Viru bog, Lahemaa National Park, Estonia, behind her: grey planks leading into the bog, low pines, dark mirror-still bog pools reflecting the sky, soft morning mist drifting slowly left. Early morning, low sun. No other people. No signs.\n\nACTION: she walks slowly along the boardwalk toward the camera, head and shoulders dipping gently with each relaxed step. On \"Easy most days, long once a week.\" an easy nod. On \"The bog doesn't care about your pace.\" a glance out over the pools, then a soft smile back to the lens. After the last word her lips close and stay closed; she keeps walking with a calm closed-mouth smile. Natural blinks. Loose strands move with the same light breeze that moves the mist.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low early sun behind her left shoulder, gold rim light on the beanie and shoulders; fill: pale morning sky; bounce: rust-red from the autumn bog moss onto her jaw. Light constant.\n\nAmbient sound: slow hollow footsteps on wooden planks, soft wind in heather, one distant bird call, all ducked well under her voice.\n"
+    },
+    {
+      "id": 6,
+      "date": "2026-10-08",
+      "place_id": "noblessner",
+      "queue": "2026-10-08_reel_noblessner-sauna",
+      "script": "Heat, then air, then a slow walk. Then something warm to eat. The cold part was always free.",
+      "tip": "sauna ritual",
+      "status": "APPROVED + SCHEDULED (Metricool 381959668)",
+      "melius": {
+        "seedance": "e13c4843-8784-414c-b3d9-4a416d7d87e5",
+        "final_stitch": "bd1bfca1-5f65-42ac-9a19-4efbb2300c23",
+        "vo": "ffcc7ec6-2563-41ef-a610-96b542a9b1be",
+        "fix_note": "3169fc82-0608-4eec-a518-21c98c8eec40"
+      },
+      "prompt": "Vertical 9:16 phone video, one continuous take, photorealistic, clean modern flagship phone night mode. The phone is propped on a low stone ledge facing her: one soft settle-wobble at the start, then locked with a slight casual tilt and subtle sensor breathing. Framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nTOP PRIORITY: 1. Face and identity match the reference 100% for the entire take. 2. Lip-sync exactly to the provided audio; English only. 3. Just out of the sauna at about 7°C: faint steam rising from her hair and face in the cold air; breath slightly visible; rosy flushed cheeks. 4. Blue-hour sky with warm promenade lamps, constant light, relit to the scene. 5. A few people strolling far behind, soft-focus, faces never visible.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, loose over the coat, tucked behind one ear; exactly ONE small plain gold hoop earring in each ear; no makeup.\nOutfit visible in frame: a long plain dark padded coat zipped up to the chin. Nothing around her neck. No logos, no text.\n\nPLACE (from @[1280px-Port_of_Noblessner,_Tallinn_(2020-05-20)]{2e70d54f-f833-457e-8085-484268d1abd7}): the seafront promenade at Noblessner harbour, Tallinn, Estonia, behind her: the real marina, historic brick industrial halls and the sea with harbour lights. Blue hour, wet paving. No readable text, no identifiable businesses.\n\nACTING (unspoken direction): share the ritual that costs nothing; her grandmother's smoke sauna taught her this before any app did; make the viewer want the walk as much as the heat; simple and honest, no big promises; relaxed, still warm, in no hurry; eyes check the lens.\nShe stands in front of the propped phone. «Heat, then air, then a slow walk.» she counts it with a small tilt of the head on each step. «Then something warm to eat.» soft smile. «The cold part was always free.» a glance at the sea, back to the lens, warm. After the last word her lips close and she holds. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, perfectly lip-synced. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: warm amber promenade lamp at frame-right lighting the right side of her face and making the faint steam glow. Fill: deep blue sky from above-left. Bounce: cool blue from the wet paving onto her chin. Never brighter than the environment; light constant.\nBackground life: two or three people walking along the promenade at a distance, one with a dog, soft-focus, natural pace.\nComposition: face upper-middle third, sea and harbour lights behind. Single take, no on-screen text.\nAudio: the provided voice plus ducked small waves on stone, harbour hum. No music.",
+      "fix_note": "FIX FOR THIS TAKE (highest priority): NOTHING around her neck: no towel, no scarf, no wrap, no snood. Only the plain dark padded coat zipped up to the chin with its plain collar. Keep her hair exactly as in the previous take. Her mouth opens only as wide as each spoken syllable needs."
+    },
+    {
+      "id": 7,
+      "date": "2026-10-14",
+      "place_id": "kalamaja",
+      "queue": "2026-10-14_reel_kalamaja-rain",
+      "script": "Missed yesterday? Don't catch up. Don't double today. Just do today's box.",
+      "tip": "failure rule",
+      "status": "REWORK: lip timing. Re-render natively, planned 6 s",
+      "melius": {
+        "seedance": "88878aff-e2cb-47fc-9dfa-53d653a0a8c4",
+        "vo": "5710e088-e2e5-4f44-93a7-612b50169eb2",
+        "vo_ms": 5277,
+        "plan_duration_s": 6
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 6-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing; a few raindrops at the lens edge are fine.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, framing her face under the hood; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: a completely plain navy waxed rain jacket with the hood up (it stays up), no text, no letters, no logo, no badge anywhere on it; a plain knit collar underneath.\n\nPLACE (from @[1280px-Kalevi_29_Kalamaja_Tallinn]{8221cee6-8a96-460e-bb18-0dc97d3e6b25} and @[1280px-Elamu_Leigeri_5,_Kalamaja,_Tallinn]{044b08fa-8c4c-4bad-b12c-02ff059747b0}): a quiet residential street in Kalamaja, Tallinn, Estonia, behind her: historic wooden apartment houses with painted wooden siding in beige and dark red-brown, white-framed windows, red roofs with chimneys. Late afternoon, light drizzle: fine rain streaks visible against the dark doorways, a wet sheen on the street. No readable house numbers, signs or number plates. No other people.\n\nACTION: she walks steadily along the pavement, head and shoulders dipping gently with each step; droplets bead on the waxed fabric of the hood. On \"Missed yesterday?\" eyebrows up, small smile; on \"Don't catch up. Don't double today.\" two small shakes of the head; on \"Just do today's box.\" a steady look into the lens and one nod. After the last word her lips close. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced. No other speech, no music.\n\nLIGHT: soft grey overcast from above; muted beige and red-brown bounce from the wooden facades onto her face. Light constant.\n\nAmbient sound: light rain on the hood, footsteps on wet asphalt, ducked under her voice."
+    },
+    {
+      "id": 8,
+      "date": "2026-10-04",
+      "place_id": "pirita",
+      "queue": "2026-10-04_reel_pirita-board",
+      "script": "Sunday night, ten minutes: fill next week's board. Empty boxes are decisions. The board's in my bio.",
+      "tip": "weekly board, CTA",
+      "status": "REWORK: lip timing. Re-render natively, planned 7 s. RUN THIS ONE FIRST AS THE TEST",
+      "melius": {
+        "seedance": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
+        "vo": "f94975a9-6294-4bb5-88ea-d55c0be45ca3",
+        "vo_ms": 6557,
+        "plan_duration_s": 7
+      },
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 7-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, down and blowing in the wind, one side tucked behind her ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain dark olive windproof jacket zipped up, plain cream knit collar showing. No logos, no text.\n\nPLACE (from @[1280px-EU-EE-Tallinn-Pirita-Pirita_beach_in_autumn]{0b007f0b-91c9-410b-b260-e9211ca606a8}): the seaside promenade at Pirita beach, Tallinn, Estonia, behind her: pale sand, the grey-blue Baltic Sea with steady waves, the Tallinn skyline small and far across the bay. Windy autumn afternoon, bright overcast sky with a brighter patch over the sea. Nothing in the sky: no paragliders, no aircraft, no birds close by. No readable signs.\n\nACTION: she walks along the promenade into the wind, head and shoulders dipping gently with each step. Strong steady wind from the sea at frame-left: her hair streams to frame-right, same direction throughout. On \"Sunday night, ten minutes:\" eyebrows up, friendly; on \"fill next week's board\" a small nod; on \"Empty boxes are decisions\" a slight reassuring tilt of the head; on \"The board's in my bio\" a half-smile and a quick glance down toward the phone and back. After the last word her lips close and stay closed. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: bright overcast key with a brighter patch over the sea at frame-left; cool silver bounce from the sea. Light constant.\n\nBACKGROUND LIFE: two tiny distant walkers with a dog far behind, soft focus.\n\nAmbient sound: wind on the mic, waves, ducked well under her voice.\n"
+    }
+  ],
+  "apps": {
+    "melius": {
+      "project_id": "e2daaabd-c043-44b3-bd32-884b1cb1051f",
+      "canvas_id": "4390116d-4cf1-4a4f-8bcb-650ce48588ae",
+      "canvas_url": "https://app.melius.com/projects/e2daaabd-c043-44b3-bd32-884b1cb1051f/canvas/4390116d-4cf1-4a4f-8bcb-650ce48588ae",
+      "team_skill": "/ilma-reel (Melius agent skill; mirrors this file's rules)",
+      "video_model": {
+        "model": "seedance-2.0",
+        "variant": "reference-to-video",
+        "tier": "standard",
+        "resolution": "720p",
+        "aspect": "9:16",
+        "inputs": [
+          "reference_image: face anchor 42fc7de6",
+          "reference_image: location plate",
+          "audio: the clip's VO node",
+          "text: quality lock ead3f832",
+          "text: fix note if any"
+        ]
+      },
+      "costs": {
+        "seedance-2.0 standard 720p": "180 credits/s",
+        "seedance-2.0 fast 720p": "144 credits/s",
+        "seedance-2.0 1080p": "x2.25",
+        "eleven_v3 TTS": "~120 credits/line",
+        "kling-lipsync": "17 credits/s",
+        "sync-lipsync-v3": "160 credits/s",
+        "sonilo-video-sfx": "11 credits/s",
+        "stitch": "free/low",
+        "gemini-3.1-pro QC": "low"
+      },
+      "mechanics_learned": [
+        "Stitch needs at least 2 connected sources; output length = longest of visuals and overlays (a longer overlay adds a black tail). Stitch upscales to 1080x1920.",
+        "An audio node cannot take a video node's sound (no audio extraction from video).",
+        "Gemini 3.1 Pro and Qwen text nodes accept only ONE video input; to compare two clips, stitch them first.",
+        "Kling lip-sync keeps the source length; audio longer than the video is cut; where the audio is silent the ORIGINAL mouth motion stays.",
+        "sonilo-video-sfx-mix replaced the voice in a test; use sonilo-video-sfx (separate audio) + stitch overlay instead.",
+        "Seedance 2.0 re-renders the voice from the audio reference; the market clip's published voice came out of this process.",
+        "Duration on a stitch node is ignored (cannot trim).",
+        "AI QC (Gemini) hallucinates timing and defects; the user's eyes decide timing; use two different models and count a blocker only when both agree."
+      ]
+    },
+    "elevenlabs": {
+      "used_via": "Melius audio nodes (Melius manages the ElevenLabs account)",
+      "settings": "see voice.recipe",
+      "brief": "project/briefs/elevenlabs_brief.md",
+      "direct_use": "If generating directly in ElevenLabs, use the same voice and model, plain text, default settings; export MP3 44.1 kHz; name files clip<N>_vo_take<k>.mp3; log the take in changelog."
+    },
+    "metricool": {
+      "brand_id": 7082564,
+      "timezone": "Europe/Tallinn",
+      "rules": [
+        "post at 10:00 Tallinn",
+        "instagramData.type REEL, isAiGenerated true",
+        "caption from publish/queue/<folder>/caption.txt"
+      ],
+      "scheduled": {
+        "2026-09-28 intro": "photo",
+        "2026-09-29 carousel First Seven": "carousel",
+        "2026-10-01 carousel daylight": "carousel",
+        "2026-10-05 carousel launch": "carousel",
+        "2026-10-06 reel Patkuli": 381959592,
+        "2026-10-08 reel Noblessner": 381959668,
+        "2026-10-12 reel market": 381959728
+      }
+    },
+    "stan": {
+      "store": "https://stan.store/Ilmakask",
+      "price_change_due": "2026-10-25: 10 -> 13 USD (manual)"
+    },
+    "github": {
+      "repo": "Poxmetax/Ilmakask",
+      "public": true,
+      "contents": [
+        "posts/ (20 images)",
+        "ref/ilma_face_anchor_ref.jpg",
+        "project/ (this passport, helper script, briefs)"
+      ]
+    }
+  },
+  "budget": {
+    "rules": [
+      "Quote credits before every paid step; stop and ask if the step would exceed the quote.",
+      "Test one clip before a batch.",
+      "Fix problems at the source (render with the final voice) instead of layering fixes (re-sync, overlays) on old footage.",
+      "Never re-generate approved assets or things the user did not ask to change."
+    ],
+    "per_step_cap_credits": 1500,
+    "melius_balance_note": "Balance on 2026-09-25 evening was below 1,260 credits (runs refused)."
+  },
+  "open_tasks": [
+    {
+      "id": "T1",
+      "what": "Test re-render clip 8 (Pirita) natively with its VO, 7 s",
+      "credits": 1260,
+      "blocked_by": "Melius credit top-up",
+      "owner": "any agent with Melius access",
+      "accept_if": "user approves timing + voice match"
+    },
+    {
+      "id": "T2",
+      "what": "If T1 approved: re-render clips 1 (7 s), 3 (8 s), 5 (6 s), 7 (6 s)",
+      "credits": 4860,
+      "blocked_by": "T1"
+    },
+    {
+      "id": "T3",
+      "what": "Schedule approved re-renders in Metricool at 10:00 with captions + AI label",
+      "blocked_by": "T2"
+    },
+    {
+      "id": "T4",
+      "what": "Verify Wikimedia Commons licence/author for every location plate and credit them",
+      "blocked_by": "user approval to fetch Commons pages"
+    },
+    {
+      "id": "T5",
+      "what": "Change Stan price 10 -> 13 USD on 2026-10-25",
+      "owner": "user"
+    }
+  ],
+  "learnings": [
+    "Tight chest-up framing keeps hands, phone and feet out of frame (they melt first).",
+    "Plain unbranded clothing wording prevents invented logos; portrait-mode blur prevents readable fake text.",
+    "The towel/scarf fight cost 3 renders: when the model can't do a detail after one retry, drop the detail.",
+    "Voice identity: one master clip the user likes; everything else is checked against it.",
+    "Timing: render with the final voice; never re-sync a different voice onto old footage."
+  ],
+  "changelog": [
+    {
+      "when": "2026-09-25T02:00:00+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "First 8 reels rendered (Seedance 2.0 + eleven_v3 VO)",
+      "changed": [
+        "8 clips rendered",
+        "fix notes for clips 2, 4, 6"
+      ],
+      "ids": {},
+      "result": "needs review",
+      "next": [
+        "user review"
+      ]
+    },
+    {
+      "when": "2026-09-25T12:00:00+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Voice lock attempts (Multilingual v2 + Kling lip-sync + ambience)",
+      "changed": [
+        "user rejected: timing and voice"
+      ],
+      "ids": {},
+      "result": "failed",
+      "next": [
+        "use market voice"
+      ]
+    },
+    {
+      "when": "2026-09-25T13:30:00+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Market voice recipe (eleven_v3 plain text) + Kling lip-sync on 7 clips",
+      "changed": [
+        "clips 2, 4, 6 approved by user",
+        "clips 1, 3, 5, 7, 8 rejected for lip timing"
+      ],
+      "ids": {},
+      "result": "partial",
+      "next": [
+        "native re-render"
+      ]
+    },
+    {
+      "when": "2026-09-25T15:39:00+03:00",
+      "agent": "Claude",
+      "app": "metricool",
+      "task": "Scheduled approved reels",
+      "changed": [
+        "Patkuli 6 Oct, Noblessner 8 Oct, market 12 Oct at 10:00, AI label on"
+      ],
+      "ids": {
+        "metricool": [
+          381959592,
+          381959668,
+          381959728
+        ]
+      },
+      "result": "ok",
+      "next": []
+    },
+    {
+      "when": "2026-09-25T20:30:00+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Prepared native re-render of clips 1, 3, 5, 7, 8",
+      "changed": [
+        "quality lock: mouth-and-timing rule added",
+        "clip 8 set to 7 s",
+        "new Seedance node for clip 5 (6cf45b2f)",
+        "match-test stitches rewired to the raw renders"
+      ],
+      "ids": {
+        "clip5_seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627"
+      },
+      "credits_spent": 0,
+      "result": "blocked (credits)",
+      "next": [
+        "T1"
+      ]
+    },
+    {
+      "when": "2026-09-25T21:00:00+03:00",
+      "agent": "Claude",
+      "app": "github",
+      "task": "Created this project passport, helper script, Melius skill and ElevenLabs brief",
+      "changed": [
+        "project/ folder added"
+      ],
+      "ids": {},
+      "result": "ok",
+      "next": [
+        "every agent reads this file first"
+      ]
+    }
+  ]
+}
