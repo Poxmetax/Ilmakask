@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.4",
-  "updated_at": "2026-09-26T00:20:05+03:00",
+  "version": "1.0.5",
+  "updated_at": "2026-09-26T00:26:23+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -477,7 +477,10 @@
       "settings": "see voice.recipe",
       "brief": "project/briefs/elevenlabs_brief.md",
       "direct_use": "If generating directly in ElevenLabs, use the same voice and model, plain text, default settings; export MP3 44.1 kHz; name files clip<N>_vo_take<k>.mp3; log the take in changelog.",
-      "connector_notes": "creative_generate_speech with model eleven_v3, voice 625jGFaa0zTLtQfxwc6Q, language_code en, plain line text, generations_count 4; never repeat a call to retry (charges again)"
+      "connector_notes": "creative_generate_speech with model eleven_v3, voice 625jGFaa0zTLtQfxwc6Q, language_code en, plain line text, generations_count 4; never repeat a call to retry (charges again)",
+      "plan_limits": "max 2 concurrent requests (use generations_count 2); video generation not available on the current plan (Seedance v2 refused: 'video generation needs a paid plan')",
+      "costs": "eleven_v3 speech: 100 ElevenLabs credits per take for a 100-character line (~$0.01); eleven_scribe_v1 transcription: 0",
+      "test_flow": "https://elevenlabs.io/app/flows/VfaWm64tCFwAtcQVKlBe"
     },
     "metricool": {
       "brand_id": 7082564,
@@ -732,6 +735,27 @@
       "result": "ok",
       "next": [
         "Optional: 1 test line in ElevenLabs direct (4 takes) to compare cost/quality vs Melius"
+      ]
+    },
+    {
+      "when": "2026-09-26T00:26:23+03:00",
+      "agent": "Claude",
+      "app": "elevenlabs",
+      "task": "Pirita (clip 8) voice test directly in ElevenLabs",
+      "changed": [
+        "flow VfaWm64tCFwAtcQVKlBe: 4 eleven_v3 takes requested, 2 refused (plan limit 2 concurrent), 2 made: take A 7.12 s, take B 7.84 s",
+        "both takes transcribed word-perfect by eleven_scribe_v1",
+        "apps.elevenlabs: plan limits and costs recorded"
+      ],
+      "ids": {
+        "tts_node": "FEGdsWk46WbSroqCCpQ3",
+        "take_A_node": "tXSwjp4TSLKAp5s82XYQ",
+        "take_B_node": "KTQkdI6ygwAMAKFd8bRo"
+      },
+      "credits_spent": 200,
+      "result": "needs review",
+      "next": [
+        "User listens to takes A/B vs market master; Pirita keeps Melius take f94975a9 (6.557 s, 7 s clip) unless user prefers A (would need an 8 s clip)"
       ]
     }
   ]
