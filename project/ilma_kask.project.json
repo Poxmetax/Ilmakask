@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.5",
-  "updated_at": "2026-09-26T00:26:23+03:00",
+  "version": "1.0.6",
+  "updated_at": "2026-09-26T00:34:13+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -756,6 +756,22 @@
       "result": "needs review",
       "next": [
         "User listens to takes A/B vs market master; Pirita keeps Melius take f94975a9 (6.557 s, 7 s clip) unless user prefers A (would need an 8 s clip)"
+      ]
+    },
+    {
+      "when": "2026-09-26T00:34:13+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Checked whether ElevenLabs audio can be moved into Melius",
+      "changed": [
+        "learning: Melius uploads accept images only; audio uploads unsupported (docs uploads/overview); url_to_canvas takes image/video only",
+        "learning: Melius Settings can hold an ElevenLabs API key (Creator plan+) to import custom voices into audio nodes; billing effect not documented"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "If user connects the key: run ONE audio node and compare Melius credit charge before/after"
       ]
     }
   ]
