@@ -47,7 +47,7 @@ Every timing failure on this project came from footage and voice being made for 
 2. Generate the final VO first. Read its duration D (ms) from the audio node.
 3. Clip length = ceil(D/1000 + 0.4) whole seconds (Seedance accepts 3–15). The closed-mouth tail is then 0.4–1.0 s. If it would be over 1.2 s, trim the line or re-roll a longer take.
 4. Render the video with that exact VO wired into the video node's `audio` handle (native lip sync). Never render first and re-sync a different or re-rolled voice later; never lip-sync new audio over footage made for other audio.
-5. Write a SHOT BREAKDOWN from the VO's phrase times, ending with "closed-mouth hold". Estimate phrase times by character share of the speech after a ~0.25 s lead-in.
+5. Time the prompt to the VO: a TIMING line (lips move only from start to end of speech, closed and still until the last frame) and a SHOT BREAKDOWN with seconds per phrase group from `project_state.py beats --clip N` (syllables + punctuation pauses). About one gesture per 1.5-2.5 s of speech; the closed-mouth action fills exactly the tail.
 6. Reject if: lips move while no voice is heard, voice plays while lips are closed, the last word is cut, or the tail is missing.
 7. Post lip-sync (Kling, Sync) is only a rescue when the new VO starts and ends within ±0.2 s of the speech already in the footage.
 

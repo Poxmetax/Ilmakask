@@ -80,18 +80,40 @@ def _step(cur, p):
     return cur[p]
 
 
-def beats(text, duration_ms, lead=0.25):
-    """Estimate phrase start/end from character share of the speech; returns rows and the clip length."""
+PAUSES = {".": 0.30, "?": 0.30, "!": 0.30, ":": 0.22, ";": 0.20, ",": 0.14}
+
+
+def syllables(word):
+    """Rough English syllable count (vowel groups, silent final e)."""
+    w = re.sub(r"[^a-z0-9]", "", word.lower())
+    if not w:
+        return 0
+    if w.isdigit():
+        return 2
+    n = len(re.findall(r"[aeiouy]+", w))
+    if w.endswith("e") and not w.endswith(("le", "ee")) and n > 1:
+        n -= 1
+    if w.endswith(("es", "ed")) and n > 1 and not w.endswith(("ted", "ded", "ses", "ces", "zes", "ges")):
+        n -= 1
+    return max(1, n)
+
+
+def beats(text, duration_ms, lead=0.20, trail=0.12):
+    """Estimate phrase start/end inside a VO take: ~0.2 s lead-in, punctuation pauses, speech spread by syllables.
+    Accuracy is about +-0.3 s; the video model follows the audio itself, the breakdown only keeps gestures and the
+    closed-mouth tail in step with it. Returns rows, clip length (s) and tail (s)."""
+    D = duration_ms / 1000
     phrases = [p.strip() for p in re.split(r"(?<=[.?!:;,])\s+", text) if p.strip()]
-    speech = max(0.5, duration_ms / 1000 - lead - 0.1)  # TTS files carry ~0.1-0.3 s lead-in and a short tail
-    weights = [len(re.sub(r"[^A-Za-z0-9]", "", p)) + 3 for p in phrases]  # +3 ~ pause/articulation per phrase
-    total, t, rows = sum(weights), lead, []
-    for p, w in zip(phrases, weights):
-        d = speech * w / total
-        rows.append((round(t, 2), round(t + d, 2), p))
-        t += d
-    clip = max(3, min(15, math.ceil(duration_ms / 1000 + 0.4)))
-    return rows, clip, round(clip - duration_ms / 1000, 2)
+    pauses = [PAUSES.get(p[-1], 0.0) for p in phrases]
+    pauses[-1] = 0.0
+    syl = [sum(syllables(w) for w in p.split()) for p in phrases]
+    per = max(0.05, (D - lead - trail - sum(pauses)) / max(1, sum(syl)))
+    t, rows = lead, []
+    for p, s_, pa in zip(phrases, syl, pauses):
+        rows.append((round(t, 2), round(t + s_ * per, 2), p))
+        t += s_ * per + pa
+    clip = max(3, min(15, math.ceil(D + 0.4)))
+    return rows, clip, round(clip - D, 2)
 
 
 def cmd_show(a, data):
@@ -155,10 +177,18 @@ def cmd_beats(a, data):
     print(f"VO {dur/1000:.2f} s -> clip length {clip} s (closed-mouth tail {tail} s)")
     if tail > 1.2:
         print("warning: tail over 1.2 s; trim the line or re-roll a longer take")
+    if tail < 0.4:
+        print("warning: tail under 0.4 s; the last word may be cut")
+    end = rows[-1][1]
+    print(f"\nTIMING (the take is exactly {clip} s and follows the audio track): her lips move ONLY while her words are heard, "
+          f"from about {rows[0][0]:.1f} s to {end:.1f} s. Between sentences the mouth pauses with the voice. "
+          f"From {end:.1f} s to {clip}.0 s there is no speech: lips closed and still until the last frame.\n")
     print("SHOT BREAKDOWN:")
-    for s, e, p in rows:
-        print(f"  {s:.1f}-{e:.1f} s \"{p}\"")
-    print(f"  {rows[-1][1]:.1f}-{clip:.1f} s closed-mouth hold, gentle smile, keeps the action going")
+    print(f"0.0-{rows[0][0]:.1f} s: silent, lips closed, eyes on the lens.")
+    for s_, e, p in rows:
+        print(f"{s_:.1f}-{e:.1f} s: says \"{p}\" with [ONE GESTURE].")
+    print(f"{end:.1f}-{clip}.0 s: silent: lips closed and still, [closed-mouth action that keeps the scene going].")
+    print("\n(merge short phrases so there is about one gesture per 1.5-2.5 s of speech)")
 
 
 def cmd_set(a, data):
