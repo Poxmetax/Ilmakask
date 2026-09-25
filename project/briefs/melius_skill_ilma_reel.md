@@ -1,6 +1,6 @@
 ---
 name: ilma-reel
-description: Studio rules for making Ilma Kask reels and stills on this team's canvases: identity, voice, lip-sync timing, physics, light, QC, budget and the shared project passport.
+description: Ilma Kask studio rules: identity, voice, PROVEN lip-sync timing method, physics, light, QC, budget and the shared project passport.
 ---
 
 # Ilma Kask reel studio (Melius agent skill)
@@ -12,8 +12,8 @@ You are the production studio for ONE synthetic creator, Ilma Kask (Instagram @i
 The single source of truth is the project passport:
 https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.project.json
 
-1. Fetch it at the start of every task. If you cannot fetch URLs, ask the user to paste the sections you need (open_tasks, clips, voice, the last changelog entries). The snapshot in section 9 below is a fallback only; the passport wins when they differ.
-2. Read `open_tasks`, the last 10 `changelog` entries, `clips[]` for the clip you are touching, `apps.melius`.
+1. Fetch it at the start of every task. If you cannot fetch URLs, ask the user to paste the sections you need (open_tasks, clips, voice, timing.validated_method, the last changelog entries). The snapshot in section 9 below is a fallback only; the passport wins when they differ.
+2. Read `open_tasks`, the last 10 `changelog` entries, `clips[]` for the clip you are touching, `timing.validated_method`, `apps.melius`.
 3. Never regenerate or "improve" anything the user did not ask to change. Approved clips (status APPROVED) are frozen.
 
 ## 1. Gates and budget (stop points)
@@ -39,17 +39,23 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Rejected (do not use): eleven_multilingual_v2, trailing <break> padding, letting the video model invent a voice without an audio reference.
 - A take is accepted when (a) its length fits the planned clip (VO + 0.4 s ≤ clip length) and (b) a same-speaker check against the market clip scores 9–10/10 (stitch [market clip, new clip] and ask a listener model). Otherwise re-roll the TTS (~120 credits), never the video.
 
-## 4. Lip-sync timing (the rule that failed before)
+## 4. Lip-sync timing (PROVEN 26 Sep 2026 on clip 8: user saw the lips land exactly on the voice)
 
-Every timing failure on this project came from footage and voice being made for different recordings. The mouth must be generated FROM the final voice file.
+Every timing failure on this project came from footage and voice being made for different recordings, or from prompts asking for speech and gestures at times the audio did not match. The mouth must be generated FROM the final voice file, and the prompt must be timed to it.
 
-1. Script: 2.3–2.6 spoken words per second.
-2. Generate the final VO first. Read its duration D (ms) from the audio node.
-3. Clip length = ceil(D/1000 + 0.4) whole seconds (Seedance accepts 3–15). The closed-mouth tail is then 0.4–1.0 s. If it would be over 1.2 s, trim the line or re-roll a longer take.
+1. Script: 2.3-2.6 spoken words per second.
+2. Generate the final VO first. Read its duration D (ms) from the audio node. Confirm the words: create an AUDIO node, model `scribe_v2`, variant `speech-to-text`, wire one audio edge from the VO, run it (about 1 credit). A wrong or missing word = re-roll the VO (~120 credits), never the video.
+3. Clip length N = ceil(D/1000 + 0.4) whole seconds (Seedance accepts 3-15). The closed-mouth tail N - D must be 0.4-1.0 s; over 1.2 s trim the line or re-roll a longer take.
 4. Render the video with that exact VO wired into the video node's `audio` handle (native lip sync). Never render first and re-sync a different or re-rolled voice later; never lip-sync new audio over footage made for other audio.
-5. Time the prompt to the VO: a TIMING line (lips move only from start to end of speech, closed and still until the last frame) and a SHOT BREAKDOWN with seconds per phrase group from `project_state.py beats --clip N` (syllables + punctuation pauses). About one gesture per 1.5-2.5 s of speech; the closed-mouth action fills exactly the tail.
+5. Time the prompt to the VO:
+   - ACTION keeps the one continuous action + the physics rule and says "Gestures follow the SHOT BREAKDOWN below." No per-phrase beats inside ACTION.
+   - Append the TIMING line: `TIMING (the take is exactly N s and follows the audio track): her lips move ONLY while her words are heard, from about S s to E s. Between sentences the mouth pauses with the voice. From E s to N.0 s there is no speech: lips closed and still until the last frame.`
+   - Append the SHOT BREAKDOWN: `0.0-S s: silent, lips closed, walking, eyes on the lens.` then one line per phrase group `a-b s: says "..." with ONE gesture.` (about one gesture per 1.5-2.5 s of speech), then `E-N.0 s: silent: lips closed and still, [closed-mouth action], she keeps [action].`
+   - Phrase times: 0.2 s lead-in, pauses of about 0.30 s after . ? !, 0.22 s after :, 0.14 s after a comma, the rest of the speech time shared by syllables. Accuracy about 0.3 s; the passport's clip prompts already carry the computed times.
+   - Prompt text length does not set the video length; the duration setting does. Shorter take = fewer gestures, longer take = more.
 6. Reject if: lips move while no voice is heard, voice plays while lips are closed, the last word is cut, or the tail is missing.
-7. Post lip-sync (Kling, Sync) is only a rescue when the new VO starts and ends within ±0.2 s of the speech already in the footage.
+7. QC: a text node `gemini-3.1-pro` wired to the video (video edge) with the timing checklist: voice start/end, lip start/end, lips without voice, voice with closed lips, last word, hold length, one voice; verdict TIMING PASS/FAIL with confidence. It is a second opinion; the user's eyes decide.
+8. Post lip-sync (Kling, Sync) is only a rescue when the new VO starts and ends within +-0.2 s of the speech already in the footage.
 
 ## 5. Physics and gravity (pick what the action needs; name the ONE rule the clip depends on in TOP PRIORITY)
 
@@ -80,7 +86,7 @@ Outfit visible in frame: [PLAIN OUTFIT]. No logos, no text.
 
 PLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.
 
-ACTION: [one action]. On "[phrase 1]" [beat]; on "[phrase 2]" [beat]. After the last word her lips close and stay closed. Natural blinks. [THE ONE PHYSICS RULE].
+ACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. Natural blinks. [THE ONE PHYSICS RULE].
 
 LIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.
 
@@ -90,7 +96,13 @@ BACKGROUND LIFE: [location crowd note; faces never sharp, nobody crosses in fron
 
 Ambient sound: [location sound], ducked well under her voice.
 
-SHOT BREAKDOWN: [phrase times from section 4, ending with the closed-mouth hold].
+TIMING (the take is exactly [N] s and follows the audio track): her lips move ONLY while her words are heard, from about [S] s to [E] s. Between sentences the mouth pauses with the voice. From [E] s to [N].0 s there is no speech: lips closed and still until the last frame.
+
+SHOT BREAKDOWN:
+0.0-[S] s: silent, lips closed, [action], eyes on the lens.
+[a]-[b] s: says "[phrase group]" with [ONE gesture].
+[...one line per phrase group, about one gesture per 1.5-2.5 s of speech...]
+[E]-[N].0 s: silent: lips closed and still, [closed-mouth action], she keeps [action].
 ```
 
 Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard / 720p / 9:16 / duration from section 4; inputs = face anchor (reference_image), location plate (reference_image), the clip's VO node (audio), quality lock (text), fix note (text) if the clip has one.
@@ -98,19 +110,20 @@ Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard
 ## 8. QC before you show anything
 
 - Identity: face shape, eye colour, the three anchors, platinum (not golden) hair, age reads 27, skin not plastic.
-- Timing: section 4, item 6. Say honestly if you cannot judge timing; the user's eyes decide timing.
+- Timing: section 4, items 6 and 7. Say honestly if you cannot judge timing; the user's eyes decide timing.
 - Physics: no sliding feet, hair/wind direction constant, props never appear, vanish or change.
 - Light: shadows agree with the plate, face not brighter than the environment, no light jumps.
 - Text/logos: none readable anywhere, including background signs and clothing.
 - AI checkers hallucinate: count a defect as real only when two different checkers agree, or the user sees it.
 
-Useful canvas mechanics learned on this project: a stitch needs at least 2 sources and cannot trim; an audio node cannot take a video's sound; Gemini/Qwen text nodes accept only one video (stitch two clips to compare); Kling lip-sync keeps the original mouth wherever the new audio is silent; sonilo-video-sfx-mix replaced the voice once (use sonilo-video-sfx + stitch overlay for ambience instead).
+Useful canvas mechanics learned on this project: a stitch needs at least 2 sources and cannot trim; an audio node cannot take a video's sound; Gemini/Qwen text nodes accept only one video (stitch two clips to compare); speech-to-text (scribe_v2) must be an AUDIO node, not a text node, and returns text without timestamps; Kling lip-sync keeps the original mouth wherever the new audio is silent; sonilo-video-sfx-mix replaced the voice once (use sonilo-video-sfx + stitch overlay for ambience instead).
 
 ## 9. Snapshot (fallback if the passport cannot be read; the passport wins)
 
 - Canvas: project e2daaabd-c043-44b3-bd32-884b1cb1051f, canvas 4390116d-4cf1-4a4f-8bcb-650ce48588ae.
 - Approved and scheduled: clip 2 Patkuli (6 Oct), clip 6 Noblessner (8 Oct), clip 4 market (12 Oct). Frozen.
-- Rework (lip timing), native re-render with their eleven_v3 VO: clip 8 Pirita 7 s (TEST FIRST, 1,260 credits), then clip 1 Town Hall 7 s, clip 3 Nõmme 8 s, clip 5 Viru bog 6 s (node 6cf45b2f…), clip 7 Kalamaja 6 s (4,860 credits).
+- Clip 8 Pirita: APPROVED 26 Sep 2026 (timed native re-render, node 0898c624…, version 105fba7e…). Frozen.
+- Still to re-render with the section 4 method (timed prompts are already in the nodes): clip 1 Town Hall 7 s (e1b86a4e…), clip 3 Nõmme 8 s (3e69a9cc…), clip 5 Viru bog 6 s (6cf45b2f…), clip 7 Kalamaja 6 s (88878aff…), 4,860 credits total.
 - Anchor paragraph: European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, [HAIR STATE FOR THIS SCENE], tucked behind one ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.
 - Disclosure: captions end with "AI-generated character · real places"; Instagram AI label on.
 

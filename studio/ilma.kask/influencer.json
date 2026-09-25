@@ -139,7 +139,8 @@
     "sonilo-video-sfx-mix replaced the voice in a test; generate ambience separately (sonilo-video-sfx, video length) and overlay it in a stitch.",
     "Video-matched ambience picks up on-screen props (paper bag rustle too loud on the market clip): tell it 'nothing close to the microphone'.",
     "Voice master = the clip the user likes; check every other reel by stitching it after the master and asking a listener model for a same-speaker score, then re-roll the TTS take until MATCH. A take longer than the clip gets its last word cut.",
-    "Budget rule (user feedback 2026-09-25): quote credits before each pass, test one clip before a batch, and stop and ask before going past the quote. Fix timing at the source (render with the final voice) instead of re-syncing lips over old footage."
+    "Budget rule (user feedback 2026-09-25): quote credits before each pass, test one clip before a batch, and stop and ask before going past the quote. Fix timing at the source (render with the final voice) instead of re-syncing lips over old footage.",
+    "2026-09-26: timed prompt method (TIMING line + SHOT BREAKDOWN sized to the VO, closed-mouth tail, native render with the final VO) passed the user's visual check on clip 8; use it for every talking clip."
   ],
   "sources": [
     "xAI consumer terms: commercial use allowed, no indemnity (secondary sources; verify)",

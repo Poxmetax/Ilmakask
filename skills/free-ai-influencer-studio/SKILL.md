@@ -112,14 +112,18 @@ Pick the route per clip:
 - **Route A: native audio-video.** Use a video model that generates speech with lip sync in the same pass, if its free tier allows commercial use without a watermark. Put the voice description and the exact dialogue in the prompt. Fastest, most natural mouth, least control over the voice match.
 - **Route B: modular.** Start frame (golden-set identity composited into the user's plate with a reference-edit model and relit to it) → silent image-to-video with a lip-sync-ready performance → TTS line from the locked voice → lip sync → `scripts/assemble_clip.py`. Slower, but the voice is identical in every clip.
 
-**Exact lip-sync timing (both routes):**
+**Exact lip-sync timing (both routes; proven on Ilma Kask clip 8, 26 Sep 2026: the user saw the lips land exactly on the voice):**
 
 1. Script at 2.3 to 2.6 spoken words per second.
-2. Generate the final voice take first and read its duration D.
-3. Clip length = ceil(D + 0.4 s) in whole seconds (many video models only take integers). That leaves a 0.4 to 1.0 s closed-mouth tail; over 1.2 s, trim the line or re-roll a longer take. A take longer than the clip gets its last word cut.
+2. Generate the final voice take first and read its duration D. Confirm the words with one speech-to-text pass (in Melius: an audio node, model scribe_v2, variant speech-to-text, one audio edge from the take); a wrong or missing word means re-rolling the voice, never the video.
+3. Clip length N = ceil(D + 0.4 s) in whole seconds (many video models only take integers). That leaves a 0.4 to 1.0 s closed-mouth tail; over 1.2 s, trim the line or re-roll a longer take. A take longer than the clip gets its last word cut.
 4. Render with that exact audio as the video model's audio input so the mouth is generated from it. Post lip-sync tools (Kling, Sync, LatentSync) are a rescue only when the new audio starts and ends within about 0.2 s of the speech already in the footage; otherwise the old mouth keeps moving wherever the new audio is silent.
-5. Write the SHOT BREAKDOWN from the take's phrase times (`project_state.py beats --clip N` estimates them by character share after a 0.25 s lead-in) and end it with a closed-mouth hold.
-6. Put the timing rule into the quality lock text that is wired into every video node: lips move only while a word is spoken, closed and still in every silence, same voice as the audio.
+5. Time the prompt to the take. ACTION keeps the one continuous action and the physics rule and says "Gestures follow the SHOT BREAKDOWN below" (no per-phrase beats there). Then append:
+   - a TIMING line: `TIMING (the take is exactly N s and follows the audio track): her lips move ONLY while her words are heard, from about S s to E s. Between sentences the mouth pauses with the voice. From E s to N.0 s there is no speech: lips closed and still until the last frame.`
+   - a SHOT BREAKDOWN with seconds: first line 0.0 to S silent, one line per phrase group (`a-b s: says "..." with ONE gesture`), about one gesture per 1.5 to 2.5 s of speech, last line E to N.0 silent with a closed-mouth action that keeps the scene going.
+   `project_state.py beats --clip N` prints both from the take (syllables plus punctuation pauses after a 0.2 s lead-in, accurate to about 0.3 s). The prompt's text length does not set the video length, the duration setting does; a shorter take gets fewer gestures, a longer one more.
+6. The LIP SYNC line says: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. Put the same timing rule into the quality lock text wired into every video node: lips move only while a word is spoken, closed and still in every silence, same voice as the audio.
+7. QC the render with one listening video model and the timing checklist (voice start and end against lip start and end, lips moving without voice, voice with closed lips, last word complete, hold length, one voice throughout) as a second opinion; the user's eyes decide.
 
 **Melius route (Route A with an audio reference, used for Ilma Kask):** Seedance 2.0 reference-to-video, standard tier, 720p, 9:16, duration from step 3; inputs = face anchor (reference_image, identity only), location plate (reference_image), the clip's VO node (audio), quality lock (text), fix note (text) if any. Seedance re-renders the voice from the audio reference, so the published voice is the one in the video; compare it with the master. Costs and canvas mechanics learned (stitch needs two sources and cannot trim; audio nodes cannot take a video's sound; text models take one video, so stitch clips to compare them; video-sfx-mix can replace the voice) live in `apps.melius` in the passport.
 

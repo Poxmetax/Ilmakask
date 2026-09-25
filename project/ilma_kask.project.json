@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.8",
-  "updated_at": "2026-09-26T00:52:57+03:00",
+  "version": "1.0.9",
+  "updated_at": "2026-09-26T01:27:09+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -189,7 +189,22 @@
       "no voice while lips are closed",
       "last word complete",
       "closed-mouth hold at the end"
-    ]
+    ],
+    "validated_method": {
+      "status": "PROVEN 2026-09-26 on clip 8 (Pirita): user visual pass + automatic check 9/10. Use for every talking clip.",
+      "steps": [
+        "1. Final VO first (voice.recipe). Read duration D from the audio node.",
+        "2. Confirm the words: audio node, model scribe_v2, variant speech-to-text, one audio edge from the VO (about 1 credit). Wrong or missing word = re-roll the VO, never the video.",
+        "3. Clip length N = ceil(D + 0.4) s; closed-mouth tail N - D must be 0.4-1.0 s.",
+        "4. Prompt: ACTION keeps the one continuous action + physics and says 'Gestures follow the SHOT BREAKDOWN below.' (no per-phrase beats in ACTION).",
+        "5. Append the TIMING line and SHOT BREAKDOWN printed by `python project/project_state.py beats --clip N` (syllables + punctuation pauses after a 0.2 s lead-in, about +-0.3 s): first line 0.0-start silent, one line per phrase group with ONE gesture (about one per 1.5-2.5 s of speech), last line end-N.0 silent closed-mouth action.",
+        "6. LIP SYNC line: 'she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.'",
+        "7. Render Seedance 2.0 reference-to-video, standard, 720p, 9:16, duration N, with inputs face anchor + plate + the VO (audio) + quality lock (text).",
+        "8. QC: text node gemini-3.1-pro wired to the video with the timing checklist (voice start/end vs lip start/end, lips without voice, voice with closed lips, last word, hold length, one voice) as a second opinion; the user's eyes decide."
+      ],
+      "why_it_works": "The mouth is generated from the final voice file, the clip length leaves a sized silent tail, and the prompt no longer asks for gestures or speech at times that contradict the audio.",
+      "note": "Prompt text length does not set video length; the duration setting does. A shorter take gets fewer gestures, a longer take more."
+    }
   },
   "physics": {
     "gravity_and_weight": [
@@ -420,12 +435,18 @@
       "queue": "2026-10-04_reel_pirita-board",
       "script": "Sunday night, ten minutes: fill next week's board. Empty boxes are decisions. The board's in my bio.",
       "tip": "weekly board, CTA",
-      "status": "REWORK: lip timing. Re-render natively, planned 7 s. RUN THIS ONE FIRST AS THE TEST",
+      "status": "APPROVED 2026-09-26: timed native re-render passed the user's visual check (lips exactly on the voice, closed-mouth end). Scheduling pending (T3).",
       "melius": {
         "seedance": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
         "vo": "f94975a9-6294-4bb5-88ea-d55c0be45ca3",
         "vo_ms": 6557,
-        "plan_duration_s": 7
+        "plan_duration_s": 7,
+        "seedance_version": "105fba7e-bb8c-4917-984a-083c60ecd8ac",
+        "run": "95ab38a6-9ccb-4638-94a9-91764e30853c",
+        "duration_ms": 7083,
+        "stt_node": "7ddae51b-e5e7-43ba-bd14-cae41339ce30",
+        "qc_node": "ad9607f9-34ff-4e3b-8182-a163246508bc",
+        "qc_result": "Gemini 3.1 Pro: voice 0.0-6.5 s, lips 0.0-6.5 s, no lips-without-voice, no voice-with-closed-lips, 'bio' complete, 0.5 s closed-mouth hold, one voice; TIMING PASS 9/10. User: 'perfect for human eye'."
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 7-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, down and blowing in the wind, one side tucked behind her ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain dark olive windproof jacket zipped up, plain cream knit collar showing. No logos, no text.\n\nPLACE (from @[1280px-EU-EE-Tallinn-Pirita-Pirita_beach_in_autumn]{0b007f0b-91c9-410b-b260-e9211ca606a8}): the seaside promenade at Pirita beach, Tallinn, Estonia, behind her: pale sand, the grey-blue Baltic Sea with steady waves, the Tallinn skyline small and far across the bay. Windy autumn afternoon, bright overcast sky with a brighter patch over the sea. Nothing in the sky: no paragliders, no aircraft, no birds close by. No readable signs.\n\nACTION: she walks along the promenade into the wind, head and shoulders dipping gently with each step. Strong steady wind from the sea at frame-left: her hair streams to frame-right, same direction throughout. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: bright overcast key with a brighter patch over the sea at frame-left; cool silver bounce from the sea. Light constant.\n\nBACKGROUND LIFE: two tiny distant walkers with a dog far behind, soft focus.\n\nAmbient sound: wind on the mic, waves, ducked well under her voice.\n\nTIMING (the take is exactly 7 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 6.4 s. Between sentences the mouth pauses with the voice. From 6.4 s to 7.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.8 s: says \"Sunday night, ten minutes:\" with eyebrows up, friendly.\n2.0-3.0 s: says \"fill next week's board.\" with a small nod.\n3.3-4.9 s: says \"Empty boxes are decisions.\" with a slight reassuring tilt of the head.\n5.2-6.4 s: says \"The board's in my bio.\" with a half-smile and a quick glance down toward the phone and back.\n6.4-7.0 s: silent: lips closed and still, soft closed-mouth smile, she keeps walking into the wind.",
       "prompt_timed_to_vo": true
@@ -464,7 +485,9 @@
         "sync-lipsync-v3": "160 credits/s",
         "sonilo-video-sfx": "11 credits/s",
         "stitch": "free/low",
-        "gemini-3.1-pro QC": "low"
+        "gemini-3.1-pro QC": "low",
+        "scribe_v2_speech_to_text": "4 credits/min (audio node, variant speech-to-text; returns text only, no word timestamps)",
+        "gemini_3_1_pro_video_qc": "about 9 credits per check"
       },
       "mechanics_learned": [
         "Stitch needs at least 2 connected sources; output length = longest of visuals and overlays (a longer overlay adds a black tail). Stitch upscales to 1080x1920.",
@@ -538,27 +561,28 @@
       "Never re-generate approved assets or things the user did not ask to change."
     ],
     "per_step_cap_credits": 1500,
-    "melius_balance_note": "Balance on 2026-09-25 evening was below 1,260 credits (runs refused)."
+    "melius_balance_note": "Pirita test render (1,260) ran 2026-09-26; check balance before T2 (4,860)."
   },
   "open_tasks": [
     {
       "id": "T1",
       "what": "Test re-render clip 8 (Pirita) natively with its VO, 7 s",
       "credits": 1260,
-      "blocked_by": "Melius credit top-up",
       "owner": "any agent with Melius access",
-      "accept_if": "user approves timing + voice match"
+      "accept_if": "user approves timing + voice match",
+      "status": "DONE 2026-09-26",
+      "result": "approved by user"
     },
     {
       "id": "T2",
-      "what": "If T1 approved: re-render clips 1 (7 s), 3 (8 s), 5 (6 s), 7 (6 s)",
+      "what": "Re-render clips 1 (7 s), 3 (8 s), 5 (6 s), 7 (6 s) with the validated method; timed prompts are already in their Seedance nodes. One at a time or as a batch after user go.",
       "credits": 4860,
-      "blocked_by": "T1"
+      "blocked_by": "user go + Melius balance (4,860 credits)"
     },
     {
       "id": "T3",
-      "what": "Schedule approved re-renders in Metricool at 10:00 with captions + AI label",
-      "blocked_by": "T2"
+      "what": "Schedule approved re-renders (clip 8 first, then 1,3,5,7) in Metricool at 10:00 with captions + AI label",
+      "blocked_by": "user go for clip 8; T2 for the rest"
     },
     {
       "id": "T4",
@@ -576,7 +600,10 @@
     "Plain unbranded clothing wording prevents invented logos; portrait-mode blur prevents readable fake text.",
     "The towel/scarf fight cost 3 renders: when the model can't do a detail after one retry, drop the detail.",
     "Voice identity: one master clip the user likes; everything else is checked against it.",
-    "Timing: render with the final voice; never re-sync a different voice onto old footage."
+    "Timing: render with the final voice; never re-sync a different voice onto old footage.",
+    "Timed prompt method (TIMING line + SHOT BREAKDOWN sized to the VO, closed-mouth tail) passed the user's visual check first try on clip 8 (2026-09-26).",
+    "Speech-to-text in Melius is an AUDIO node (scribe_v2, speech-to-text); a text node with scribe fails with 'requires one audio input'. It returns text only, so phrase times stay estimates.",
+    "The workspace cannot download from cdn.melius.com or ElevenLabs storage; the user reviews on the canvas or via the direct MP4 link a run returns."
   ],
   "changelog": [
     {
@@ -813,6 +840,31 @@
       "result": "ok",
       "next": [
         "T1: render Pirita (0898c624) test, 1,260 credits, after user approval"
+      ]
+    },
+    {
+      "when": "2026-09-26T01:27:09+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Pirita (clip 8) timed test render approved by user; proven timing method written to JSON and knowledge files",
+      "changed": [
+        "Seedance 0898c624 rendered (run 95ab38a6, version 105fba7e, 7.08 s) with VO f94975a9 and the timed prompt",
+        "STT check node 7ddae51b (scribe_v2): transcript word-perfect",
+        "QC node ad9607f9 (gemini-3.1-pro): TIMING PASS 9/10; user: 'perfect for human eye, everything on point'",
+        "clips.8 status APPROVED; timing.validated_method added; open_tasks T1 done, T2/T3 updated; learnings + costs added",
+        "Knowledge: skills/free-ai-influencer-studio/SKILL.md timing section, project/briefs/melius_skill_ilma_reel.md (sections 0,4,7,8,9), project/briefs/elevenlabs_brief.md, Melius team skill /ilma-reel updated"
+      ],
+      "ids": {
+        "seedance": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
+        "version": "105fba7e-bb8c-4917-984a-083c60ecd8ac",
+        "stt": "7ddae51b-e5e7-43ba-bd14-cae41339ce30",
+        "qc": "ad9607f9-34ff-4e3b-8182-a163246508bc"
+      },
+      "credits_spent": 1270,
+      "result": "ok",
+      "next": [
+        "T2: render clips 1,3,5,7 with the same method (4,860 credits) after user go",
+        "T3: schedule clip 8 in Metricool 4 Oct 10:00 after user go"
       ]
     }
   ]

@@ -48,3 +48,10 @@ Reply with a HANDOFF ENTRY so the next agent knows what you did:
   - Em dash: short beat.
 - Keep audio tags out of production lines. They can change her voice character.
 - Through the connector, use `creative_generate_speech`, model `eleven_v3`, this voice, the plain line and 4 takes. Never repeat the call to retry; each call is charged.
+
+## Proven timing method (26 Sep 2026)
+
+The voice take drives everything downstream, so its length is the clip plan.
+- After a take is made, confirm the words with speech-to-text. Record its exact duration in ms in the handoff entry.
+- The clip becomes ceil(duration + 0.4 s) seconds long. A take that would leave a silent end over 1.2 s, or under 0.4 s, is re-rolled.
+- Never make a new take for a clip whose video is already rendered or approved. The mouth was generated from the old take.

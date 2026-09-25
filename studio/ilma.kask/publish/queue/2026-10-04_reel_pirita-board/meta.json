@@ -5,10 +5,11 @@
   "type": "reel",
   "clip": 8,
   "ai_label": true,
-  "status": "rework requested by user 2026-09-25",
-  "melius_node": "f9ecc1df-2ffd-46b8-adc6-d56d20f5c999",
-  "duration_s": 8.0,
-  "resolution": "1080x1920",
-  "voice": "market master voice (eleven_v3 Veda Sky, plain text); kling lip-sync + place ambience",
-  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+  "status": "approved by user 2026-09-26 (timed native re-render); not yet scheduled",
+  "melius_node": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
+  "duration_s": 7.08,
+  "resolution": "720x1280 (Seedance 720p)",
+  "voice": "eleven_v3 Veda Sky take f94975a9 (6.557 s), rendered natively as the video's audio input; no post lip-sync",
+  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node",
+  "melius_version": "105fba7e-bb8c-4917-984a-083c60ecd8ac"
 }
