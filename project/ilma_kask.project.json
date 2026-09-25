@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.9",
-  "updated_at": "2026-09-26T01:27:09+03:00",
+  "version": "1.0.10",
+  "updated_at": "2026-09-26T01:37:24+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -435,7 +435,7 @@
       "queue": "2026-10-04_reel_pirita-board",
       "script": "Sunday night, ten minutes: fill next week's board. Empty boxes are decisions. The board's in my bio.",
       "tip": "weekly board, CTA",
-      "status": "APPROVED 2026-09-26: timed native re-render passed the user's visual check (lips exactly on the voice, closed-mouth end). Scheduling pending (T3).",
+      "status": "APPROVED + SCHEDULED (Metricool 382275000, 2026-10-04 10:00 Tallinn). Timed native re-render passed the user's visual check 2026-09-26.",
       "melius": {
         "seedance": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
         "vo": "f94975a9-6294-4bb5-88ea-d55c0be45ca3",
@@ -525,7 +525,8 @@
         "2026-10-05 carousel launch": "carousel",
         "2026-10-06 reel Patkuli": 381959592,
         "2026-10-08 reel Noblessner": 381959668,
-        "2026-10-12 reel market": 381959728
+        "2026-10-12 reel market": 381959728,
+        "2026-10-04 reel Pirita": 382275000
       }
     },
     "stan": {
@@ -575,13 +576,13 @@
     },
     {
       "id": "T2",
-      "what": "Re-render clips 1 (7 s), 3 (8 s), 5 (6 s), 7 (6 s) with the validated method; timed prompts are already in their Seedance nodes. One at a time or as a batch after user go.",
+      "what": "Re-render clips 1 (7 s), 3 (8 s), 5 (6 s), 7 (6 s) with the validated method, ONE AT A TIME with the user's visual review after each (user rule 2026-09-26). Order by post date: 1, 3, 5, 7.",
       "credits": 4860,
       "blocked_by": "user go + Melius balance (4,860 credits)"
     },
     {
       "id": "T3",
-      "what": "Schedule approved re-renders (clip 8 first, then 1,3,5,7) in Metricool at 10:00 with captions + AI label",
+      "what": "Schedule approved re-renders (1,3,5,7) in Metricool at 10:00 with captions + AI label (clip 8 done: 382275000)",
       "blocked_by": "user go for clip 8; T2 for the rest"
     },
     {
@@ -865,6 +866,24 @@
       "next": [
         "T2: render clips 1,3,5,7 with the same method (4,860 credits) after user go",
         "T3: schedule clip 8 in Metricool 4 Oct 10:00 after user go"
+      ]
+    },
+    {
+      "when": "2026-09-26T01:37:24+03:00",
+      "agent": "Claude",
+      "app": "metricool",
+      "task": "Scheduled approved Pirita reel",
+      "changed": [
+        "Metricool post 382275000: IG REEL, 2026-10-04 10:00 Europe/Tallinn, caption from queue, isAiGenerated true",
+        "open_tasks T2: one clip at a time with user review (user rule)"
+      ],
+      "ids": {
+        "metricool_post": "382275000"
+      },
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "Clip 1 Town Hall: STT check, render 7 s (1,260 credits), QC, user review"
       ]
     }
   ]

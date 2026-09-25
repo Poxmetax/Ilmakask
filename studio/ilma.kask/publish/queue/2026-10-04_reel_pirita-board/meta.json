@@ -5,11 +5,14 @@
   "type": "reel",
   "clip": 8,
   "ai_label": true,
-  "status": "approved by user 2026-09-26 (timed native re-render); not yet scheduled",
+  "status": "scheduled",
   "melius_node": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
   "duration_s": 7.08,
   "resolution": "720x1280 (Seedance 720p)",
   "voice": "eleven_v3 Veda Sky take f94975a9 (6.557 s), rendered natively as the video's audio input; no post lip-sync",
-  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node",
-  "melius_version": "105fba7e-bb8c-4917-984a-083c60ecd8ac"
+  "video": "copied into Metricool storage at scheduling; source: Melius node 0898c624 version 105fba7e",
+  "melius_version": "105fba7e-bb8c-4917-984a-083c60ecd8ac",
+  "scheduler": "metricool",
+  "metricool_post_id": 382275000,
+  "approved_by_user": "2026-09-26"
 }
