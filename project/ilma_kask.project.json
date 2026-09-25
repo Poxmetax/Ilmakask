@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.6",
-  "updated_at": "2026-09-26T00:34:13+03:00",
+  "version": "1.0.7",
+  "updated_at": "2026-09-26T00:43:19+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -772,6 +772,25 @@
       "result": "ok",
       "next": [
         "If user connects the key: run ONE audio node and compare Melius credit charge before/after"
+      ]
+    },
+    {
+      "when": "2026-09-26T00:43:19+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Tested Melius<->ElevenLabs API key link",
+      "changed": [
+        "custom_voice_list now shows 5 voices imported from the user's ElevenLabs account (Energetic Leah, Leah, Shibo, Untitled voice, Barkmeta); Veda Sky stays a stock voice",
+        "test node 4f274bfc (eleven_v3, Veda Sky, Pirita line) ran OK: 7.654 s (too long for the 7 s clip; existing take f94975a9 stays)",
+        "Melius still lists eleven_v3 at 120 credits; run result shows no charge, so billing must be checked in Melius Credit history and ElevenLabs usage"
+      ],
+      "ids": {
+        "test_vo_node": "4f274bfc-81fb-489b-a9e3-4758905d3d4b"
+      },
+      "credits_spent": 0,
+      "result": "needs review",
+      "next": [
+        "User checks Melius Team settings > Plans & billing > Credit history for the 21:42 UTC eleven_v3 run (120 or 0?) and ElevenLabs usage (+~100 characters?)"
       ]
     }
   ]
