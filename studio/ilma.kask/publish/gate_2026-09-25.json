@@ -1,0 +1,228 @@
+{
+  "ok": true,
+  "checked_on": "2026-09-24",
+  "files": [
+    {
+      "file": "publish/queue/2026-09-28_intro/slide_01.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-28_intro_slide_01",
+      "lineage": [
+        "2026-09-28_intro_slide_01",
+        "anchor01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_01.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_01",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_01",
+        "anchor01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_02.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_02",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_02",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_03.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_03",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_03",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_04.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_04",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_04",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_05.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_05",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_05",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_06.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_06",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_06",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_07.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_07",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_07",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_08.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_08",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_08",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-09-29_carousel_first-seven/slide_09.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-09-29_carousel_first-seven_slide_09",
+      "lineage": [
+        "2026-09-29_carousel_first-seven_slide_09",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-01_carousel_daylight/slide_01.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-01_carousel_daylight_slide_01",
+      "lineage": [
+        "2026-10-01_carousel_daylight_slide_01",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-01_carousel_daylight/slide_02.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-01_carousel_daylight_slide_02",
+      "lineage": [
+        "2026-10-01_carousel_daylight_slide_02",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-01_carousel_daylight/slide_03.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-01_carousel_daylight_slide_03",
+      "lineage": [
+        "2026-10-01_carousel_daylight_slide_03",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-01_carousel_daylight/slide_04.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-01_carousel_daylight_slide_04",
+      "lineage": [
+        "2026-10-01_carousel_daylight_slide_04",
+        "tool:dejavu"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_01.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_01",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_01",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_02.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_02",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_02",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_03.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_03",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_03",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_04.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_04",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_04",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_05.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_05",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_05",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    },
+    {
+      "file": "publish/queue/2026-10-05_carousel_launch/slide_06.jpg",
+      "ok": true,
+      "problems": [],
+      "asset_id": "2026-10-05_carousel_launch_slide_06",
+      "lineage": [
+        "2026-10-05_carousel_launch_slide_06",
+        "anchor01",
+        "product01",
+        "tool:dejavu",
+        "tool:grok"
+      ]
+    }
+  ]
+}

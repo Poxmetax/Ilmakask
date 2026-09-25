@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.2",
-  "updated_at": "2026-09-25T23:24:31+03:00",
+  "version": "1.0.3",
+  "updated_at": "2026-09-25T23:59:07+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -419,7 +419,7 @@
       "team_skill": {
         "slash_command": "/ilma-reel",
         "skill_id": "1d8f4662-1ca5-471b-afb4-cca730a01f75",
-        "source": "project/briefs/melius_skill_ilma_reel.md"
+        "source": "skills/melius-ilma-reel/SKILL.md (copy also in project/briefs/)"
       },
       "video_model": {
         "model": "seedance-2.0",
@@ -489,10 +489,21 @@
       "repo": "Poxmetax/Ilmakask",
       "public": true,
       "contents": [
-        "posts/ (20 images)",
-        "ref/ilma_face_anchor_ref.jpg",
-        "project/ (this passport, helper script, briefs)"
+        "project/ (passport, helper script, briefs)",
+        "skills/free-ai-influencer-studio/ (Claude skill, updated)",
+        "skills/melius-ilma-reel/ (Melius team skill /ilma-reel)",
+        "studio/ilma.kask/ (bible, ledger, calendar, go-live guide, post queue; signed links and paid product removed)",
+        "posts/ (post images)",
+        "ref/ilma_face_anchor_ref.jpg"
+      ],
+      "kept_out": [
+        "paid product PDF and spec",
+        "signed Melius media links",
+        "emails, keys, personal data"
       ]
+    },
+    "claude": {
+      "skill": "free-ai-influencer-studio (saved to the user's account 2026-09-25; copy in skills/free-ai-influencer-studio/)"
     }
   },
   "budget": {
@@ -669,6 +680,25 @@
       "next": [
         "Use /ilma-reel in Melius chat for every Ilma task",
         "Paste Mel's HANDOFF ENTRY back to Claude to log it"
+      ]
+    },
+    {
+      "when": "2026-09-25T23:59:07+03:00",
+      "agent": "Claude",
+      "app": "github",
+      "task": "Uploaded skills and studio state to the repo; replaced outdated files",
+      "changed": [
+        "README.md rewritten as project overview",
+        "skills/free-ai-influencer-studio added (updated skill)",
+        "skills/melius-ilma-reel added",
+        "studio/ilma.kask added (signed links, paid product and spec removed)",
+        "calendar times corrected 18:00 -> 10:00, statuses synced"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "Top up Melius, then run T1 (Pirita test)"
       ]
     }
   ]

@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-08",
+  "time": "10:00",
+  "timezone": "Europe/Tallinn",
+  "type": "reel",
+  "clip": 6,
+  "ai_label": true,
+  "status": "scheduled",
+  "melius_node": "bd1bfca1-5f65-42ac-9a19-4efbb2300c23",
+  "duration_s": 8.0,
+  "resolution": "1080x1920",
+  "voice": "market master voice (eleven_v3 Veda Sky, plain text); kling lip-sync + place ambience",
+  "scheduler": "metricool",
+  "metricool_post_id": 381959668,
+  "approved_by_user": "2026-09-25",
+  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+}

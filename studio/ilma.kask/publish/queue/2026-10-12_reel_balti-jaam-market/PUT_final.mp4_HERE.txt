@@ -1,0 +1,1 @@
+Produce Clip 4 from Ilma_Kask_launch_pack.md section 4, run qc_clip.py, add it to ledger.csv, save it here as final.mp4, then run license_gate.py.

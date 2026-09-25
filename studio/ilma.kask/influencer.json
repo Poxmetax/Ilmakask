@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "created": "2026-09-24",
+  "persona": {
+    "name": "Ilma Kask",
+    "handle": "ilma.kask",
+    "age": 27,
+    "niche": "Outdoor strength, daylight and sauna for dark northern weeks",
+    "niche_sentence": "Ilma helps busy people in the north keep a training week through the dark months with one board, short sessions and real Estonian places.",
+    "backstory": null,
+    "voice_style": null,
+    "catchphrase": "The weather is the coach.",
+    "audience_language": "English",
+    "home_region": "Tallinn, Estonia",
+    "disclosure_line": "AI-generated character · real places"
+  },
+  "identity": {
+    "anchor_image": "identity/ilma_face_anchor_ref.jpg",
+    "golden_set": [],
+    "anchors": [
+      "freckles across nose bridge and upper cheeks",
+      "straight thick ash-brown brows darker than hair",
+      "one small plain gold hoop in each ear"
+    ],
+    "anchor_paragraph": "European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face with high rounded cheekbones and a gently tapered jaw; straight nose with a softly rounded tip; naturally full lips in a soft rose-nude tone; light blue-grey eyes, muted, NOT saturated, no contact-lens look; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, soft side part; exactly ONE small plain gold hoop earring in each ear; glowing minimal natural makeup; slim athletic build, 172 cm, toned but not bulky.",
+    "sheet_images": [],
+    "locked": false
+  },
+  "voice": {
+    "tool": "Kokoro-82M",
+    "model": "kokoro v1.0",
+    "voice_id": "af_heart",
+    "settings": {
+      "speed": 0.95,
+      "lang_code": "a"
+    },
+    "seed_line": "Ten minutes outside before nine. Real sky, not a window. Grey sky still counts.",
+    "pronunciations": {},
+    "locked": false,
+    "reels_anchor": {
+      "master": "Balti Jaama Turg market reel (12 Oct), Seedance node 9385d68b, its own voice kept untouched",
+      "master_vo": "Melius node 9b652063, version 4d257bf8 (eleven_v3, voice Veda Sky 625jGFaa0zTLtQfxwc6Q, plain script text)",
+      "recipe_for_every_other_line": "eleven_v3, voice 625jGFaa0zTLtQfxwc6Q, default settings, plain script text only (no tags, no breaks, no voice description), exactly like the master",
+      "lip_sync": "kling-lipsync on the approved source clip; take must be shorter than the clip",
+      "acceptance": "stitch [market master + reel] and have Gemini 3.1 Pro score same-speaker similarity; re-roll the take if below MATCH",
+      "user_decision": "2026-09-25: user chose the market clip's original voice as the master for all reels",
+      "locked": true,
+      "locked_on": "2026-09-25"
+    }
+  },
+  "world": {
+    "locations": [
+      {
+        "name": "Raekoja plats, Tallinn",
+        "use": "light tip, crowd"
+      },
+      {
+        "name": "Patkuli stairs and platform",
+        "use": "stairs"
+      },
+      {
+        "name": "Nomme-Harku lit loop",
+        "use": "dark evenings"
+      },
+      {
+        "name": "Balti Jaama Turg",
+        "use": "food, crowd, ask permission"
+      },
+      {
+        "name": "Viru raba, Lahemaa",
+        "use": "long easy"
+      },
+      {
+        "name": "Noblessner seafront",
+        "use": "after sauna"
+      },
+      {
+        "name": "Kalamaja wooden streets",
+        "use": "rain, failure rule"
+      },
+      {
+        "name": "Pirita promenade",
+        "use": "board, CTA"
+      }
+    ]
+  },
+  "stack": {
+    "hardware_tier": null,
+    "tools": {}
+  },
+  "product": {
+    "title": "The Weather Week",
+    "format": "six-week plan with weekly boards",
+    "price": "USD 13 regular; USD 10 introductory launch price until 2026-10-25 (manual change)",
+    "platform": "Stan Store, Creator plan ($29/month after 14-day trial; no free plan)",
+    "spec_path": "product/spec.json",
+    "sample_approved": true,
+    "status": "listing kit ready; trial to start 27 Sep 2026",
+    "lead_magnet": "The First Seven, price 0+",
+    "launch_price_change": "manual on 2026-10-25: 10 -> 13 USD",
+    "autodm_keyword": "BOARD",
+    "store_url": "https://stan.store/Ilmakask"
+  },
+  "publishing": {
+    "tier": 0,
+    "ig_user_id": null,
+    "token_expires": null,
+    "cadence": "12 posts, 28 Sep to 14 Oct 2026",
+    "scheduler": "Metricool free plan (Instagram connected 2026-09-25; Google Drive integration is paid-only)",
+    "instagram_handle": "ilmakask",
+    "metricool_brand_id": 7082564
+  },
+  "gates": {
+    "G1_identity": false,
+    "G2_voice_world": false,
+    "G3_product_sample": false,
+    "G4_first_nine_posts": 0
+  },
+  "mode": "guided",
+  "phase": 10,
+  "learnings": [
+    {
+      "week": 0,
+      "note": "Static posts (intro + 3 carousels) cleared license gate 2026-09-25; 8 reels waiting for video."
+    },
+    {
+      "week": 0,
+      "note": "User chose Stan Store over Payhip; skill corrected to respect the named platform and check plan features."
+    },
+    {
+      "week": 0,
+      "note": "User set price to $10 launch / $13 regular (USD). Framed as introductory price, not 'was $13', per EU price-reduction rules."
+    },
+    "2026-09-25 reels: Seedance 2.0 breaks on hands, feet and full bodies; tight chest-up selfie framing with hands/phone out of frame removed hand errors.",
+    "2026-09-25 reels: set clip length = voice length rounded up; extra seconds make the mouth keep moving after the line.",
+    "2026-09-25 reels: models invent logos on plain jackets; say 'completely plain, no text, letters, logo or badge' for every garment.",
+    "2026-09-25 QC: a single vision model invents defects (Gemini reported the same six-finger collar touch on two different takes); require a second describing model (Qwen 3.6) to confirm a blocker before paying for a re-render.",
+    "2026-09-25 kling-lipsync repair is cheap (17 credits/s) and fixes sync, but drops the ambient sound (voice only).",
+    "sonilo-video-sfx-mix replaced the voice in a test; generate ambience separately (sonilo-video-sfx, video length) and overlay it in a stitch.",
+    "Video-matched ambience picks up on-screen props (paper bag rustle too loud on the market clip): tell it 'nothing close to the microphone'.",
+    "Voice master = the clip the user likes; check every other reel by stitching it after the master and asking a listener model for a same-speaker score, then re-roll the TTS take until MATCH. A take longer than the clip gets its last word cut.",
+    "Budget rule (user feedback 2026-09-25): quote credits before each pass, test one clip before a batch, and stop and ask before going past the quote. Fix timing at the source (render with the final voice) instead of re-syncing lips over old footage."
+  ],
+  "sources": [
+    "xAI consumer terms: commercial use allowed, no indemnity (secondary sources; verify)",
+    "Kokoro-82M Apache-2.0 model card",
+    "Estonian Health Trails, RMK, Visit Estonia",
+    "timeanddate Tallinn sun data",
+    "EU AI Act Art. 50 FAQ"
+  ],
+  "production": {
+    "platform": "Melius",
+    "project": "Ilma Kask reels",
+    "canvas_id": "4390116d-4cf1-4a4f-8bcb-650ce48588ae",
+    "route": "B-hybrid: ElevenLabs v3 TTS (Melius) -> Seedance 2.0 reference-to-video with audio (face anchor + real-place photo as references), 720p 9:16",
+    "voice_for_reels": {
+      "master": "Balti Jaama Turg market reel (12 Oct), Seedance node 9385d68b, its own voice kept untouched",
+      "master_vo": "Melius node 9b652063, version 4d257bf8 (eleven_v3, voice Veda Sky 625jGFaa0zTLtQfxwc6Q, plain script text)",
+      "recipe_for_every_other_line": "eleven_v3, voice 625jGFaa0zTLtQfxwc6Q, default settings, plain script text only (no tags, no breaks, no voice description), exactly like the master",
+      "lip_sync": "kling-lipsync on the approved source clip; take must be shorter than the clip",
+      "acceptance": "stitch [market master + reel] and have Gemini 3.1 Pro score same-speaker similarity; re-roll the take if below MATCH",
+      "user_decision": "2026-09-25: user chose the market clip's original voice as the master for all reels",
+      "locked": true,
+      "locked_on": "2026-09-25"
+    },
+    "estimated_credits": {
+      "video_seconds": 56,
+      "credits_per_second": 180,
+      "tts": 80,
+      "total": 10160
+    },
+    "status": "2026-09-25: first render pass done; awaiting user review (G4). Credits ran out before re-renders of clips 4, 6, 7, 8.",
+    "clip_nodes": {
+      "1": "e1b86a4e-ad2e-48c4-abad-67f815702954",
+      "2": "e7396821-1ec6-44d5-a40e-485927a32c10",
+      "3": "3e69a9cc-dbbb-4992-b3e2-15b492f93d36",
+      "4": "9385d68b-35ff-497a-803b-4d3ae63678c9",
+      "5": "2641e895-186e-4a20-8f7e-5900ad68c36d",
+      "6": "e13c4843-8784-414c-b3d9-4a416d7d87e5",
+      "7": "88878aff-e2cb-47fc-9dfa-53d653a0a8c4",
+      "8": "0898c624-33e9-4d58-9a8a-729ecf6c97ab"
+    },
+    "candidates": {
+      "1 Town Hall Square (30 Sep)": {
+        "node": "e1b86a4e-ad2e-48c4-abad-67f815702954",
+        "version": "tight framing v4 (7.1 s)",
+        "qc": "Qwen: clean, no hands, 1 continuous take; Gemini flagged lip/hands (not confirmed by second model)",
+        "verdict": "candidate - user to approve"
+      },
+      "2 Patkuli (6 Oct)": {
+        "node": "e7396821-1ec6-44d5-a40e-485927a32c10",
+        "version": "wide framing v1 (8.1 s)",
+        "qc": "Qwen: background stable, hand holding phone normal; Gemini flagged melting background people (not confirmed)",
+        "verdict": "candidate - user to approve"
+      },
+      "3 Nomme lit trail (2 Oct)": {
+        "node": "3e69a9cc-dbbb-4992-b3e2-15b492f93d36",
+        "version": "tight framing v2 (8 s)",
+        "qc": "Qwen: clean, 1 hoop per ear; Gemini: one over-wide mouth moment at 2-3 s",
+        "verdict": "candidate - user to approve"
+      },
+      "4 Balti Jaama Turg (12 Oct)": {
+        "node": "9385d68b-35ff-497a-803b-4d3ae63678c9",
+        "repair_node": "66ec30fb-7f28-4ee0-93c0-ad72c9e723fb",
+        "qc": "original: mouth moves after line ends; kling repair: voice-only, Gemini flags sync + fingers",
+        "verdict": "re-render with tight prompt (9 s = 1,620 credits)"
+      },
+      "5 Viru bog (10 Oct)": {
+        "node": "251cedce-07c3-498b-9cf5-7cbbdee34dea",
+        "version": "kling lip-sync repair of wide v1 (7 s)",
+        "qc": "Gemini PUBLISHABLE; no ambience (voice only)",
+        "verdict": "candidate - user to approve"
+      },
+      "6 Noblessner (8 Oct)": {
+        "node": "e13c4843-8784-414c-b3d9-4a416d7d87e5",
+        "repair_node": "a916d9c4-8b9d-461c-9437-c8b380e9dce0",
+        "qc": "original: scarf instead of towel, mouth moves after line; repair: Gemini flags rubbery mouth",
+        "verdict": "re-render with tight prompt (7 s = 1,260 credits)"
+      },
+      "7 Kalamaja (14 Oct)": {
+        "node": "88878aff-e2cb-47fc-9dfa-53d653a0a8c4",
+        "qc": "confirmed fake logo 'AJILET' + moose on jacket",
+        "verdict": "re-render with tight prompt (6 s = 1,080 credits)"
+      },
+      "8 Pirita (4 Oct)": {
+        "node": "0898c624-33e9-4d58-9a8a-729ecf6c97ab",
+        "version": "tight framing v2 (7.2 s)",
+        "qc": "Qwen: partial white text/logo on jacket chest; Gemini: extra stud earring, dog walker morphs",
+        "verdict": "likely re-render (8 s = 1,440 credits) - user to look first"
+      }
+    },
+    "scripts_updated_2026-09-25": {
+      "2 Patkuli": "Stair repeats: strong going up, easy coming down. The walk down is your rest. Don't rush it. (8.2 s, render 9 s, standing)",
+      "4 Market": "Protein at the first real meal. Rye bread counts. Frozen berries count. Defaults, not a diet. (8.1 s, render 9 s, bag in crook of arm)",
+      "6 Noblessner": "Heat, then air, then a slow walk. Then something warm to eat. The cold part was always free. (7.6 s, render 8 s, phone propped on ledge)"
+    },
+    "rerender_queue": {
+      "clips": [
+        "1",
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "route": "Seedance 2.0 native render with market-voice VO",
+      "credits": 6120,
+      "status": "waiting for top-up; test one clip first"
+    },
+    "duplicate_check_2026-09-25": "8 reels = 8 different tips and places; 4 scheduled image posts all different; no duplicates",
+    "pipeline_2026-09-25": [
+      "Seedance 2.0 = approved visuals (not regenerated)",
+      "VO: eleven_v3 + Veda Sky + plain text (market recipe); re-roll if longer than the clip",
+      "kling-lipsync: source clip + VO",
+      "stitch: lip-synced clip + existing matched ambience overlay (sonilo-video-sfx)",
+      "market reel 4: original Seedance clip, untouched",
+      "QC: market-vs-reel voice match (Gemini) + lip notes"
+    ],
+    "clip6_decision": "User 2026-09-25: no towel/scarf attempts; nothing around her neck. Hair approved."
+  },
+  "project_passport": {
+    "repo_path": "project/ilma_kask.project.json",
+    "raw_url": "https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.project.json",
+    "rule": "read at task start, log a changelog entry at task end; passport wins on conflicts",
+    "melius_team_skill": "/ilma-reel"
+  }
+}

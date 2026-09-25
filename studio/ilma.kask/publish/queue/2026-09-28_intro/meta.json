@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-28",
+  "time": "10:00",
+  "timezone": "Europe/Tallinn",
+  "type": "photo",
+  "ai_label": true,
+  "status": "scheduled",
+  "scheduler": "metricool"
+}

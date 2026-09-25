@@ -1,0 +1,13 @@
+date,time,timezone,platform,format,series,idea_id,title,status,pack_path,post_url
+2026-09-28,10:00,Europe/Tallinn,instagram,photo,,intro,intro,scheduled,studio/ilma.kask/publish/queue/2026-09-28_intro,
+2026-09-29,10:00,Europe/Tallinn,instagram,carousel,,carousel_first-seven,carousel_first-seven,scheduled,studio/ilma.kask/publish/queue/2026-09-29_carousel_first-seven,
+2026-09-30,10:00,Europe/Tallinn,instagram,reel,,clip1,town-hall-square,"rework: lip timing, native re-render pending",studio/ilma.kask/publish/queue/2026-09-30_reel_town-hall-square,
+2026-10-01,10:00,Europe/Tallinn,instagram,carousel,,carousel_daylight,carousel_daylight,scheduled,studio/ilma.kask/publish/queue/2026-10-01_carousel_daylight,
+2026-10-02,10:00,Europe/Tallinn,instagram,reel,,clip3,nomme-lit-loop,"rework: lip timing, native re-render pending",studio/ilma.kask/publish/queue/2026-10-02_reel_nomme-lit-loop,
+2026-10-04,10:00,Europe/Tallinn,instagram,reel,,clip8,pirita-board,"rework: lip timing, native re-render pending",studio/ilma.kask/publish/queue/2026-10-04_reel_pirita-board,
+2026-10-05,10:00,Europe/Tallinn,instagram,carousel,,carousel_launch,carousel_launch,scheduled,studio/ilma.kask/publish/queue/2026-10-05_carousel_launch,
+2026-10-06,10:00,Europe/Tallinn,instagram,reel,,clip2,patkuli-stairs,scheduled,studio/ilma.kask/publish/queue/2026-10-06_reel_patkuli-stairs,
+2026-10-08,10:00,Europe/Tallinn,instagram,reel,,clip6,noblessner-sauna,scheduled,studio/ilma.kask/publish/queue/2026-10-08_reel_noblessner-sauna,
+2026-10-10,10:00,Europe/Tallinn,instagram,reel,,clip5,viru-bog,"rework: lip timing, native re-render pending",studio/ilma.kask/publish/queue/2026-10-10_reel_viru-bog,
+2026-10-12,10:00,Europe/Tallinn,instagram,reel,,clip4,balti-jaam-market,scheduled,studio/ilma.kask/publish/queue/2026-10-12_reel_balti-jaam-market,
+2026-10-14,10:00,Europe/Tallinn,instagram,reel,,clip7,kalamaja-rain,"rework: lip timing, native re-render pending",studio/ilma.kask/publish/queue/2026-10-14_reel_kalamaja-rain,

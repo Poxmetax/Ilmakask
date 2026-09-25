@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-10",
+  "time": "10:00",
+  "timezone": "Europe/Tallinn",
+  "type": "reel",
+  "clip": 5,
+  "ai_label": true,
+  "status": "rework requested by user 2026-09-25",
+  "melius_node": "f8e68b32-fae8-4990-b157-3fcb8f172d68",
+  "duration_s": 6.87,
+  "resolution": "1080x1920",
+  "voice": "market master voice (eleven_v3 Veda Sky, plain text); kling lip-sync + place ambience",
+  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+}

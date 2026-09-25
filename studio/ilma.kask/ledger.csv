@@ -1,0 +1,35 @@
+asset_id,file,stage,tool,plan,commercial_ok,watermark,terms_url,verified_on,derived_from,notes
+tool:grok,,tool,Grok image generation,user plan (check),yes,no,https://x.ai/legal,2026-09-25,,consumer terms reported to allow commercial use; no IP indemnity; re-verify on vendor page
+tool:kokoro,,tool,Kokoro-82M,open weights Apache-2.0,yes,no,https://huggingface.co/hexgrad/Kokoro-82M,2026-09-25,,CPU TTS
+anchor01,identity/ilma_face_anchor_ref.jpg,identity,Grok,user plan,yes,no,,2026-09-25,tool:grok,crop of 7XbTE
+profile01,identity/ilma_profile_1080.jpg,identity,Grok,user plan,yes,no,,2026-09-25,anchor01,profile crop
+tool:dejavu,,tool,DejaVu fonts,free license,yes,no,https://dejavu-fonts.github.io/License.html,2026-09-25,,bundled font
+product01,product/The_Weather_Week.pdf,product,build_product_pdf.py,local,yes,no,,2026-09-25,anchor01;tool:dejavu,own text
+2026-09-28_intro_slide_01,publish/queue/2026-09-28_intro/slide_01.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,anchor01;tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_01,publish/queue/2026-09-29_carousel_first-seven/slide_01.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,anchor01;tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_02,publish/queue/2026-09-29_carousel_first-seven/slide_02.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_03,publish/queue/2026-09-29_carousel_first-seven/slide_03.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_04,publish/queue/2026-09-29_carousel_first-seven/slide_04.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_05,publish/queue/2026-09-29_carousel_first-seven/slide_05.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_06,publish/queue/2026-09-29_carousel_first-seven/slide_06.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_07,publish/queue/2026-09-29_carousel_first-seven/slide_07.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_08,publish/queue/2026-09-29_carousel_first-seven/slide_08.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-09-29_carousel_first-seven_slide_09,publish/queue/2026-09-29_carousel_first-seven/slide_09.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-10-01_carousel_daylight_slide_01,publish/queue/2026-10-01_carousel_daylight/slide_01.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-10-01_carousel_daylight_slide_02,publish/queue/2026-10-01_carousel_daylight/slide_02.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-10-01_carousel_daylight_slide_03,publish/queue/2026-10-01_carousel_daylight/slide_03.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-10-01_carousel_daylight_slide_04,publish/queue/2026-10-01_carousel_daylight/slide_04.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,tool:dejavu,own design
+2026-10-05_carousel_launch_slide_01,publish/queue/2026-10-05_carousel_launch/slide_01.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+2026-10-05_carousel_launch_slide_02,publish/queue/2026-10-05_carousel_launch/slide_02.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+2026-10-05_carousel_launch_slide_03,publish/queue/2026-10-05_carousel_launch/slide_03.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+2026-10-05_carousel_launch_slide_04,publish/queue/2026-10-05_carousel_launch/slide_04.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+2026-10-05_carousel_launch_slide_05,publish/queue/2026-10-05_carousel_launch/slide_05.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+2026-10-05_carousel_launch_slide_06,publish/queue/2026-10-05_carousel_launch/slide_06.jpg,post,render.py (PIL),local,yes,no,,2026-09-25,product01;tool:dejavu,own design
+tool:melius,,tool,Melius (Seedance 2.0 visuals; ElevenLabs Multilingual v2 TTS; Kling lip-sync; Sonilo video SFX; stitch),paid credits (team plan TIER_0 = ~0 credits),yes,no,https://www.melius.com/terms,2026-09-25,,Terms: outputs usable commercially regardless of plan; no IP indemnity | 2026-09-25: reel audio pipeline changed to anchored Multilingual v2 voice + Kling lip-sync + Sonilo ambience; all run inside Melius under the same terms
+plate_townhall,Commons:File:Tallinn_-_Town_Hall_Square_(Raekoja_plats).jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Tallinn_-_Town_Hall_Square_(Raekoja_plats).jpg,,,licence/author not yet read (Commons unreachable from sandbox); credit in caption
+plate_patkuli,Commons:File:Vanalinn_Patkuli_platvormilt_2013.jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Vanalinn_Patkuli_platvormilt_2013.jpg,,,verify licence/author
+plate_balti,Commons:File:Balti_jaama_turg_2018_02.jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Balti_jaama_turg_2018_02.jpg,,,verify licence/author; outdoor stall with price cards
+plate_viru,Commons:File:Päikesetõus_Viru_rabas.jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Päikesetõus_Viru_rabas.jpg,,,verify licence/author
+plate_noblessner,Commons:File:Port_of_Noblessner,_Tallinn_(2020-05-20).jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Port_of_Noblessner,_Tallinn_(2020-05-20).jpg,,,verify licence/author
+plate_kalamaja,Commons:File:Vana-Kalamaja_tänav_(Kotzebue_ja_Kopli_tänava_vahel)_08.09.2023.jpg,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:Vana-Kalamaja_tänav_(Kotzebue_ja_Kopli_tänava_vahel)_08.09.2023.jpg,,,verify licence/author
+plate_pirita,Commons:File:EU-EE-Tallinn-Pirita-Pirita_beach_in_autumn.JPG,plate,Wikimedia Commons,free licence,VERIFY,no,https://commons.wikimedia.org/wiki/File:EU-EE-Tallinn-Pirita-Pirita_beach_in_autumn.JPG,,,"verify licence/author; photo has paramotors, prompt removes them"
