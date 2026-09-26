@@ -5,10 +5,15 @@
   "type": "reel",
   "clip": 3,
   "ai_label": true,
-  "status": "rework requested by user 2026-09-25",
-  "melius_node": "c3741184-c8c5-45ea-8cd4-4d976661348d",
+  "status": "scheduled",
+  "melius_node": "3e69a9cc-dbbb-4992-b3e2-15b492f93d36",
   "duration_s": 8.0,
-  "resolution": "1080x1920",
-  "voice": "market master voice (eleven_v3 Veda Sky, plain text); kling lip-sync + place ambience",
-  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+  "resolution": "720x1280 (Seedance 720p)",
+  "voice": "eleven_v3 Veda Sky take aa197573 (7.576 s), rendered natively as the video's audio input",
+  "video": "copied into Metricool storage at scheduling; source: Melius node 3e69a9cc version 3332651d",
+  "melius_version": "3332651d-3b15-4f0a-b715-6937fc8d8503",
+  "look": "user-approved 4K still A v1 (1f85614b), place described in words (no plate)",
+  "scheduler": "metricool",
+  "metricool_post_id": 382463028,
+  "approved_by_user": "2026-09-26"
 }
