@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.37",
-  "updated_at": "2026-09-26T22:26:54+03:00",
+  "version": "1.0.38",
+  "updated_at": "2026-09-26T22:36:02+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -643,7 +643,16 @@
           "v1": "ddacfa21-8b32-49c7-81f7-1c99bc0b5782",
           "v2": "85ac1a23-da06-4929-b75f-f070a69a86e1",
           "credits": 134,
-          "status": "awaiting user pick"
+          "status": "round 2 awaiting user review",
+          "round1": "user: freckles (more than other photos) in both; cause: anchor paragraph not pasted verbatim + 'no makeup' + night grain",
+          "round2": {
+            "run": "58026012-96a9-4f5b-96b0-051281ae6ef7",
+            "v1": "6cefaace-f0a5-4eaf-8ce8-280d34d9f3a5 (checker: clearly visible freckles, FAIL)",
+            "v2": "e8386531-1bff-4cad-8220-69b492790fe0 (checker: a few faint, not more than the identity photo, PASS; active)",
+            "extra_ref": "approved Patkuli still 35890aa7 as a second face/skin reference",
+            "qc_node": "10e818ea-2946-4ab4-8ce7-b76212d4053f",
+            "credits": 152
+          }
         },
         "budget": "video 9 s x 180 = 1620; ambience sonilo-sfx ~20; QC ~20"
       }
@@ -901,7 +910,8 @@
     "2026-09-26 stitch: works with ONE video clip plus an audio overlay (the >=2-sources worry is wrong); the output length follows the LONGEST track, so the ambience must be no longer than the video (use sonilo-sfx 8 s for an 8 s clip; a 10 s track added 2 s of black).",
     "2026-09-26 sonilo-sfx with a 'very quiet, distant, low level' prompt came out barely audible under the voice; elevenlabs-sfx with the same prompt came out clearly audible.",
     "2026-09-26 tiny far-away people that are in the approved still tend to stay frozen in seedance reference-to-video even when the prompt names their motions; birds added in the prompt did move.",
-    "2026-09-26 Patkuli v2: the checker called the wall people frozen and the wind too one-sided; the user watched and said the people are not frozen and the wind is right. Again: the user's eyes decide; checker notes about background motion are weak."
+    "2026-09-26 Patkuli v2: the checker called the wall people frozen and the wind too one-sided; the user watched and said the people are not frozen and the wind is right. Again: the user's eyes decide; checker notes about background motion are weak.",
+    "2026-09-26 Noblessner stills: freckles came back when the still prompt paraphrased identity ('copy her face') instead of pasting the anchor paragraph verbatim and said 'no makeup'; with blue-hour night grain the model reads texture as freckles. Always paste the anchor paragraph verbatim, keep 'minimal natural makeup', add an approved clear-skin still as a second face reference, and run the skin checker on each variation (edge passes only the active version: switch versions to check both)."
   ],
   "changelog": [
     {
@@ -1648,6 +1658,25 @@
       "result": "2 stills awaiting user pick",
       "next": [
         "user picks still; then 9 s video (1620) + ambience"
+      ]
+    },
+    {
+      "when": "2026-09-26T22:36:02+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Noblessner stills round 2 (freckle fix)",
+      "changed": [
+        "still prompt: anchor paragraph verbatim, minimal makeup, even flush, Patkuli still as 2nd face ref"
+      ],
+      "ids": {
+        "still": "010b9b3a",
+        "run": "58026012",
+        "qc": "10e818ea"
+      },
+      "credits_spent": 152,
+      "result": "v1 FAIL (freckles), v2 PASS per checker",
+      "next": [
+        "user reviews round-2 v2; then 9 s video"
       ]
     }
   ],
