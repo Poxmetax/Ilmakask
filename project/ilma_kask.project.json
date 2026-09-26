@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.27",
-  "updated_at": "2026-09-26T16:09:16+03:00",
+  "version": "1.0.28",
+  "updated_at": "2026-09-26T16:38:00+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -481,7 +481,7 @@
       "queue": "2026-10-10_reel_viru-bog",
       "script": "Easy most days, long once a week. The bog doesn't care about your pace.",
       "tip": "easy most days, long once a week",
-      "status": "REVIEW: selfie still C (camera standard) waiting for the user's pick; then video 6 s (1,080 credits)",
+      "status": "REVIEW: selfie video still reads layered per both checkers; waiting for the user's eyes and a decision on the fix route",
       "melius": {
         "seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627",
         "vo": "212e04f5-4669-4b0d-865c-4b8ea6280bd5",
@@ -529,7 +529,18 @@
             "8ed8da62",
             "be669482 (first run started before its input edges existed after a node_create timeout: text-to-image, no references)"
           ],
-          "credits": 268
+          "credits": 268,
+          "user_pick": "v2 593bcc2d (USER: feels more alive)"
+        },
+        "video_selfie": {
+          "version": "aa98862d-df40-42a1-bfee-66e434de02e3",
+          "run": "43512a32-72d2-44d7-8117-ac2c26dd8c77",
+          "inputs": "face anchor + selfie still C v2 (reference_image), VO 212e04f5, quality lock with camera line",
+          "credits": 1080,
+          "qc": {
+            "gemini": "TIMING PASS 9 (voice 0.0-5.0 s, 0.8 s closed hold); CAMERA ONE-IMAGE FAIL 10: she bobs with the walk but the background does not move in sync (layered)",
+            "qwen": "CAMERA ONE-IMAGE FAIL: she moves independently, background static or slow separate drift"
+          }
         }
       },
       "prompt": "Vertical 9:16 handheld phone video, one continuous 6-second take, photorealistic, modern flagship phone held by a friend walking backward a step ahead of her (phone and hands out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, loose over her shoulders under the beanie, one side tucked behind her ear; small plain thin gold huggie hoop earrings; no makeup.\nOutfit visible in frame: plain moss-green waterproof shell zipped to the collarbone over a plain grey merino base layer, plain rust knit beanie. No logos, no text.\n\nPLACE (from @[1280px-Päikesetõus_Viru_rabas]{5477f5be-232b-4b81-b9ad-9e0ec7dacfb8}): the wooden boardwalk across Viru bog, Lahemaa National Park, Estonia, behind her: grey planks leading into the bog, low pines, dark mirror-still bog pools reflecting the sky, soft morning mist drifting slowly left. Early morning, low sun. No other people. No signs.\n\nACTION: she walks slowly along the boardwalk toward the camera, head and shoulders dipping gently with each relaxed step. Gestures follow the SHOT BREAKDOWN below. Natural blinks. Loose strands move with the same light breeze that moves the mist.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low early sun behind her left shoulder, gold rim light on the beanie and shoulders; fill: pale morning sky; bounce: rust-red from the autumn bog moss onto her jaw. Light constant.\n\nAmbient sound: slow hollow footsteps on wooden planks, soft wind in heather, one distant bird call, all ducked well under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.3 s. Between sentences the mouth pauses with the voice. From 5.3 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-2.7 s: says \"Easy most days, long once a week.\" with one easy nod on \"long once a week\".\n3.0-5.3 s: says \"The bog doesn't care about your pace.\" with a glance out over the pools, then a soft smile back to the lens.\n5.3-6.0 s: silent: lips closed and still, calm closed-mouth smile, she keeps walking.",
@@ -775,7 +786,8 @@
     "2026-09-26 USER: a sunrise must read as a sunrise: small bright white-gold sun, crisp pale sky; a dim orange low sun reads as sunset",
     "2026-09-26 USER: a friend-held walking-backward shot made the Viru bog clip look like two pasted layers with different zoom. Every clip is a front-camera selfie on the same phone (camera_standard)",
     "2026-09-26 USER: vary clothes and headwear across clips and places (wardrobe library + no-repeat rule)",
-    "2026-09-26 Mechanics: if node_create times out, the node may exist WITHOUT its input edges; check edges (run inputs list) before running, or the run silently falls back to text-to-image"
+    "2026-09-26 Mechanics: if node_create times out, the node may exist WITHOUT its input edges; check edges (run inputs list) before running, or the run silently falls back to text-to-image",
+    "2026-09-26 Seedance reference-to-video + a walking selfie over a wide landscape: both checkers see the woman bobbing while the background stays nearly locked (layered look). Candidate fixes: standing selfie (less motion), or start-frame image-to-video from the approved still followed by video-to-video with the VO for native lip sync"
   ],
   "changelog": [
     {
@@ -1342,6 +1354,22 @@
       "result": "needs review",
       "next": [
         "User picks still C; render selfie video 6 s"
+      ]
+    },
+    {
+      "when": "2026-09-26T16:38:00+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Viru bog selfie video from still C v2 + two-model camera QC",
+      "changed": [
+        "6cf45b2f version aa98862d",
+        "QC nodes 0fe5b3c5 (Gemini) and 7d303a39 (Qwen): camera one-image FAIL, timing PASS"
+      ],
+      "ids": {},
+      "credits_spent": 1091,
+      "result": "needs review",
+      "next": [
+        "User decides fix route"
       ]
     }
   ],
