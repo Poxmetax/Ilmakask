@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.23",
-  "updated_at": "2026-09-26T14:53:20+03:00",
+  "version": "1.0.24",
+  "updated_at": "2026-09-26T14:56:08+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -481,12 +481,22 @@
       "queue": "2026-10-10_reel_viru-bog",
       "script": "Easy most days, long once a week. The bog doesn't care about your pace.",
       "tip": "easy most days, long once a week",
-      "status": "REWORK: lip timing. New native render node created, planned 6 s",
+      "status": "REVIEW: still A (2 x 4K) waiting for the user's pick; then video 6 s (1,080 credits)",
       "melius": {
         "seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627",
         "vo": "212e04f5-4669-4b0d-865c-4b8ea6280bd5",
         "vo_ms": 5433,
-        "plan_duration_s": 6
+        "plan_duration_s": 6,
+        "still_a": {
+          "node": "d9b96db9-3907-45c5-aae7-22fbad951ac8",
+          "model": "gpt-image-2.5-sunburst 4K",
+          "inputs": "face anchor + Viru bog plate 5477f5be (named by description)",
+          "versions": [
+            "ef11bf5b-b068-4deb-8920-f3c7e7deebca",
+            "1ad7e6f7-04d1-488e-b43f-8560b5cf31be"
+          ],
+          "credits": 134
+        }
       },
       "prompt": "Vertical 9:16 handheld phone video, one continuous 6-second take, photorealistic, modern flagship phone held by a friend walking backward a step ahead of her (phone and hands out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, loose over her shoulders under the beanie, one side tucked behind her ear; no earrings; no makeup.\nOutfit visible in frame: plain moss-green waterproof shell zipped to the collarbone over a plain grey merino base layer, plain rust knit beanie. No logos, no text.\n\nPLACE (from @[1280px-Päikesetõus_Viru_rabas]{5477f5be-232b-4b81-b9ad-9e0ec7dacfb8}): the wooden boardwalk across Viru bog, Lahemaa National Park, Estonia, behind her: grey planks leading into the bog, low pines, dark mirror-still bog pools reflecting the sky, soft morning mist drifting slowly left. Early morning, low sun. No other people. No signs.\n\nACTION: she walks slowly along the boardwalk toward the camera, head and shoulders dipping gently with each relaxed step. Gestures follow the SHOT BREAKDOWN below. Natural blinks. Loose strands move with the same light breeze that moves the mist.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low early sun behind her left shoulder, gold rim light on the beanie and shoulders; fill: pale morning sky; bounce: rust-red from the autumn bog moss onto her jaw. Light constant.\n\nAmbient sound: slow hollow footsteps on wooden planks, soft wind in heather, one distant bird call, all ducked well under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.3 s. Between sentences the mouth pauses with the voice. From 5.3 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-2.7 s: says \"Easy most days, long once a week.\" with one easy nod on \"long once a week\".\n3.0-5.3 s: says \"The bog doesn't care about your pace.\" with a glance out over the pools, then a soft smile back to the lens.\n5.3-6.0 s: silent: lips closed and still, calm closed-mouth smile, she keeps walking.",
       "prompt_timed_to_vo": true
@@ -1226,6 +1236,21 @@
       "result": "ok",
       "next": [
         "Clip 5 Viru bog: still first"
+      ]
+    },
+    {
+      "when": "2026-09-26T14:56:08+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Clip 5 Viru bog: 4K stills",
+      "changed": [
+        "node d9b96db9 still A, 2 variants"
+      ],
+      "ids": {},
+      "credits_spent": 134,
+      "result": "needs review",
+      "next": [
+        "User picks a still; then render 6 s video"
       ]
     }
   ],
