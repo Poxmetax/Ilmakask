@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.33",
-  "updated_at": "2026-09-26T18:45:26+03:00",
+  "version": "1.0.34",
+  "updated_at": "2026-09-26T21:26:36+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -408,7 +408,7 @@
       "queue": "2026-10-06_reel_patkuli-stairs",
       "script": "Stair repeats: strong going up, easy coming down. The walk down is your rest. Don't rush it.",
       "tip": "stair intervals",
-      "status": "REMAKE IN PROGRESS: selfie still waiting for the user's pick; old reel stays scheduled (Metricool 381959592) until the new one is approved",
+      "status": "REMAKE REVIEW: video 9012f9e5 waiting for the user's eyes; old reel still scheduled (381959592)",
       "melius": {
         "seedance": "e7396821-1ec6-44d5-a40e-485927a32c10",
         "final_stitch": "0da7cb40-83f2-4ca9-b639-88f70817bd07",
@@ -433,7 +433,16 @@
             "b4f8540a-b140-47ec-962c-815503631571",
             "e36171a2-b003-49b7-b333-5102961d9908"
           ],
-          "credits": 134
+          "credits": 134,
+          "user_pick": "v1 b4f8540a"
+        },
+        "video": {
+          "node": "ff00729f-084f-4a92-a66c-2c41b952e4c8",
+          "version": "9012f9e5-940e-4c9b-910c-c75a45c14d4a",
+          "run": "f369a15b-13f4-4fcf-8afe-11ade7f0e48d",
+          "inputs": "face anchor + still A v1 (reference_image), VO 40f05dbf (audio), quality lock",
+          "credits": 1440,
+          "qc_gemini": "TIMING PASS 9 (lips follow voice, no lips without voice, 'it' complete, ~1.0 s closed hold); 5 blinks (target 2-3); says the background looks static while her hair moves"
         }
       }
     },
@@ -1498,6 +1507,22 @@
       "result": "needs review",
       "next": [
         "User picks; render 8 s selfie video from VO 40f05dbf (7.576 s)"
+      ]
+    },
+    {
+      "when": "2026-09-26T21:26:36+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Patkuli remake video",
+      "changed": [
+        "new node ff00729f version 9012f9e5 (8 s)",
+        "QC e14c1c2e: timing PASS; 5 blinks; static background note"
+      ],
+      "ids": {},
+      "credits_spent": 1449,
+      "result": "needs review",
+      "next": [
+        "User reviews; if approved, replace Metricool 381959592 with the new video"
       ]
     }
   ],
