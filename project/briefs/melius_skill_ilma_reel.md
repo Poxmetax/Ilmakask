@@ -159,3 +159,6 @@ Background people never stand frozen: give each one a concrete motion for the wh
 
 ## Head turns (user rule 2026-09-26)
 A head turn away from the lens gets its own, slightly longer silent beat (about 1.3-1.8 s: turn at a natural speed, brief hold as if something caught her attention or she is thinking, turn back). The next sentence starts only after her eyes are back on the lens. Plan it at a sentence break in the script and make the pause in the VO with punctuation (ellipsis or dash), then check the gap in the take. At most one head turn per clip.
+
+## Makeup (user rule 2026-09-26)
+Makeup is allowed and may vary by scene, always realistic and natural-looking. Freckles are not makeup and never appear. Default line: "minimal natural makeup"; never write "no makeup". Paste the identity anchor paragraph verbatim in every still and video prompt.

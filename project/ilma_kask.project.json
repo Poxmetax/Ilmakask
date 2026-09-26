@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.38",
-  "updated_at": "2026-09-26T22:36:02+03:00",
+  "version": "1.0.39",
+  "updated_at": "2026-09-26T23:01:28+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -127,7 +127,8 @@
       }
     },
     "earrings": "USER 2026-09-26: earrings in PUBLIC places (streets, squares, markets, trails, parks, promenades) in varied styles and designs (studs, huggies, thin hoops; silver or gold); NO earrings in private, non-public places (home, private sauna, private spaces). Never re-render an existing scene just for earrings.",
-    "beauty_marks": "barely visible, only as faint as in the profile photo (USER 2026-09-26)"
+    "beauty_marks": "barely visible, only as faint as in the profile photo (USER 2026-09-26)",
+    "makeup_rule_user_2026_09_26": "Makeup is allowed and can vary by scene, but always realistic and natural-looking. Freckles are NOT makeup and never appear. Default line: 'minimal natural makeup'; never write 'no makeup' (it pulled freckles into the Noblessner stills)."
   },
   "voice": {
     "locked": true,
@@ -643,7 +644,7 @@
           "v1": "ddacfa21-8b32-49c7-81f7-1c99bc0b5782",
           "v2": "85ac1a23-da06-4929-b75f-f070a69a86e1",
           "credits": 134,
-          "status": "round 2 awaiting user review",
+          "status": "user pick: round-2 v2 e8386531 (closer to the profile photo)",
           "round1": "user: freckles (more than other photos) in both; cause: anchor paragraph not pasted verbatim + 'no makeup' + night grain",
           "round2": {
             "run": "58026012-96a9-4f5b-96b0-051281ae6ef7",
@@ -652,9 +653,34 @@
             "extra_ref": "approved Patkuli still 35890aa7 as a second face/skin reference",
             "qc_node": "10e818ea-2946-4ab4-8ce7-b76212d4053f",
             "credits": 152
+          },
+          "user_pick": "e8386531-1bff-4cad-8220-69b492790fe0"
+        },
+        "budget": "video 9 s x 180 = 1620; ambience sonilo-sfx ~20; QC ~20",
+        "video": {
+          "node": "55ef5348-ffac-4d07-8cd2-90014a0fa2a0",
+          "run": "b623a313-9205-4ed1-b6de-3868fe364d6d",
+          "credits": 1620,
+          "blinks_planned": "5 at 0.9/2.9/3.4/5.6/8.4 s",
+          "head_turn": "none (eyes-only glance in the 5.4-5.7 s pause)",
+          "qc_gemini": "TIMING FAIL (lip movement in pauses 3.8-4.2, 5.8-6.6 s), 8 blinks (upper limit), head turn 5.9-6.6 s reported, dog walker blurs ~4 s, far figures frozen, no steam seen, faint freckles, subject sharper than background; REALISM FAIL. Checker is second opinion only."
+        },
+        "ambience": {
+          "part1": "fe15db14-0398-40aa-ba5f-e2edd2527086",
+          "part2": "1ced268d-e756-402a-8b4f-4ea8bfc5619e",
+          "plan": "two 5 s sonilo-sfx tracks overlaid at 0 s and 4 s so the mix ends at 9 s (sonilo has no 9 s option; a longer track would add black frames)",
+          "credits": 20,
+          "mix_a": {
+            "stitch": "bf6b4e65-caff-41d6-9815-85023826af23",
+            "result": "two 5 s sonilo pieces at 0/4 s: checker hears a seam at ~4 s -> rejected"
+          },
+          "mix_b": {
+            "sfx": "184e978d-3c18-4e68-b7d6-83aa18aa0a6a (sonilo-video-sfx, 99 credits)",
+            "stitch": "20b8c8ee-cb87-4c12-9e50-c4680b4eb073",
+            "qc": "8939274e: water lapping, clearly audible (not barely), checker hears a jump ~5 s; voice intact; 9 s no black"
           }
         },
-        "budget": "video 9 s x 180 = 1620; ambience sonilo-sfx ~20; QC ~20"
+        "status": "awaiting user review of video 55ef5348 + mix b"
       }
     },
     {
@@ -911,7 +937,8 @@
     "2026-09-26 sonilo-sfx with a 'very quiet, distant, low level' prompt came out barely audible under the voice; elevenlabs-sfx with the same prompt came out clearly audible.",
     "2026-09-26 tiny far-away people that are in the approved still tend to stay frozen in seedance reference-to-video even when the prompt names their motions; birds added in the prompt did move.",
     "2026-09-26 Patkuli v2: the checker called the wall people frozen and the wind too one-sided; the user watched and said the people are not frozen and the wind is right. Again: the user's eyes decide; checker notes about background motion are weak.",
-    "2026-09-26 Noblessner stills: freckles came back when the still prompt paraphrased identity ('copy her face') instead of pasting the anchor paragraph verbatim and said 'no makeup'; with blue-hour night grain the model reads texture as freckles. Always paste the anchor paragraph verbatim, keep 'minimal natural makeup', add an approved clear-skin still as a second face reference, and run the skin checker on each variation (edge passes only the active version: switch versions to check both)."
+    "2026-09-26 Noblessner stills: freckles came back when the still prompt paraphrased identity ('copy her face') instead of pasting the anchor paragraph verbatim and said 'no makeup'; with blue-hour night grain the model reads texture as freckles. Always paste the anchor paragraph verbatim, keep 'minimal natural makeup', add an approved clear-skin still as a second face reference, and run the skin checker on each variation (edge passes only the active version: switch versions to check both).",
+    "2026-09-26 ambience: two overlapping sfx pieces create an audible seam; for clip lengths sonilo-sfx cannot hit (e.g. 9 s), use one track: sonilo-video-sfx (length = video) or plan clip length to a sonilo duration (8/10 s)."
   ],
   "changelog": [
     {
@@ -1677,6 +1704,31 @@
       "result": "v1 FAIL (freckles), v2 PASS per checker",
       "next": [
         "user reviews round-2 v2; then 9 s video"
+      ]
+    },
+    {
+      "when": "2026-09-26T23:01:28+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Noblessner remake video + ambience",
+      "changed": [
+        "makeup rule (realistic, freckles never)",
+        "video 9 s rendered from user-picked still",
+        "ambience: 2-piece mix rejected (seam), 1-track video-to-sfx mix"
+      ],
+      "ids": {
+        "video": "55ef5348",
+        "run": "b623a313",
+        "mix": "20b8c8ee",
+        "qc": [
+          "e14c1c2e",
+          "8939274e"
+        ]
+      },
+      "credits_spent": 1775,
+      "result": "awaiting user review; checker flags pause-lip movement, possible head turn, dog-walker blur",
+      "next": [
+        "user reviews Noblessner video; if approved, update Metricool 381959668"
       ]
     }
   ],
