@@ -26,8 +26,8 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 ## 2. Identity lock (copy verbatim, never paraphrase)
 
 - Attach the face anchor node `42fc7de6-dfee-4a99-aa2a-57c125a3b664` as `reference_image` on every generation, labelled "identity only, never its lighting".
-- Paste `identity.anchor_paragraph` from the passport word for word. Only the bracket [HAIR STATE FOR THIS SCENE] changes (down / blowing in the wind / loose under a beanie / tucked behind one ear). Colour, length, brows, freckles and earrings never change.
-- Signature anchors to check in every frame: light-brown freckles across the nose bridge and upper cheeks; straight thick ash-brown brows clearly darker than the hair; exactly ONE small plain gold hoop in each ear. Hair is COOL PLATINUM ice-blonde, never golden or yellow. Eyes light blue-grey, muted.
+- Paste `identity.anchor_paragraph` from the passport word for word. Only [HAIR STATE FOR THIS SCENE] and [EARRINGS FOR THIS SCENE] change. Earrings are optional and should vary by day like a real person (none, small studs, thin hoops; silver or gold). Face details never change; makeup or hair colour change only when the user chooses.
+- Identity comes ONLY from the profile photo (face anchor). Describe and check only what it shows: no freckles, tiny beauty marks only as faint as in the photo, thick straight dark-blonde brows clearly darker than the platinum hair (never golden or yellow), light blue slightly hooded eyes, high cheekbones and defined jaw. Never add features the photo does not show.
 - Body: slim athletic, toned not bulky, 172 cm. Keep hands, phone and feet out of frame (tight mid-chest-up framing) unless the shot truly needs them.
 - Clothing: completely plain, no logos, letters, badges or patches anywhere. Reuse the outfit already written for that clip in `clips[].prompt`.
 - Wire the QUALITY LOCK text node `ead3f832-bf83-49ff-b0cf-82487abd3f3d` into every video node as a text input.
@@ -73,7 +73,7 @@ Every timing failure on this project came from footage and voice being made for 
 ## 7. Talking-clip prompt template (fill every bracket; an unfilled bracket is a bug)
 
 ```
-Vertical 9:16 handheld phone [selfie|companion-held|propped] video, one continuous [N]-second take, photorealistic, modern flagship phone [front camera held at arm's length (phone and arm out of frame)|held by a friend|propped on a ledge]. Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.
+Vertical 9:16 handheld phone [selfie|companion-held|propped] video, one continuous [N]-second take, photorealistic, modern flagship phone [front camera held at arm's length (phone and arm out of frame)|held by a friend|propped on a ledge]. Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.
 
 WOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [anchor_paragraph VERBATIM]
 Outfit visible in frame: [PLAIN OUTFIT]. No logos, no text.
@@ -97,7 +97,7 @@ Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard
 
 ## 8. QC before you show anything
 
-- Identity: face shape, eye colour, the three anchors, platinum (not golden) hair, age reads 27, skin not plastic.
+- Identity: same face as the profile photo (the user's eyes decide; AI checkers are only a second opinion), no invented freckles or marks, platinum (not golden) hair, reads mid-twenties, skin not plastic.
 - Timing: section 4, item 6. Say honestly if you cannot judge timing; the user's eyes decide timing.
 - Physics: no sliding feet, hair/wind direction constant, props never appear, vanish or change.
 - Light: shadows agree with the plate, face not brighter than the environment, no light jumps.
@@ -111,7 +111,7 @@ Useful canvas mechanics learned on this project: a stitch needs at least 2 sourc
 - Canvas: project e2daaabd-c043-44b3-bd32-884b1cb1051f, canvas 4390116d-4cf1-4a4f-8bcb-650ce48588ae.
 - Approved and scheduled: clip 2 Patkuli (6 Oct), clip 6 Noblessner (8 Oct), clip 4 market (12 Oct). Frozen.
 - Rework (lip timing), native re-render with their eleven_v3 VO: clip 8 Pirita 7 s (TEST FIRST, 1,260 credits), then clip 1 Town Hall 7 s, clip 3 Nõmme 8 s, clip 5 Viru bog 6 s (node 6cf45b2f…), clip 7 Kalamaja 6 s (4,860 credits).
-- Anchor paragraph: European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, [HAIR STATE FOR THIS SCENE], tucked behind one ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.
+- Anchor paragraph: Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, [HAIR STATE FOR THIS SCENE]; [EARRINGS FOR THIS SCENE]; minimal natural makeup.
 - Disclosure: captions end with "AI-generated character · real places"; Instagram AI label on.
 
 ## 10. End of every task: HANDOFF ENTRY

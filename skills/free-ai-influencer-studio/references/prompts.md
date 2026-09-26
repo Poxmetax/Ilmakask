@@ -24,7 +24,7 @@ Clothing: plain [COLOUR] crew-neck knit, no logos.
 Lighting: soft directional daylight from one side like a large window, gentle falloff, a soft real shadow on the far cheek, every pore and anchor clearly readable. Calm alive gaze, relaxed eyes, the faintest hint of warmth at the corners of the lips.
 ```
 
-Anchor rules: 2 to 3 anchors, each visible from the front (freckle pattern, a brow colour that contrasts with the hair, a mole, a small scar, one specific earring). Accessories as anchors are counted ("exactly ONE small plain gold hoop in each ear"). Hair colours drift toward the model's default (platinum goes golden), so name the drift you forbid.
+Anchor rules: 2 to 3 anchors, each visible from the front in the face-anchor photo itself (a brow colour that contrasts with the hair, eye shape, a mole or small scar that is really there). Never write a feature the photo does not show: an invented anchor (e.g. freckles the photo lacks) gets painted on by every model. Treat accessories such as earrings as per-scene styling that varies by day, not as identity anchors. Hair colours drift toward the model's default (platinum goes golden), so name the drift you forbid.
 
 ## 2. Three-panel character sheet
 

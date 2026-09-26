@@ -18,13 +18,14 @@
     "anchor_image": "identity/ilma_face_anchor_ref.jpg",
     "golden_set": [],
     "anchors": [
-      "freckles across nose bridge and upper cheeks",
-      "straight thick ash-brown brows darker than hair",
-      "one small plain gold hoop in each ear"
+      "thick straight dark-blonde brows clearly darker than the platinum hair",
+      "light blue, slightly hooded almond eyes",
+      "high prominent cheekbones and defined jaw, exactly as in the profile photo"
     ],
-    "anchor_paragraph": "European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face with high rounded cheekbones and a gently tapered jaw; straight nose with a softly rounded tip; naturally full lips in a soft rose-nude tone; light blue-grey eyes, muted, NOT saturated, no contact-lens look; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, soft side part; exactly ONE small plain gold hoop earring in each ear; glowing minimal natural makeup; slim athletic build, 172 cm, toned but not bulky.",
+    "anchor_paragraph": "Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, [HAIR STATE FOR THIS SCENE]; [EARRINGS FOR THIS SCENE]; minimal natural makeup.",
     "sheet_images": [],
-    "locked": false
+    "locked": false,
+    "source_rule": "profile photo is the only identity source; no freckles; earrings optional and varied per day (user 2026-09-26)"
   },
   "voice": {
     "tool": "Kokoro-82M",
