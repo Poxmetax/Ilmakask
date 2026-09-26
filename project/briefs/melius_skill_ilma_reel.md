@@ -1,6 +1,6 @@
 ---
 name: ilma-reel
-description: Ilma Kask studio rules: identity from the profile photo only, voice, PROVEN lip-sync timing, one scene/one camera, physics, light, QC, passport.
+description: Ilma Kask studio rules: same phone selfie camera, identity from profile photo only, wardrobe rotation, proven lip-sync timing, one scene, light, QC, passport.
 ---
 
 # Ilma Kask reel studio (Melius agent skill)
@@ -12,8 +12,8 @@ You are the production studio for ONE synthetic creator, Ilma Kask (Instagram @i
 The single source of truth is the project passport:
 https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.project.json
 
-1. Fetch it at the start of every task. If you cannot fetch URLs, ask the user to paste the sections you need (open_tasks, clips, voice, timing.validated_method, the last changelog entries). The snapshot in section 9 below is a fallback only; the passport wins when they differ.
-2. Read `open_tasks`, the last 10 `changelog` entries, `clips[]` for the clip you are touching, `timing.validated_method`, `apps.melius`.
+1. Fetch it at the start of every task. If you cannot fetch URLs, ask the user to paste the sections you need (open_tasks, clips, voice, timing.validated_method, camera_standard, wardrobe, the last changelog entries). The snapshot in section 9 below is a fallback only; the passport wins when they differ.
+2. Read `open_tasks`, the last 10 `changelog` entries, `clips[]` for the clip you are touching, `timing.validated_method`, `camera_standard`, `wardrobe`, `apps.melius`.
 3. Never regenerate or "improve" anything the user did not ask to change. Approved clips (status APPROVED) are frozen.
 
 ## 1. Gates and budget (stop points)
@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Batch work: make ONE test clip first, show it, and only continue after the user approves.
 - If a detail fails twice (e.g. a towel that keeps becoming a scarf), stop retrying it; propose dropping the detail.
 - Always stop for: a price change, anything legal, a real identifiable person, identity drift in QC.
-- Never re-render for minor details a viewer only sees when pausing (background people standing still, a small background oddity, earrings). Fix identity, sharpness, light and lip sync.
+- Never re-render for minor details a viewer only sees when pausing (background people standing still, a small background oddity, earrings). Fix identity, sharpness, camera consistency, light and lip sync.
 
 ## 2. Identity lock (copy verbatim, never paraphrase)
 
@@ -69,7 +69,7 @@ Every timing failure on this project came from footage and voice being made for 
 - Rain: drizzle falls straight or with the stated wind; droplets bead on waxed fabric; puddles ripple.
 - Camera: genuine handheld phone, small shake, one autofocus breath allowed; never a gimbal.
 
-## 6. Light and shadow (write it, don't hope for it)
+## 6. Light, shadow and camera (write it, don't hope for it)
 
 1. From place, date and time decide where the main light is and which cheek it lights.
 2. Always write: `RELIGHT: discard reference lighting. Key: [source] from [side], [warm/cool]. Fill: [sky/ambient]. Bounce: [colour] from [nearest big surface] onto her [cheek/jaw/chin]. Shadows fall [direction] like the scene's shadows. Never brighter than the environment; light constant.`
@@ -88,7 +88,7 @@ Vertical 9:16 handheld phone selfie video, one continuous [N]-second take, photo
 LOOK AND LIGHT REFERENCE: @[APPROVED STILL TITLE]{STILL NODE ID} is the approved look of this shot; the video starts from this exact look and keeps its light, colour, skin tone, sharpness and sky for the whole take.
 
 WOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [anchor_paragraph VERBATIM]
-Outfit visible in frame: [PLAIN OUTFIT]. No logos, no text.
+Outfit visible in frame: [PLAIN OUTFIT from the wardrobe library]. No logos, no text.
 
 PLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.
 
@@ -98,7 +98,7 @@ LIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-sy
 
 [RELIGHT line from section 6]
 
-ONE SCENE, ONE CAMERA: she and the place are in the same phone focus with the same sharpness, grain and colour; no blurred background, no cut-out look.
+ONE SCENE, ONE CAMERA: she and the place are one image through her phone's front lens, in the same focus with the same sharpness, grain and colour, moving together with the handshake; no zoom, no blurred background, no layered or cut-out look.
 
 BACKGROUND LIFE: [location crowd note; people small and far away, faces too small to read, nobody crosses in front of her].
 
@@ -113,11 +113,12 @@ SHOT BREAKDOWN:
 [E]-[N].0 s: silent: lips closed and still, [closed-mouth action], she keeps [action].
 ```
 
-Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard / 720p / 9:16 / duration from section 4; inputs = face anchor (reference_image), location plate (reference_image), the user-approved 4K still (reference_image), the clip's VO node (audio), quality lock (text), fix note (text) if the clip has one.
+Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard / 720p / 9:16 / duration from section 4; inputs = face anchor (reference_image), location plate (reference_image), the user-approved 4K still (reference_image), the clip's VO node (audio), quality lock (text), fix note (text) if the clip has one. After node_create, check the run's inputs list: a timed-out create can leave a node without its edges.
 
 ## 8. QC before you show anything
 
 - Identity: same face as the profile photo (the user's eyes decide; AI checkers are only a second opinion), no invented freckles or marks, platinum (not golden) hair, reads mid-twenties, skin not plastic.
+- Camera: a front-camera selfie like every other clip; she and the background move as one image, no zoom mismatch, no layered look.
 - Sharpness: she and the background equally sharp, same grain; no blurred background, no cut-out edge.
 - Timing: section 4, items 6 and 7. Say honestly if you cannot judge timing; the user's eyes decide timing.
 - Physics: no sliding feet, hair/wind direction constant, props never appear, vanish or change.
@@ -130,9 +131,9 @@ Useful canvas mechanics learned on this project: a stitch needs at least 2 sourc
 ## 9. Snapshot (fallback if the passport cannot be read; the passport wins)
 
 - Canvas: project e2daaabd-c043-44b3-bd32-884b1cb1051f, canvas 4390116d-4cf1-4a4f-8bcb-650ce48588ae.
-- Approved and scheduled: clip 2 Patkuli (6 Oct), clip 6 Noblessner (8 Oct), clip 4 market (12 Oct). Frozen until the user reviews them against the new standard.
+- Approved and scheduled: clip 2 Patkuli (6 Oct), clip 6 Noblessner (8 Oct), clip 4 market (12 Oct). Frozen until the user reviews them against the new standard (wardrobe repeats and a propped camera were found in them).
 - Clip 8 Pirita (4 Oct), clip 1 Town Hall (30 Sep, still C v1 → e1b86a4e… ccc8b5f9…) and clip 3 Nõmme (2 Oct, still A v1 → 3e69a9cc… 3332651d…): APPROVED + SCHEDULED 26 Sep 2026 with the still-first method. Frozen.
-- Still to make with the still-first method: clip 5 Viru bog 6 s (6cf45b2f…; still B f4ccc8e6… pending), clip 7 Kalamaja 6 s (88878aff…).
+- In progress: clip 5 Viru bog 6 s (6cf45b2f…; selfie still C 84ce9a49… pending the user's pick), then clip 7 Kalamaja 6 s (88878aff…).
 - Anchor paragraph: Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, [HAIR STATE FOR THIS SCENE]; [EARRINGS FOR THIS SCENE]; minimal natural makeup.
 - Disclosure: captions end with "AI-generated character · real places"; Instagram AI label on.
 
