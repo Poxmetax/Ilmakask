@@ -22,11 +22,12 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Batch work: make ONE test clip first, show it, and only continue after the user approves.
 - If a detail fails twice (e.g. a towel that keeps becoming a scarf), stop retrying it; propose dropping the detail.
 - Always stop for: a price change, anything legal, a real identifiable person, identity drift in QC.
+- Never re-render for minor details a viewer only sees when pausing (background people standing still, a small background oddity, earrings). Fix identity, sharpness, light and lip sync.
 
 ## 2. Identity lock (copy verbatim, never paraphrase)
 
 - Attach the face anchor node `42fc7de6-dfee-4a99-aa2a-57c125a3b664` as `reference_image` on every generation, labelled "identity only, never its lighting".
-- Paste `identity.anchor_paragraph` from the passport word for word. Only [HAIR STATE FOR THIS SCENE] and [EARRINGS FOR THIS SCENE] change. Earrings are optional and should vary by day like a real person (none, small studs, thin hoops; silver or gold). Face details never change; makeup or hair colour change only when the user chooses.
+- Paste `identity.anchor_paragraph` from the passport word for word. Only [HAIR STATE FOR THIS SCENE] and [EARRINGS FOR THIS SCENE] change. Earrings: in PUBLIC places (streets, squares, markets, trails, parks) she wears earrings in varied styles (studs, huggies, thin hoops; silver or gold); in PRIVATE places (home, private sauna) none. Never re-render a finished scene just for earrings. Face details never change; makeup or hair colour change only when the user chooses.
 - Identity comes ONLY from the profile photo (face anchor). Describe and check only what it shows: no freckles, tiny beauty marks only as faint as in the photo, thick straight dark-blonde brows clearly darker than the platinum hair (never golden or yellow), light blue slightly hooded eyes, high cheekbones and defined jaw. Never add features the photo does not show.
 - Body: slim athletic, toned not bulky, 172 cm. Keep hands, phone and feet out of frame (tight mid-chest-up framing) unless the shot truly needs them.
 - Clothing: completely plain, no logos, letters, badges or patches anywhere. Reuse the outfit already written for that clip in `clips[].prompt`.
@@ -39,7 +40,7 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Rejected (do not use): eleven_multilingual_v2, trailing <break> padding, letting the video model invent a voice without an audio reference.
 - A take is accepted when (a) its length fits the planned clip (VO + 0.4 s ≤ clip length) and (b) a same-speaker check against the market clip scores 9–10/10 (stitch [market clip, new clip] and ask a listener model). Otherwise re-roll the TTS (~120 credits), never the video.
 
-## 4. Lip-sync timing (PROVEN 26 Sep 2026 on clip 8: user saw the lips land exactly on the voice)
+## 4. Lip-sync timing (PROVEN 26 Sep 2026 on clips 8, 1 and 3: the user saw the lips land exactly on the voice)
 
 Every timing failure on this project came from footage and voice being made for different recordings, or from prompts asking for speech and gestures at times the audio did not match. The mouth must be generated FROM the final voice file, and the prompt must be timed to it.
 
@@ -73,10 +74,10 @@ Every timing failure on this project came from footage and voice being made for 
 1. From place, date and time decide where the main light is and which cheek it lights.
 2. Always write: `RELIGHT: discard reference lighting. Key: [source] from [side], [warm/cool]. Fill: [sky/ambient]. Bounce: [colour] from [nearest big surface] onto her [cheek/jaw/chin]. Shadows fall [direction] like the scene's shadows. Never brighter than the environment; light constant.`
 3. Contact shadows under whatever she touches; every shadow falls the same way as the plate's own shadows.
-4. Light is constant for the whole take (not a time-lapse).
+4. Light is constant for the whole take (not a time-lapse). A sunrise must read as a sunrise: a small bright white-gold sun and a crisp pale sky; a dim orange low sun reads as a sunset.
 5. Per-location light, sound and crowd notes are in `locations` in the passport. Location plates are the photo nodes listed there; always attach the plate as a reference image and name it by description ('the photo of the square'), never by order: Melius may pass inputs in a different order.
 6. ONE SCENE, ONE CAMERA (user rule, 26 Sep 2026): one and the same person, one clip, one scene. She and the place share the same sharpness, detail, grain, colour and white balance (phone deep focus: face and background in focus together); never write 'background softer', 'soft-focus' or 'shallow depth of field'. Shadows fall the same way on her as in the scene; hair and clothes obey gravity and the scene's wind.
-7. STILL FIRST: make a 4K still (gpt-image-2.5-sunburst image-to-image: face anchor + plate), the user approves it, then wire the approved still as a third reference_image into the video node as the LOOK AND LIGHT REFERENCE. Never fix look or light on video. Never use nano-banana-2 for identity stills.
+7. STILL FIRST: make a 4K still (gpt-image-2.5-sunburst image-to-image: face anchor + plate), the user approves it, then wire the approved still as a reference_image into the video node as the LOOK AND LIGHT REFERENCE. Never fix look or light on video; small fixes are an image edit of the picked still (67 credits a try). Never use nano-banana-2 for identity stills.
 
 ## 7. Talking-clip prompt template (fill every bracket; an unfilled bracket is a bug)
 
@@ -121,16 +122,16 @@ Node wiring for every talking clip: seedance-2.0 / reference-to-video / standard
 - Physics: no sliding feet, hair/wind direction constant, props never appear, vanish or change.
 - Light: shadows agree with the plate, face not brighter than the environment, no light jumps.
 - Text/logos: none readable anywhere, including background signs and clothing.
-- AI checkers hallucinate (one claimed freckles that do not exist): count a defect as real only when two different checkers agree, or the user sees it.
+- AI checkers hallucinate and over-report (one claimed freckles that do not exist; another a garbled sign and sliding pigeons the user never saw): count a defect as real only when two different checkers agree, or the user sees it.
 
-Useful canvas mechanics learned on this project: a stitch needs at least 2 sources and cannot trim; an audio node cannot take a video's sound; Gemini/Qwen text nodes accept only one video (stitch two clips to compare); speech-to-text (scribe_v2) must be an AUDIO node, not a text node, and returns text without timestamps; an edge passes only a node's ACTIVE version; Kling lip-sync keeps the original mouth wherever the new audio is silent; sonilo-video-sfx-mix replaced the voice once (use sonilo-video-sfx + stitch overlay for ambience instead).
+Useful canvas mechanics learned on this project: a stitch needs at least 2 sources and cannot trim; an audio node cannot take a video's sound; Gemini/Qwen text nodes accept only one video (stitch two clips to compare); speech-to-text (scribe_v2) must be an AUDIO node, not a text node, and returns text without timestamps; an edge passes only a node's ACTIVE version; a video's playable .mp4 link comes from display_canvas (nodes[].mediaUrl) or from the inputs of a run that consumes the video; Kling lip-sync keeps the original mouth wherever the new audio is silent; sonilo-video-sfx-mix replaced the voice once (use sonilo-video-sfx + stitch overlay for ambience instead).
 
 ## 9. Snapshot (fallback if the passport cannot be read; the passport wins)
 
 - Canvas: project e2daaabd-c043-44b3-bd32-884b1cb1051f, canvas 4390116d-4cf1-4a4f-8bcb-650ce48588ae.
 - Approved and scheduled: clip 2 Patkuli (6 Oct), clip 6 Noblessner (8 Oct), clip 4 market (12 Oct). Frozen until the user reviews them against the new standard.
-- Clip 8 Pirita: APPROVED 26 Sep 2026 (timed native re-render, node 0898c624…, version 105fba7e…). Frozen.
-- Still to re-render with the section 4 method and the still-first pipeline: clip 1 Town Hall 7 s (e1b86a4e…, look from user-approved still C v1 220e2f9a…), clip 3 Nõmme 8 s (3e69a9cc…), clip 5 Viru bog 6 s (6cf45b2f…), clip 7 Kalamaja 6 s (88878aff…).
+- Clip 8 Pirita (4 Oct), clip 1 Town Hall (30 Sep, still C v1 → e1b86a4e… ccc8b5f9…) and clip 3 Nõmme (2 Oct, still A v1 → 3e69a9cc… 3332651d…): APPROVED + SCHEDULED 26 Sep 2026 with the still-first method. Frozen.
+- Still to make with the still-first method: clip 5 Viru bog 6 s (6cf45b2f…; still B f4ccc8e6… pending), clip 7 Kalamaja 6 s (88878aff…).
 - Anchor paragraph: Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, [HAIR STATE FOR THIS SCENE]; [EARRINGS FOR THIS SCENE]; minimal natural makeup.
 - Disclosure: captions end with "AI-generated character · real places"; Instagram AI label on.
 
