@@ -156,3 +156,6 @@ Seedance returns only the provided voice (digital silence otherwise). Every clip
 
 ## Live background (user rule 2026-09-26)
 Background people never stand frozen: give each one a concrete motion for the whole take (strolls, turns and points, lifts a phone and walks off) and add other live elements (birds, smoke, trees, traffic, water).
+
+## Head turns (user rule 2026-09-26)
+A head turn away from the lens gets its own, slightly longer silent beat (about 1.3-1.8 s: turn at a natural speed, brief hold as if something caught her attention or she is thinking, turn back). The next sentence starts only after her eyes are back on the lens. Plan it at a sentence break in the script and make the pause in the VO with punctuation (ellipsis or dash), then check the gap in the take. At most one head turn per clip.

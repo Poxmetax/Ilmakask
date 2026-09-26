@@ -6,12 +6,14 @@
   "clip": 2,
   "ai_label": true,
   "status": "scheduled",
-  "melius_node": "0da7cb40-83f2-4ca9-b639-88f70817bd07",
-  "duration_s": 9.01,
-  "resolution": "1080x1920",
-  "voice": "market master voice (eleven_v3 Veda Sky, plain text); kling lip-sync + place ambience",
+  "melius_node": "1cbdad33-9e59-43a0-a8be-b2d631240a98",
+  "duration_s": 8.1,
+  "resolution": "1080x1920 (stitch output)",
+  "voice": "Clip 2 VO 40f05dbf (eleven_v3 Veda Sky, plain text); seedance-2.0 native lip sync; sonilo-sfx ambience 4db8b24a mixed via stitch",
   "scheduler": "metricool",
-  "metricool_post_id": 381959592,
-  "approved_by_user": "2026-09-25",
-  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+  "metricool_post_id": 382617897,
+  "approved_by_user": "2026-09-26 (remake v2)",
+  "video": "Metricool copy on static.metricool.com; Melius source = stitch node",
+  "metricool_uuid": "-7048840060585098026",
+  "replaced": "2026-09-26: old post 381959592 (9.01 s kling version) updated in place with the remake"
 }

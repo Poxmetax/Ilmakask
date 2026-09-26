@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.35",
-  "updated_at": "2026-09-26T21:56:43+03:00",
+  "version": "1.0.36",
+  "updated_at": "2026-09-26T22:13:38+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -253,11 +253,11 @@
   },
   "quality_lock": {
     "melius_node": "ead3f832-bf83-49ff-b0cf-82487abd3f3d",
-    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
+    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Head turns: whenever she looks away (over her shoulder, at something that caught her attention, a thinking pause), the turn happens only in a real pause in the audio: she stops talking, turns her head at a natural, unhurried speed, holds her look there for a moment, turns back, and starts the next sentence only once her eyes are back on the lens. Never a quick flick timed to squeeze into a short gap.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
     "rule": "wire as a text input into every video node (Melius appends it to the prompt)",
     "rewritten": "2026-09-26: identity only from the profile photo; one scene/one camera (matching sharpness, grain, colour; deep phone focus); light and shadow from the place; gravity and movement; 2026-09-26 camera line added (same phone, selfie, one image through one lens); 2026-09-26 gravity/physics for every visible detail incl. raindrops (user); 2026-09-26 eyes: 2-3 natural blinks per clip (user)"
   },
-  "prompt_template_talking_clip": "Vertical 9:16 handheld phone selfie video, one continuous [N]-second take, photorealistic, her own phone's wide front camera held at arm's length slightly above eye level (phone and arm out of frame). Tight framing from mid-chest up, head in the upper third. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [identity.anchor_paragraph VERBATIM]\nOutfit visible in frame: [PLAIN OUTFIT]. No logos, no text.\n\nPLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.\n\nACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. EYES: she blinks naturally about [PICK 3-7, at most 8] times at random, uneven moments with no rhythm (some in pauses, some mid-phrase, a slower one when she glances away, sometimes two close together); mark each rough blink moment in the SHOT BREAKDOWN at irregular times; never a stare longer than about 2 seconds. [ONE PHYSICS RULE].\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\n[lighting.template filled]\n\nBACKGROUND LIFE: [locations.<id>.crowd].\n\nAmbient sound: [locations.<id>.sound], ducked well under her voice.\n\nTIMING (the take is exactly [N] s and follows the audio track): her lips move ONLY while her words are heard, from about [start] s to [end] s. Between sentences the mouth pauses with the voice. From [end] s to [N].0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n[one line per phrase group from `project_state.py beats --clip N`: \"a-b s: says \\\"...\\\" with ONE gesture\", about one gesture per 1.5-2.5 s of speech, first line 0.0-[start] s silent, last line [end]-[N].0 s silent closed-mouth hold]",
+  "prompt_template_talking_clip": "Vertical 9:16 handheld phone selfie video, one continuous [N]-second take, photorealistic, her own phone's wide front camera held at arm's length slightly above eye level (phone and arm out of frame). Tight framing from mid-chest up, head in the upper third. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [identity.anchor_paragraph VERBATIM]\nOutfit visible in frame: [PLAIN OUTFIT]. No logos, no text.\n\nPLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.\n\nACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. Any head turn away from the lens happens only in its own silent line of the SHOT BREAKDOWN (about 1.3-1.8 s: turn, brief hold, back), and the next sentence starts after her eyes are back on the lens. EYES: she blinks naturally about [PICK 3-7, at most 8] times at random, uneven moments with no rhythm (some in pauses, some mid-phrase, a slower one when she glances away, sometimes two close together); mark each rough blink moment in the SHOT BREAKDOWN at irregular times; never a stare longer than about 2 seconds. [ONE PHYSICS RULE].\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\n[lighting.template filled]\n\nBACKGROUND LIFE: [locations.<id>.crowd].\n\nAmbient sound: [locations.<id>.sound], ducked well under her voice.\n\nTIMING (the take is exactly [N] s and follows the audio track): her lips move ONLY while her words are heard, from about [start] s to [end] s. Between sentences the mouth pauses with the voice. From [end] s to [N].0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n[one line per phrase group from `project_state.py beats --clip N`: \"a-b s: says \\\"...\\\" with ONE gesture\", about one gesture per 1.5-2.5 s of speech, first line 0.0-[start] s silent, last line [end]-[N].0 s silent closed-mouth hold]",
   "locations": {
     "town_hall_square": {
       "name": "Raekoja plats (Town Hall Square), Tallinn",
@@ -408,7 +408,7 @@
       "queue": "2026-10-06_reel_patkuli-stairs",
       "script": "Stair repeats: strong going up, easy coming down. The walk down is your rest. Don't rush it.",
       "tip": "stair intervals",
-      "status": "REMAKE REVIEW: video 9012f9e5 waiting for the user's eyes; old reel still scheduled (381959592)",
+      "status": "APPROVED + SCHEDULED (remake v2 with ambience)",
       "melius": {
         "seedance": "e7396821-1ec6-44d5-a40e-485927a32c10",
         "final_stitch": "0da7cb40-83f2-4ca9-b639-88f70817bd07",
@@ -471,7 +471,15 @@
             "qc_node": "88a5ce1a-83df-437b-ad86-eab6437d7f9a",
             "qc": "AMBIENCE PASS, 8 s, no black frames"
           },
-          "status": "awaiting user review"
+          "status": "APPROVED by user 2026-09-26 (people not frozen by eye, wind fine, blinks/voice/lip sync on point)",
+          "metricool": {
+            "old_post": 381959592,
+            "new_post_id": 382617897,
+            "uuid": "-7048840060585098026",
+            "date": "2026-10-06T10:00 Europe/Tallinn",
+            "caption": "unchanged",
+            "media": "copied to static.metricool.com by Metricool"
+          }
         }
       }
     },
@@ -756,7 +764,7 @@
         "2026-09-29 carousel First Seven": "carousel",
         "2026-10-01 carousel daylight": "carousel",
         "2026-10-05 carousel launch": "carousel",
-        "2026-10-06 reel Patkuli": 381959592,
+        "2026-10-06 reel Patkuli": 382617897,
         "2026-10-08 reel Noblessner": 381959668,
         "2026-10-12 reel market": 381959728,
         "2026-10-04 reel Pirita": 382275000,
@@ -874,7 +882,8 @@
     "2026-09-26 USER: add slightly more blinking, 2-3 per clip, no longer stares without blinking (in quality lock and template)",
     "2026-09-26 stitch: works with ONE video clip plus an audio overlay (the >=2-sources worry is wrong); the output length follows the LONGEST track, so the ambience must be no longer than the video (use sonilo-sfx 8 s for an 8 s clip; a 10 s track added 2 s of black).",
     "2026-09-26 sonilo-sfx with a 'very quiet, distant, low level' prompt came out barely audible under the voice; elevenlabs-sfx with the same prompt came out clearly audible.",
-    "2026-09-26 tiny far-away people that are in the approved still tend to stay frozen in seedance reference-to-video even when the prompt names their motions; birds added in the prompt did move."
+    "2026-09-26 tiny far-away people that are in the approved still tend to stay frozen in seedance reference-to-video even when the prompt names their motions; birds added in the prompt did move.",
+    "2026-09-26 Patkuli v2: the checker called the wall people frozen and the wind too one-sided; the user watched and said the people are not frozen and the wind is right. Again: the user's eyes decide; checker notes about background motion are weak."
   ],
   "changelog": [
     {
@@ -1582,6 +1591,27 @@
       "next": [
         "user review of Patkuli v2 final mix; then replace Metricool 381959592"
       ]
+    },
+    {
+      "when": "2026-09-26T22:13:38+03:00",
+      "agent": "claude",
+      "app": "metricool",
+      "task": "Patkuli v2 approved; Metricool post updated; head-turn rule",
+      "changed": [
+        "Metricool 6 Oct reel: video replaced with Patkuli v2 + ambience, caption unchanged",
+        "quality lock + passport + brief + template: head-turn rule (own silent beat ~1.3-1.8 s, next sentence after eyes are back)"
+      ],
+      "ids": {
+        "metricool_new": 382617897,
+        "metricool_old": 381959592,
+        "uuid": "-7048840060585098026",
+        "stitch": "1cbdad33"
+      },
+      "credits_spent": 0,
+      "result": "Patkuli approved and rescheduled",
+      "next": [
+        "review Noblessner (8 Oct, 381959668) with the new settings"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -1765,5 +1795,16 @@
     "pipeline": "text-to-sfx track (elevenlabs-sfx or sonilo-sfx, prompt says very quiet/distant/low level, no voices, no music) -> stitch node: the video as the clip source + the sfx wired to the stitch 'audio' handle as audioOverlays at 0 s -> QC that the voice is intact and clearly louder and the ambience is barely audible.",
     "limits": "stitch has no volume control, so the level must come from the sfx prompt; the workspace cannot download Melius media (CDN blocked by the egress allowlist), so no local ffmpeg mix."
   },
-  "physics_rule_user_2026_09_26_background": "Background people must visibly move for the whole take (user 2026-09-26: Patkuli v1 had frozen people). Name concrete motions per person in the prompt (strolls left to right, turns and points, lifts a phone and walks off) plus other live elements (gull, smoke, trees, traffic, water)."
+  "physics_rule_user_2026_09_26_background": "Background people must visibly move for the whole take (user 2026-09-26: Patkuli v1 had frozen people). Name concrete motions per person in the prompt (strolls left to right, turns and points, lifts a phone and walks off) plus other live elements (gull, smoke, trees, traffic, water).",
+  "head_turn_rule_user_2026_09_26": {
+    "rule": "When she turns her head away (glance over the shoulder, something catches her attention, a thinking pause), give the turn a real, slightly longer pause in the voice: she stops talking, turns at a natural speed, holds briefly, turns back, and the next sentence starts only after her eyes are back on the lens.",
+    "why": "user on Patkuli v2 (approved): the head turn looked good but too fast, obviously squeezed into the voice-track gap.",
+    "method": [
+      "Plan at most one head turn per clip and put it at a sentence break in the script.",
+      "Budget about 1.3-1.8 s of silence for the turn (turn away ~0.4 s, hold ~0.5-0.8 s, back ~0.4 s); add that to the clip length.",
+      "eleven_v3 recipe forbids <break> tags, so make the pause with punctuation in the plain line (an ellipsis or a dash at the sentence break), then measure the gap in the take; re-roll the VO if the gap is shorter than ~1.2 s.",
+      "SHOT BREAKDOWN: a separate silent line for the turn, e.g. '3.9-5.4 s: silent, lips closed: something catches her eye, she turns her head over her shoulder, holds a moment, turns back to the lens'; the next phrase line starts after it."
+    ],
+    "status": "rule adopted 2026-09-26; ellipsis-pause method to be verified on the next clip"
+  }
 }
