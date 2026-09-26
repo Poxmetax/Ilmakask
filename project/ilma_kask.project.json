@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.28",
-  "updated_at": "2026-09-26T16:38:00+03:00",
+  "version": "1.0.29",
+  "updated_at": "2026-09-26T17:00:02+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -481,7 +481,7 @@
       "queue": "2026-10-10_reel_viru-bog",
       "script": "Easy most days, long once a week. The bog doesn't care about your pace.",
       "tip": "easy most days, long once a week",
-      "status": "REVIEW: selfie video still reads layered per both checkers; waiting for the user's eyes and a decision on the fix route",
+      "status": "APPROVED + SCHEDULED (Metricool 382504449, 2026-10-10 10:00 Tallinn); selfie video aa98862d from still C v2",
       "melius": {
         "seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627",
         "vo": "212e04f5-4669-4b0d-865c-4b8ea6280bd5",
@@ -540,7 +540,8 @@
           "qc": {
             "gemini": "TIMING PASS 9 (voice 0.0-5.0 s, 0.8 s closed hold); CAMERA ONE-IMAGE FAIL 10: she bobs with the walk but the background does not move in sync (layered)",
             "qwen": "CAMERA ONE-IMAGE FAIL: she moves independently, background static or slow separate drift"
-          }
+          },
+          "user_verdict": "USER 2026-09-26: perfect for the human eye; no change (checkers' layered verdict overruled)"
         }
       },
       "prompt": "Vertical 9:16 handheld phone video, one continuous 6-second take, photorealistic, modern flagship phone held by a friend walking backward a step ahead of her (phone and hands out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, loose over her shoulders under the beanie, one side tucked behind her ear; small plain thin gold huggie hoop earrings; no makeup.\nOutfit visible in frame: plain moss-green waterproof shell zipped to the collarbone over a plain grey merino base layer, plain rust knit beanie. No logos, no text.\n\nPLACE (from @[1280px-Päikesetõus_Viru_rabas]{5477f5be-232b-4b81-b9ad-9e0ec7dacfb8}): the wooden boardwalk across Viru bog, Lahemaa National Park, Estonia, behind her: grey planks leading into the bog, low pines, dark mirror-still bog pools reflecting the sky, soft morning mist drifting slowly left. Early morning, low sun. No other people. No signs.\n\nACTION: she walks slowly along the boardwalk toward the camera, head and shoulders dipping gently with each relaxed step. Gestures follow the SHOT BREAKDOWN below. Natural blinks. Loose strands move with the same light breeze that moves the mist.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low early sun behind her left shoulder, gold rim light on the beanie and shoulders; fill: pale morning sky; bounce: rust-red from the autumn bog moss onto her jaw. Light constant.\n\nAmbient sound: slow hollow footsteps on wooden planks, soft wind in heather, one distant bird call, all ducked well under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.3 s. Between sentences the mouth pauses with the voice. From 5.3 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-2.7 s: says \"Easy most days, long once a week.\" with one easy nod on \"long once a week\".\n3.0-5.3 s: says \"The bog doesn't care about your pace.\" with a glance out over the pools, then a soft smile back to the lens.\n5.3-6.0 s: silent: lips closed and still, calm closed-mouth smile, she keeps walking.",
@@ -577,7 +578,7 @@
         "vo_ms": 5277,
         "plan_duration_s": 6
       },
-      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 6-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing; a few raindrops at the lens edge are fine.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, framing her face under the hood; thin plain silver hoop earrings; minimal natural makeup.\nOutfit visible in frame: a completely plain navy waxed rain jacket with the hood up (it stays up), no text, no letters, no logo, no badge anywhere on it; a plain knit collar underneath.\n\nPLACE (from @[1280px-Kalevi_29_Kalamaja_Tallinn]{8221cee6-8a96-460e-bb18-0dc97d3e6b25} and @[1280px-Elamu_Leigeri_5,_Kalamaja,_Tallinn]{044b08fa-8c4c-4bad-b12c-02ff059747b0}): a quiet residential street in Kalamaja, Tallinn, Estonia, behind her: historic wooden apartment houses with painted wooden siding in beige and dark red-brown, white-framed windows, red roofs with chimneys. Late afternoon, light drizzle: fine rain streaks visible against the dark doorways, a wet sheen on the street. No readable house numbers, signs or number plates. No other people.\n\nACTION: she walks steadily along the pavement, head and shoulders dipping gently with each step; droplets bead on the waxed fabric of the hood. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: soft grey overcast from above; muted beige and red-brown bounce from the wooden facades onto her face. Light constant.\n\nAmbient sound: light rain on the hood, footsteps on wet asphalt, ducked under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.2 s. Between sentences the mouth pauses with the voice. From 5.2 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.2 s: says \"Missed yesterday?\" with eyebrows up and a small smile.\n1.5-3.7 s: says \"Don't catch up. Don't double today.\" with one small shake of the head on each sentence.\n4.0-5.2 s: says \"Just do today's box.\" with a steady look into the lens and one nod.\n5.2-6.0 s: silent: lips closed and still, rain ticking on the hood, she keeps walking.",
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 6-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing; a few raindrops at the lens edge are fine.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, in a single low braid over one shoulder, a few front strands framing her face under the hood; thin plain silver hoop earrings; minimal natural makeup.\nOutfit visible in frame: a completely plain navy waxed rain jacket with the hood up (it stays up), no text, no letters, no logo, no badge anywhere on it; a plain knit collar underneath.\n\nPLACE (from @[1280px-Kalevi_29_Kalamaja_Tallinn]{8221cee6-8a96-460e-bb18-0dc97d3e6b25} and @[1280px-Elamu_Leigeri_5,_Kalamaja,_Tallinn]{044b08fa-8c4c-4bad-b12c-02ff059747b0}): a quiet residential street in Kalamaja, Tallinn, Estonia, behind her: historic wooden apartment houses with painted wooden siding in beige and dark red-brown, white-framed windows, red roofs with chimneys. Late afternoon, light drizzle: fine rain streaks visible against the dark doorways, a wet sheen on the street. No readable house numbers, signs or number plates. No other people.\n\nACTION: she walks steadily along the pavement, head and shoulders dipping gently with each step; droplets bead on the waxed fabric of the hood. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: soft grey overcast from above; muted beige and red-brown bounce from the wooden facades onto her face. Light constant.\n\nAmbient sound: light rain on the hood, footsteps on wet asphalt, ducked under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.2 s. Between sentences the mouth pauses with the voice. From 5.2 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.2 s: says \"Missed yesterday?\" with eyebrows up and a small smile.\n1.5-3.7 s: says \"Don't catch up. Don't double today.\" with one small shake of the head on each sentence.\n4.0-5.2 s: says \"Just do today's box.\" with a steady look into the lens and one nod.\n5.2-6.0 s: silent: lips closed and still, rain ticking on the hood, she keeps walking.",
       "prompt_timed_to_vo": true
     },
     {
@@ -682,7 +683,8 @@
         "2026-10-12 reel market": 381959728,
         "2026-10-04 reel Pirita": 382275000,
         "2026-09-30 reel Town Hall": 382450130,
-        "2026-10-02 reel Nõmme": 382463028
+        "2026-10-02 reel Nõmme": 382463028,
+        "2026-10-10 reel Viru bog": 382504449
       }
     },
     "stan": {
@@ -787,7 +789,8 @@
     "2026-09-26 USER: a friend-held walking-backward shot made the Viru bog clip look like two pasted layers with different zoom. Every clip is a front-camera selfie on the same phone (camera_standard)",
     "2026-09-26 USER: vary clothes and headwear across clips and places (wardrobe library + no-repeat rule)",
     "2026-09-26 Mechanics: if node_create times out, the node may exist WITHOUT its input edges; check edges (run inputs list) before running, or the run silently falls back to text-to-image",
-    "2026-09-26 Seedance reference-to-video + a walking selfie over a wide landscape: both checkers see the woman bobbing while the background stays nearly locked (layered look). Candidate fixes: standing selfie (less motion), or start-frame image-to-video from the approved still followed by video-to-video with the VO for native lip sync"
+    "2026-09-26 Seedance reference-to-video + a walking selfie over a wide landscape: both checkers see the woman bobbing while the background stays nearly locked (layered look). Candidate fixes: standing selfie (less motion), or start-frame image-to-video from the approved still followed by video-to-video with the VO for native lip sync",
+    "2026-09-26 USER: the AI checkers flagged a layered look on the Viru bog selfie; the user saw it as perfect. The user's eyes decide"
   ],
   "changelog": [
     {
@@ -1371,6 +1374,23 @@
       "next": [
         "User decides fix route"
       ]
+    },
+    {
+      "when": "2026-09-26T17:00:02+03:00",
+      "agent": "Claude",
+      "app": "metricool",
+      "task": "Viru bog approved and scheduled; hairstyle variation added",
+      "changed": [
+        "Metricool 382504449: 2026-10-10 10:00",
+        "wardrobe.library.hairstyles + rule",
+        "clip 7 hairstyle: low braid under hood"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "Kalamaja selfie still"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -1447,7 +1467,8 @@
       "No outerwear piece repeated within 3 consecutive posts; no two consecutive posts in the same main colour",
       "Headwear varies across clips (beanies, cap, beret, headband, hood, bucket hat, none); never the same headwear in consecutive posts",
       "Earrings: public places = varied styles; private places = none",
-      "Log each clip's outfit in wardrobe.used before rendering; pick from the library to avoid repeats; approved clips are never changed for wardrobe"
+      "Log each clip's outfit in wardrobe.used before rendering; pick from the library to avoid repeats; approved clips are never changed for wardrobe",
+      "USER 2026-09-26: vary hairstyles from time to time (with clothes and earrings) to keep content fresh and real; never the same hairstyle in consecutive posts; approved clips are not redone for this"
     ],
     "library": {
       "outerwear": [
@@ -1500,6 +1521,20 @@
         "thin silver hoops",
         "small gold hoops",
         "small pearl studs"
+      ],
+      "hairstyles": [
+        "down and straight, side part",
+        "tucked behind one ear",
+        "high ponytail",
+        "low ponytail at the nape",
+        "loose low bun",
+        "messy top knot",
+        "single low braid over one shoulder",
+        "two low braids (casual)",
+        "half-up half-down",
+        "claw clip twist",
+        "sleek low bun (evening)",
+        "under a beanie or hood with front strands out"
       ]
     },
     "used": {
@@ -1508,9 +1543,9 @@
       "8 Pirita 4 Oct": "dark olive windproof jacket + cream knit collar; hair down in wind",
       "2 Patkuli 6 Oct (old settings)": "open dark olive shell + charcoal zip fleece; high ponytail",
       "6 Noblessner 8 Oct (old settings)": "long dark padded coat; hair loose",
-      "5 Viru bog 10 Oct": "moss-green waterproof shell + grey merino; rust knit beanie; thin gold huggies",
+      "5 Viru bog 10 Oct": "moss-green waterproof shell + grey merino; rust knit beanie; hair loose under the beanie; thin gold huggies",
       "4 market 12 Oct (old settings)": "camel overcoat + cream sweater; paper bag prop",
-      "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar"
+      "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar; single low braid over one shoulder with front strands out of the hood; thin silver hoops"
     },
     "repeats_found_2026_09_26": [
       "dark olive jacket in 3 consecutive posts (Nõmme 2 Oct, Pirita 4 Oct, Patkuli 6 Oct); Patkuli is almost the same outfit as Nõmme",
