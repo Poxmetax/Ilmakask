@@ -92,7 +92,7 @@ Outfit visible in frame: [PLAIN OUTFIT from the wardrobe library]. No logos, no 
 
 PLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.
 
-ACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. Natural blinks. [THE ONE PHYSICS RULE].
+ACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. 2-3 natural blinks spread through the take, mostly in the pauses (never a long stare without blinking). [THE ONE PHYSICS RULE].
 
 LIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.
 
