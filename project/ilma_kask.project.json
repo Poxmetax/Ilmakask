@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.39",
-  "updated_at": "2026-09-26T23:01:28+03:00",
+  "version": "1.0.40",
+  "updated_at": "2026-09-27T01:07:11+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -254,7 +254,7 @@
   },
   "quality_lock": {
     "melius_node": "ead3f832-bf83-49ff-b0cf-82487abd3f3d",
-    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Head turns: whenever she looks away (over her shoulder, at something that caught her attention, a thinking pause), the turn happens only in a real pause in the audio: she stops talking, turns her head at a natural, unhurried speed, holds her look there for a moment, turns back, and starts the next sentence only once her eyes are back on the lens. Never a quick flick timed to squeeze into a short gap.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
+    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. Temperature logic: her breath is visible only when the scene is frosty (around 0°C or colder); in any milder air her breath is never visible, no steam or vapour comes from her mouth or nose. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Head turns: whenever she looks away (over her shoulder, at something that caught her attention, a thinking pause), the turn happens only in a real pause in the audio: she stops talking, turns her head at a natural, unhurried speed, holds her look there for a moment, turns back, and starts the next sentence only once her eyes are back on the lens. Never a quick flick timed to squeeze into a short gap.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
     "rule": "wire as a text input into every video node (Melius appends it to the prompt)",
     "rewritten": "2026-09-26: identity only from the profile photo; one scene/one camera (matching sharpness, grain, colour; deep phone focus); light and shadow from the place; gravity and movement; 2026-09-26 camera line added (same phone, selfie, one image through one lens); 2026-09-26 gravity/physics for every visible detail incl. raindrops (user); 2026-09-26 eyes: 2-3 natural blinks per clip (user)"
   },
@@ -621,7 +621,7 @@
       "queue": "2026-10-08_reel_noblessner-sauna",
       "script": "Heat, then air, then a slow walk. Then something warm to eat. The cold part was always free.",
       "tip": "sauna ritual",
-      "status": "APPROVED + SCHEDULED (Metricool 381959668)",
+      "status": "APPROVED + SCHEDULED (remake with ambience)",
       "melius": {
         "seedance": "e13c4843-8784-414c-b3d9-4a416d7d87e5",
         "final_stitch": "bd1bfca1-5f65-42ac-9a19-4efbb2300c23",
@@ -680,7 +680,15 @@
             "qc": "8939274e: water lapping, clearly audible (not barely), checker hears a jump ~5 s; voice intact; 9 s no black"
           }
         },
-        "status": "awaiting user review of video 55ef5348 + mix b"
+        "status": "APPROVED by user 2026-09-27 (everything fine; note: no visible breath above freezing for future clips)",
+        "metricool": {
+          "old_post": 381959668,
+          "new_post_id": 382664983,
+          "uuid": "3821711244395889835",
+          "date": "2026-10-08T10:00 Europe/Tallinn",
+          "caption": "unchanged",
+          "media": "final mix b (stitch 20b8c8ee), copied to static.metricool.com"
+        }
       }
     },
     {
@@ -818,7 +826,7 @@
         "2026-10-01 carousel daylight": "carousel",
         "2026-10-05 carousel launch": "carousel",
         "2026-10-06 reel Patkuli": 382617897,
-        "2026-10-08 reel Noblessner": 381959668,
+        "2026-10-08 reel Noblessner": 382664983,
         "2026-10-12 reel market": 381959728,
         "2026-10-04 reel Pirita": 382275000,
         "2026-09-30 reel Town Hall": 382450130,
@@ -938,7 +946,8 @@
     "2026-09-26 tiny far-away people that are in the approved still tend to stay frozen in seedance reference-to-video even when the prompt names their motions; birds added in the prompt did move.",
     "2026-09-26 Patkuli v2: the checker called the wall people frozen and the wind too one-sided; the user watched and said the people are not frozen and the wind is right. Again: the user's eyes decide; checker notes about background motion are weak.",
     "2026-09-26 Noblessner stills: freckles came back when the still prompt paraphrased identity ('copy her face') instead of pasting the anchor paragraph verbatim and said 'no makeup'; with blue-hour night grain the model reads texture as freckles. Always paste the anchor paragraph verbatim, keep 'minimal natural makeup', add an approved clear-skin still as a second face reference, and run the skin checker on each variation (edge passes only the active version: switch versions to check both).",
-    "2026-09-26 ambience: two overlapping sfx pieces create an audible seam; for clip lengths sonilo-sfx cannot hit (e.g. 9 s), use one track: sonilo-video-sfx (length = video) or plan clip length to a sonilo duration (8/10 s)."
+    "2026-09-26 ambience: two overlapping sfx pieces create an audible seam; for clip lengths sonilo-sfx cannot hit (e.g. 9 s), use one track: sonilo-video-sfx (length = video) or plan clip length to a sonilo duration (8/10 s).",
+    "2026-09-27 Noblessner approved by the user although the checker failed timing/background/realism: checker video verdicts remain a weak second opinion; the user's eyes decide."
   ],
   "changelog": [
     {
@@ -1730,6 +1739,27 @@
       "next": [
         "user reviews Noblessner video; if approved, update Metricool 381959668"
       ]
+    },
+    {
+      "when": "2026-09-27T01:07:11+03:00",
+      "agent": "claude",
+      "app": "metricool",
+      "task": "Noblessner remake approved and rescheduled; breath rule",
+      "changed": [
+        "Metricool 8 Oct reel: video replaced with the Noblessner selfie remake + ambience, caption unchanged",
+        "quality lock + passport + brief: visible breath only when frosty (around 0 C or colder)"
+      ],
+      "ids": {
+        "metricool_new": 382664983,
+        "metricool_old": 381959668,
+        "uuid": "3821711244395889835",
+        "stitch": "20b8c8ee"
+      },
+      "credits_spent": 0,
+      "result": "Noblessner approved and rescheduled",
+      "next": [
+        "review market reel (12 Oct, 381959728: old settings, camel coat repeat)"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -1893,7 +1923,6 @@
       "3 Nõmme 2 Oct": "dark olive shell + charcoal fleece; high ponytail + thin headband; silver studs",
       "8 Pirita 4 Oct": "dark olive windproof jacket + cream knit collar; hair down in wind",
       "2 Patkuli 6 Oct (old settings)": "(being replaced) open dark olive shell + charcoal zip fleece; high ponytail",
-      "6 Noblessner 8 Oct (old settings)": "long dark padded coat; hair loose",
       "5 Viru bog 10 Oct": "moss-green waterproof shell + grey merino; rust knit beanie; hair loose under the beanie; thin gold huggies",
       "4 market 12 Oct (old settings)": "camel overcoat + cream sweater; paper bag prop",
       "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar; single low braid over one shoulder with front strands out of the hood; thin silver hoops",
@@ -1925,5 +1954,6 @@
       "SHOT BREAKDOWN: a separate silent line for the turn, e.g. '3.9-5.4 s: silent, lips closed: something catches her eye, she turns her head over her shoulder, holds a moment, turns back to the lens'; the next phrase line starts after it."
     ],
     "status": "rule adopted 2026-09-26; ellipsis-pause method to be verified on the next clip"
-  }
+  },
+  "breath_rule_user_2026_09_27": "Visible breath (steam when exhaling) only when it is frosty outside (around 0°C or colder). Every prompt states the temperature; above freezing: no visible breath, no vapour from mouth or nose. (user on Noblessner remake at ~7°C)"
 }

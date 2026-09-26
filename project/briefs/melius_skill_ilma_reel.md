@@ -162,3 +162,6 @@ A head turn away from the lens gets its own, slightly longer silent beat (about 
 
 ## Makeup (user rule 2026-09-26)
 Makeup is allowed and may vary by scene, always realistic and natural-looking. Freckles are not makeup and never appear. Default line: "minimal natural makeup"; never write "no makeup". Paste the identity anchor paragraph verbatim in every still and video prompt.
+
+## Breath and temperature (user rule 2026-09-27)
+State the temperature in every prompt. Her breath is visible only when it is frosty (around 0°C or colder); above freezing there is no visible breath and no vapour from her mouth or nose.
