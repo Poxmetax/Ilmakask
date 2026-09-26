@@ -66,7 +66,7 @@ Every timing failure on this project came from footage and voice being made for 
 - Fabric: heavy wool swings slowly and creases at the elbows; nylon shells rustle; knit collars sit, they never float.
 - Surfaces: boardwalk planks dip a few millimetres under each step; wet cobbles and paving reflect and the reflections move with the camera.
 - Breath: small chest rise; faster after exertion, then settles. Breath vapour only at about 5 °C or colder; sauna steam rises off hair and skin, drifts downwind and fades within a second.
-- Rain: drizzle falls straight or with the stated wind; droplets bead on waxed fabric; puddles ripple.
+- Rain: drizzle falls straight or with the stated wind; new drops keep landing, bead on waxed fabric, grow, merge and run DOWN along creases and seams, then drip off edges; never float, slide sideways or freeze; puddles ripple. (User rule: every visible detail in focus obeys gravity and physics for that scene.)
 - Camera: genuine handheld phone, small shake, one autofocus breath allowed; never a gimbal.
 
 ## 6. Light, shadow and camera (write it, don't hope for it)

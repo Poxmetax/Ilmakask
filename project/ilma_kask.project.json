@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.30",
-  "updated_at": "2026-09-26T17:02:54+03:00",
+  "version": "1.0.31",
+  "updated_at": "2026-09-26T17:24:53+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -235,10 +235,11 @@
       "Boardwalk planks dip a few millimetres under each step; wet cobbles and paving show reflections that move with the camera.",
       "Breathing: small chest rise; after exertion faster for the first seconds, then settles.",
       "Cold: breath vapour only at about 5 °C or below; steam off hair/skin after sauna rises and drifts downwind and fades within a second.",
-      "Water and rain: drizzle falls straight or with the stated wind; droplets bead on waxed fabric; puddles ripple on impact.",
+      "Water and rain (USER 2026-09-26: every detail obeys gravity and physics): rain falls straight down or with the stated wind at a steady speed; drops land on the waxed fabric, bead up, grow, merge and run DOWN the slope of the hood and shoulders along the seams and folds, then drip from the lowest edges (hood rim, cuffs); drops never float, hover, slide sideways against gravity or move upward; new drops keep landing so the beading changes; wet surfaces shine and puddles ripple on impact; damp hair clings and hangs heavier",
       "Camera: genuine handheld phone, small shake, one autofocus breath allowed; never a gimbal, never a crane."
     ],
-    "one_rule_per_clip": "Name the single physics rule the clip lives or dies by in TOP PRIORITY."
+    "one_rule_per_clip": "Name the single physics rule the clip lives or dies by in TOP PRIORITY.",
+    "user_rule_2026_09_26": "Every detail in every scene obeys gravity and real physics for that scene (rain, water, hair, fabric, props)"
   },
   "lighting": {
     "method": [
@@ -252,9 +253,9 @@
   },
   "quality_lock": {
     "melius_node": "ead3f832-bf83-49ff-b0cf-82487abd3f3d",
-    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and movement: clothing and hair have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding; the background is live (people and things move naturally), never a still photo; buildings and walls stay rigid and straight.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
+    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. The background is live (people and things move naturally), never a still photo; buildings and walls stay rigid and straight.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
     "rule": "wire as a text input into every video node (Melius appends it to the prompt)",
-    "rewritten": "2026-09-26: identity only from the profile photo; one scene/one camera (matching sharpness, grain, colour; deep phone focus); light and shadow from the place; gravity and movement; 2026-09-26 camera line added (same phone, selfie, one image through one lens)"
+    "rewritten": "2026-09-26: identity only from the profile photo; one scene/one camera (matching sharpness, grain, colour; deep phone focus); light and shadow from the place; gravity and movement; 2026-09-26 camera line added (same phone, selfie, one image through one lens); 2026-09-26 gravity/physics for every visible detail incl. raindrops (user)"
   },
   "prompt_template_talking_clip": "Vertical 9:16 handheld phone selfie video, one continuous [N]-second take, photorealistic, her own phone's wide front camera held at arm's length slightly above eye level (phone and arm out of frame). Tight framing from mid-chest up, head in the upper third. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): [identity.anchor_paragraph VERBATIM]\nOutfit visible in frame: [PLAIN OUTFIT]. No logos, no text.\n\nPLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.\n\nACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. Natural blinks. [ONE PHYSICS RULE].\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\n[lighting.template filled]\n\nBACKGROUND LIFE: [locations.<id>.crowd].\n\nAmbient sound: [locations.<id>.sound], ducked well under her voice.\n\nTIMING (the take is exactly [N] s and follows the audio track): her lips move ONLY while her words are heard, from about [start] s to [end] s. Between sentences the mouth pauses with the voice. From [end] s to [N].0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n[one line per phrase group from `project_state.py beats --clip N`: \"a-b s: says \\\"...\\\" with ONE gesture\", about one gesture per 1.5-2.5 s of speech, first line 0.0-[start] s silent, last line [end]-[N].0 s silent closed-mouth hold]",
   "locations": {
@@ -571,7 +572,7 @@
       "queue": "2026-10-14_reel_kalamaja-rain",
       "script": "Missed yesterday? Don't catch up. Don't double today. Just do today's box.",
       "tip": "failure rule",
-      "status": "REVIEW: selfie still A (2 x 4K) waiting for the user's pick; then video 6 s (1,080 credits)",
+      "status": "REVIEW: selfie video 07ff6249; timing PASS; checker says raindrops look frozen; waiting for the user's eyes",
       "melius": {
         "seedance": "88878aff-e2cb-47fc-9dfa-53d653a0a8c4",
         "vo": "5710e088-e2e5-4f44-93a7-612b50169eb2",
@@ -586,7 +587,15 @@
             "f1027d61-d50c-49ab-ab39-76f35c232b4a",
             "322c076a-029b-4909-9821-9d7f89440f82"
           ],
-          "credits": 134
+          "credits": 134,
+          "user_pick": "v1 f1027d61 (USER: more style)"
+        },
+        "video_selfie": {
+          "version": "07ff6249-4520-4ba0-9d33-67682e80f8d6",
+          "run": "55a86c55-49c4-43eb-b699-33dfdf28e39e",
+          "inputs": "face anchor + selfie still A v1 (plates removed; still is the only place reference), VO 5710e088, quality lock (with gravity/rain physics)",
+          "credits": 1080,
+          "qc_gemini": "TIMING PASS 9 (voice 0.1-4.9 s, ~0.8 s closed hold); RAIN PHYSICS FAIL 10: drops on jacket/hood look frozen, no visible falling drizzle (one checker only)"
         }
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 6-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing; a few raindrops at the lens edge are fine.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, in a single low braid over one shoulder, a few front strands framing her face under the hood; thin plain silver hoop earrings; minimal natural makeup.\nOutfit visible in frame: a completely plain navy waxed rain jacket with the hood up (it stays up), no text, no letters, no logo, no badge anywhere on it; a plain knit collar underneath.\n\nPLACE (from @[1280px-Kalevi_29_Kalamaja_Tallinn]{8221cee6-8a96-460e-bb18-0dc97d3e6b25} and @[1280px-Elamu_Leigeri_5,_Kalamaja,_Tallinn]{044b08fa-8c4c-4bad-b12c-02ff059747b0}): a quiet residential street in Kalamaja, Tallinn, Estonia, behind her: historic wooden apartment houses with painted wooden siding in beige and dark red-brown, white-framed windows, red roofs with chimneys. Late afternoon, light drizzle: fine rain streaks visible against the dark doorways, a wet sheen on the street. No readable house numbers, signs or number plates. No other people.\n\nACTION: she walks steadily along the pavement, head and shoulders dipping gently with each step; droplets bead on the waxed fabric of the hood. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: soft grey overcast from above; muted beige and red-brown bounce from the wooden facades onto her face. Light constant.\n\nAmbient sound: light rain on the hood, footsteps on wet asphalt, ducked under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.2 s. Between sentences the mouth pauses with the voice. From 5.2 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.2 s: says \"Missed yesterday?\" with eyebrows up and a small smile.\n1.5-3.7 s: says \"Don't catch up. Don't double today.\" with one small shake of the head on each sentence.\n4.0-5.2 s: says \"Just do today's box.\" with a steady look into the lens and one nod.\n5.2-6.0 s: silent: lips closed and still, rain ticking on the hood, she keeps walking.",
@@ -801,7 +810,8 @@
     "2026-09-26 USER: vary clothes and headwear across clips and places (wardrobe library + no-repeat rule)",
     "2026-09-26 Mechanics: if node_create times out, the node may exist WITHOUT its input edges; check edges (run inputs list) before running, or the run silently falls back to text-to-image",
     "2026-09-26 Seedance reference-to-video + a walking selfie over a wide landscape: both checkers see the woman bobbing while the background stays nearly locked (layered look). Candidate fixes: standing selfie (less motion), or start-frame image-to-video from the approved still followed by video-to-video with the VO for native lip sync",
-    "2026-09-26 USER: the AI checkers flagged a layered look on the Viru bog selfie; the user saw it as perfect. The user's eyes decide"
+    "2026-09-26 USER: the AI checkers flagged a layered look on the Viru bog selfie; the user saw it as perfect. The user's eyes decide",
+    "2026-09-26 Drops baked into the look-reference still tend to stay frozen in the video (Gemini on Kalamaja). If the user sees it: make the still with a lightly damp jacket (few drops) and let the video add landing/running drops"
   ],
   "changelog": [
     {
@@ -1417,6 +1427,24 @@
       "next": [
         "User picks; render 6 s selfie video"
       ]
+    },
+    {
+      "when": "2026-09-26T17:24:53+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Kalamaja selfie video + physics rule in quality lock; braids added",
+      "changed": [
+        "88878aff version 07ff6249",
+        "quality lock: gravity and physics for every visible detail incl. raindrops",
+        "wardrobe.library.hairstyles + braids",
+        "QC 669e7260: timing PASS, rain physics FAIL (Gemini)"
+      ],
+      "ids": {},
+      "credits_spent": 1098,
+      "result": "needs review",
+      "next": [
+        "User reviews Kalamaja"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -1494,7 +1522,9 @@
       "Headwear varies across clips (beanies, cap, beret, headband, hood, bucket hat, none); never the same headwear in consecutive posts",
       "Earrings: public places = varied styles; private places = none",
       "Log each clip's outfit in wardrobe.used before rendering; pick from the library to avoid repeats; approved clips are never changed for wardrobe",
-      "USER 2026-09-26: vary hairstyles from time to time (with clothes and earrings) to keep content fresh and real; never the same hairstyle in consecutive posts; approved clips are not redone for this"
+      "USER 2026-09-26: vary hairstyles from time to time (with clothes and earrings) to keep content fresh and real; never the same hairstyle in consecutive posts; approved clips are not redone for this",
+      "USER 2026-09-26: braids are part of the hairstyle rotation (several braid styles)",
+      "USER 2026-09-26: braids are part of the rotation (single, French, Dutch, fishtail, side, crown, braided bun)"
     ],
     "library": {
       "outerwear": [
@@ -1560,7 +1590,17 @@
         "half-up half-down",
         "claw clip twist",
         "sleek low bun (evening)",
-        "under a beanie or hood with front strands out"
+        "under a beanie or hood with front strands out",
+        "side braid (loose)",
+        "French braid down the back",
+        "Dutch braid",
+        "fishtail braid over one shoulder",
+        "crown braid",
+        "two braided pigtails (sporty)",
+        "two Dutch braids",
+        "loose side braid with face-framing strands",
+        "crown braid (braided around the head)",
+        "braided low bun"
       ]
     },
     "used": {
@@ -1578,5 +1618,6 @@
       "camel coat + cream knit twice (Town Hall 30 Sep, market 12 Oct)",
       "Fix only in clips the user decides to remake (Patkuli, Noblessner, market are pending the scheduled-reel review); approved clips stay as they are"
     ]
-  }
+  },
+  "physics_rule_user_2026_09_26": "Every visible detail in focus obeys gravity and physics for that scene: raindrops bead on waxed fabric, grow, merge and run DOWN the fabric along creases and drip off edges; new drops keep landing; nothing floats, freezes or moves against gravity"
 }
