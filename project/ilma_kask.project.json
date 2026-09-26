@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.19",
-  "updated_at": "2026-09-26T13:43:03+03:00",
+  "version": "1.0.20",
+  "updated_at": "2026-09-26T14:04:38+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -126,7 +126,7 @@
         "hair": "platinum/white-blonde, faint creamy roots, long straight fine, flyaways, part slightly off-centre (viewer's left), worn down"
       }
     },
-    "earrings": "optional, per scene; vary style and shape across days; 'no earrings' is fine (USER 2026-09-26)",
+    "earrings": "optional, per scene, vary by day (studs, hoops, none). USER 2026-09-26: never re-render or change an already rendered scene just to add or remove earrings",
     "beauty_marks": "barely visible, only as faint as in the profile photo (USER 2026-09-26)"
   },
   "voice": {
@@ -335,7 +335,7 @@
       "queue": "2026-09-30_reel_town-hall-square",
       "script": "Ten minutes outside before nine. Real sky, not a window. Grey sky still counts.",
       "tip": "daylight before 9",
-      "status": "REVIEW: video from still C v1 (ccc8b5f9); timing PASS, both checkers flag sharpness mismatch (her sharper than background) and stiff motion; waiting for the user's eyes",
+      "status": "APPROVED + SCHEDULED (Metricool 382450130, 2026-09-30 10:00 Tallinn); video ccc8b5f9 from still C v1",
       "melius": {
         "seedance": "e1b86a4e-ad2e-48c4-abad-67f815702954",
         "vo": "8b4688b6-3e66-459a-969f-b865c27e54c0",
@@ -393,7 +393,8 @@
             "timing_gemini": "PASS 9/10: voice and lips 0.2-6.1 s, 0.9 s closed hold; brief smile-stretch 4.5-4.8 s; garbled sign text right side; pigeons glide",
             "realism_gemini": "FAIL 10: she is sharper than the background, face ~+0.5-1 stop brighter/warmer, flat front light, smooth skin, gliding walk, stiff coat, background mostly frozen",
             "realism_qwen": "FAIL; SHARPNESS MATCH FAIL; TIMING PASS: face slightly brighter/warmer, she sharper than a softer painted-looking background, waxy skin, stiff hair/coat, background people slide"
-          }
+          },
+          "user_verdict": "USER 2026-09-26: sharpness way better, lighting consistent; no garbled sign or sliding pigeons seen; still background people are natural; minor details not visible at this length -> approved unchanged"
         }
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 7-second take, photorealistic, modern flagship phone front camera held at arm's length (the phone and arm are out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing, no beauty filter, no colour grade.\n\nLOOK AND LIGHT REFERENCE: @[Town Hall still C — profile photo only, one scene one camera (GPT Image 2.5, 4K)]{220e2f9a-a9f3-4758-876a-4a8bf58d2cac} is the approved look of this shot: the same woman looking straight into the lens, the same framing, the same coat, hair and earrings, the same natural light and skin tone on her face, the same plain grey-white overcast sky, the same square behind her, and the same sharpness and detail on her and on the square. The video starts from this exact look and keeps its light, colour, skin tone, sharpness and sky for the whole take.\n\nWOMAN (her face comes only from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match it exactly for the whole take; identity only, never its lighting): adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, styled exactly as in the look reference; earrings exactly as in the look reference (none if it shows none); minimal natural makeup.\nOutfit visible in frame: collar of a plain camel double-breasted wool coat open over a plain cream chunky knit. No logos, no text.\n\nPLACE (from @[Tallinn_-_Town_Hall_Square_(Raekoja_plats)]{ab212c04-b15f-4bb7-a73d-5492b41ad799}): Tallinn Town Hall Square, Old Town, Estonia, behind her: the Gothic Town Hall with its slim straight tower and the colourful medieval merchant houses with red roofs, wet grey cobblestones. Buildings stay rigid and straight. Autumn morning, plain soft grey-white overcast sky exactly like the real square: no dramatic clouds, no texture, no tint. No readable signs, no text.\n\nACTION: she walks slowly across the square, talking to the lens like telling a friend a tiny habit; her head and shoulders dip gently with each step (heel-to-toe weight, never gliding) and the background moves past with real parallax. Gestures follow the SHOT BREAKDOWN below. Natural blinks. A light breeze from frame-right moves loose strands the same way throughout; the coat hangs with real weight.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: exactly the light of the look reference. She is lit only by the same soft overcast daylight that lights the facades, with soft natural shadows under her brows, nose and chin falling the same way as the shadows on the square. One neutral daylight white balance for her and the square together; natural healthy skin tone with a little colour in her cheeks and lips from the cool air, never pale, never grey, never brighter than the facades. No studio light, no beauty light, no rim light, no glow on her hair. Light constant.\n\nONE SCENE, ONE CAMERA: she and the square are in the same phone focus with the same sharpness, grain and colour; no blurred background, no cut-out look.\n\nBACKGROUND LIFE: the square is live, never a still photo: a few people far behind her walk at a natural pace and change position, pigeons peck and hop on the cobbles, all small and far away, faces too small to read. Nobody crosses in front of her.\n\nAmbient sound: soft footsteps on cobbles, distant unintelligible voices, ducked under her voice.\n\nTIMING (the take is exactly 7 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 6.3 s. Between sentences the mouth pauses with the voice. From 6.3 s to 7.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-2.6 s: says \"Ten minutes outside before nine.\" and glances up at the sky.\n2.9-4.8 s: says \"Real sky, not a window.\" with a small head tilt toward the square.\n5.1-6.3 s: says \"Grey sky still counts.\" with a warm half-smile.\n6.3-7.0 s: silent: lips closed and still, soft closed-mouth smile, she keeps walking.",
@@ -430,7 +431,7 @@
         "vo_ms": 7576,
         "plan_duration_s": 8
       },
-      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 8-second take, photorealistic, flagship phone night mode, phone held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Mild natural noise only in the dark sky; real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, in a high ponytail with a thin plain headband, ears uncovered; small plain silver stud earrings; minimal natural makeup.\nOutfit visible in frame: plain dark olive shell zipped over a plain charcoal fleece, a thin plain reflective strip on the shoulder. No logos, no text.\n\nPLACE: the lit Nõmme–Harku health trail in Tallinn, Estonia: a wide packed-gravel path through tall straight Scots pines on sandy ground, slim trail lamps on poles along one side, the trail curving away into the dark trees behind her. Dusk: deep blue sky with a little light low behind the pines; the trail lamps are ON. About 8°C, no breath vapour. No signs, no text.\n\nACTION: she walks briskly, head and shoulders dipping with each step, ponytail swinging; lamplight slides across her face as she passes a lamp. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: key from the trail lamp at frame-right lighting her face from the side and front; cool blue dusk fill; never brighter than the environment; dusk constant, no time-lapse.\n\nBACKGROUND LIFE: one tiny distant runner with a headlamp far behind, fading into the trees.\n\nAmbient sound: gravel footsteps, breeze in the pines, ducked under her voice.\n\nTIMING (the take is exactly 8 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 7.5 s. Between sentences the mouth pauses with the voice. From 7.5 s to 8.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.8 s: says \"This loop stays lit all night.\" and glances up at the lamp.\n2.1-4.8 s: says \"So too dark isn't a reason anymore.\" with a small raised-eyebrow look at the lens.\n5.1-7.5 s: says \"Walk it if running feels like a fight.\" with an easy laugh in the eyes.\n7.5-8.0 s: silent: lips closed and still, relaxed closed-mouth smile, she keeps walking.",
+      "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 8-second take, photorealistic, flagship phone night mode, phone held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Mild natural noise only in the dark sky; real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, in a high ponytail with a thin plain headband, ears uncovered; small plain silver stud earrings; minimal natural makeup.\nOutfit visible in frame: plain dark olive shell zipped over a plain charcoal fleece, a thin plain reflective strip on the shoulder. No logos, no text.\n\nPLACE: the lit Nõmme–Harku health trail in Tallinn, Estonia: a wide packed-gravel path through tall straight Scots pines on sandy ground, slim trail lamps on poles along one side, the trail curving away into the dark trees behind her. Dusk: deep blue sky with a little light low behind the pines; the trail lamps are ON. About 8°C, no breath vapour. No signs, no text.\n\nACTION: she walks briskly, head and shoulders dipping with each step, ponytail swinging; lamplight slides across her face as she passes a lamp. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: key from the trail lamp at frame-right lighting her face from the side and front; cool blue dusk fill; never brighter than the environment; dusk constant, no time-lapse.\n\nBACKGROUND LIFE: one tiny distant runner with a headlamp far behind, fading into the trees.\n\nAmbient sound: gravel footsteps, breeze in the pines, ducked under her voice.\n\nTIMING (the take is exactly 8 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 7.5 s. Between sentences the mouth pauses with the voice. From 7.5 s to 8.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.8 s: says \"This loop stays lit all night.\" and glances up at the lamp.\n2.1-4.8 s: says \"So too dark isn't a reason anymore.\" with a small raised-eyebrow look at the lens.\n5.1-7.5 s: says \"Walk it if running feels like a fight.\" with an easy laugh in the eyes.\n7.5-8.0 s: silent: lips closed and still, relaxed closed-mouth smile, she keeps walking.",
       "prompt_timed_to_vo": true
     },
     {
@@ -603,7 +604,8 @@
         "2026-10-06 reel Patkuli": 381959592,
         "2026-10-08 reel Noblessner": 381959668,
         "2026-10-12 reel market": 381959728,
-        "2026-10-04 reel Pirita": 382275000
+        "2026-10-04 reel Pirita": 382275000,
+        "2026-09-30 reel Town Hall": 382450130
       }
     },
     "stan": {
@@ -696,7 +698,12 @@
     "An edge passes only a node's ACTIVE version. To feed two versions of one node, copy one into a file node (node_create type file, sourceNodeId) before switching the active version.",
     "2026-09-26 The profile photo is the only identity source. Our text had invented freckles and gold hoops; the video models then painted them on. Describe only what the photo shows.",
     "2026-09-26 A 'background slightly softer' instruction caused the person/background sharpness mismatch; use phone deep focus with the same grain and detail on both.",
-    "2026-09-26 Melius may pass multi-image inputs in a different order from the edges; describe each image ('the portrait photo of the woman', 'the photo of the square') instead of 'first/second'."
+    "2026-09-26 Melius may pass multi-image inputs in a different order from the edges; describe each image ('the portrait photo of the woman', 'the photo of the square') instead of 'first/second'.",
+    "2026-09-26 USER: do not change an already rendered scene just for earrings; earrings are a free styling choice per clip",
+    "2026-09-26 USER: background people standing still is natural (people stop to talk); not a defect",
+    "2026-09-26 AI checkers claimed a garbled sign and sliding pigeons in the Town Hall clip; the user saw neither. Checkers over-report small defects; only fix what the user sees",
+    "2026-09-26 USER: in a 7 s reel, minor details most viewers only catch when pausing are not worth a re-render; fix identity, sharpness, light and lip sync",
+    "2026-09-26 Mechanics: a Seedance node's playable MP4 URL is not in canvas_content; display_canvas returns nodes[].mediaUrl (signed cdn.melius.com .mp4) which Metricool accepts and copies into its own storage"
   ],
   "changelog": [
     {
@@ -1132,6 +1139,23 @@
       "result": "needs review",
       "next": [
         "User reviews Town Hall video; if sharpness mismatch is visible, test fix (drop the low-res plate input so the 4K still supplies the background; or standing instead of walking)"
+      ]
+    },
+    {
+      "when": "2026-09-26T14:04:38+03:00",
+      "agent": "Claude",
+      "app": "metricool",
+      "task": "Town Hall reel approved by user and scheduled",
+      "changed": [
+        "Metricool 382450130: 2026-09-30 10:00 Tallinn, REEL, AI label",
+        "clips.1 APPROVED + SCHEDULED",
+        "learnings: earrings never a re-render reason; standing background people fine; checker over-reporting; display_canvas mediaUrl"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "Clip 3 Nõmme: still-first (needs a location plate)"
       ]
     }
   ],
