@@ -92,7 +92,7 @@ Outfit visible in frame: [PLAIN OUTFIT from the wardrobe library]. No logos, no 
 
 PLACE (from @[PLATE TITLE]{PLATE NODE ID}): [what is behind her]. [TIME, WEATHER]. No readable signs.
 
-ACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. 2-3 natural blinks spread through the take, mostly in the pauses (never a long stare without blinking). [THE ONE PHYSICS RULE].
+ACTION: [one continuous action]. Gestures follow the SHOT BREAKDOWN below. EYES: about [PICK 3-7, at most 8] natural blinks at random, uneven moments with no rhythm (pauses, mid-phrase, a slower one on a glance, sometimes two close together), each marked at an irregular time in the SHOT BREAKDOWN; never a stare longer than about 2 seconds. [THE ONE PHYSICS RULE].
 
 LIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.
 
@@ -150,3 +150,9 @@ You cannot write the passport yourself, so finish every task by printing this bl
  "result": "ok | failed | needs review",
  "next": ["<what the next agent should do>"]}
 ```
+
+## Ambience (user rule 2026-09-26)
+Seedance returns only the provided voice (digital silence otherwise). Every clip gets a barely-heard, scene-true ambience added after the render: a text-to-sfx track (elevenlabs-sfx or sonilo-sfx; prompt: very quiet, distant, low level, no voices, no music) mixed under the video with a stitch node (video as the clip, sfx on the stitch audio handle as an audio overlay at 0 s). Check that the voice is intact and clearly louder.
+
+## Live background (user rule 2026-09-26)
+Background people never stand frozen: give each one a concrete motion for the whole take (strolls, turns and points, lifts a phone and walks off) and add other live elements (birds, smoke, trees, traffic, water).
