@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Paste `identity.anchor_paragraph` from the passport word for word. Only [HAIR STATE FOR THIS SCENE] and [EARRINGS FOR THIS SCENE] change. Earrings: in PUBLIC places (streets, squares, markets, trails, parks) she wears earrings in varied styles (studs, huggies, thin hoops; silver or gold); in PRIVATE places (home, private sauna) none. Never re-render a finished scene just for earrings. Face details never change; makeup or hair colour change only when the user chooses.
 - Identity comes ONLY from the profile photo (face anchor). Describe and check only what it shows: no freckles, tiny beauty marks only as faint as in the photo, thick straight dark-blonde brows clearly darker than the platinum hair (never golden or yellow), light blue slightly hooded eyes, high cheekbones and defined jaw. Never add features the photo does not show.
 - Body: slim athletic, toned not bulky, 172 cm. Keep hands, phone and feet out of frame (tight mid-chest-up framing) unless the shot truly needs them.
-- Clothing: completely plain, no logos, letters, badges or patches anywhere. Reuse the outfit already written for that clip in `clips[].prompt`.
+- Clothing: completely plain, no logos, letters, badges or patches anywhere. Pick each new clip's outfit and headwear from `wardrobe.library` in the passport: weather and place first, no outerwear repeated within 3 consecutive posts, never the same main colour or headwear in consecutive posts; log it in `wardrobe.used`. Approved clips keep their outfit.
 - Wire the QUALITY LOCK text node `ead3f832-bf83-49ff-b0cf-82487abd3f3d` into every video node as a text input.
 
 ## 3. Voice lock
@@ -77,12 +77,13 @@ Every timing failure on this project came from footage and voice being made for 
 4. Light is constant for the whole take (not a time-lapse). A sunrise must read as a sunrise: a small bright white-gold sun and a crisp pale sky; a dim orange low sun reads as a sunset.
 5. Per-location light, sound and crowd notes are in `locations` in the passport. Location plates are the photo nodes listed there; always attach the plate as a reference image and name it by description ('the photo of the square'), never by order: Melius may pass inputs in a different order.
 6. ONE SCENE, ONE CAMERA (user rule, 26 Sep 2026): one and the same person, one clip, one scene. She and the place share the same sharpness, detail, grain, colour and white balance (phone deep focus: face and background in focus together); never write 'background softer', 'soft-focus' or 'shallow depth of field'. Shadows fall the same way on her as in the scene; hair and clothes obey gravity and the scene's wind.
-7. STILL FIRST: make a 4K still (gpt-image-2.5-sunburst image-to-image: face anchor + plate), the user approves it, then wire the approved still as a reference_image into the video node as the LOOK AND LIGHT REFERENCE. Never fix look or light on video; small fixes are an image edit of the picked still (67 credits a try). Never use nano-banana-2 for identity stills.
+7. SAME PHONE, SAME WAY (user rule, 26 Sep 2026): she films every clip herself, so every clip and every still is a front-camera selfie from the same phone at arm's length, wide lens, same framing and colour, light handshake. Never friend-held, propped, tripod or gimbal; never a zoom or dolly zoom; she and the place are one image through one lens that move together (a friend-held walking shot made the Viru bog clip look like two pasted layers with different zoom). Passport: `camera_standard`.
+8. STILL FIRST: make a 4K still (gpt-image-2.5-sunburst image-to-image: face anchor + plate), the user approves it, then wire the approved still as a reference_image into the video node as the LOOK AND LIGHT REFERENCE. Never fix look or light on video; small fixes are an image edit of the picked still (67 credits a try). Never use nano-banana-2 for identity stills.
 
 ## 7. Talking-clip prompt template (fill every bracket; an unfilled bracket is a bug)
 
 ```
-Vertical 9:16 handheld phone [selfie|companion-held|propped] video, one continuous [N]-second take, photorealistic, modern flagship phone [front camera held at arm's length (phone and arm out of frame)|held by a friend|propped on a ledge]. Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.
+Vertical 9:16 handheld phone selfie video, one continuous [N]-second take, photorealistic, her own phone's wide front camera held at arm's length slightly above eye level (phone and arm out of frame). Tight framing from mid-chest up, head in the upper third. Real skin with visible pores exactly as in her identity photo, no smoothing.
 
 LOOK AND LIGHT REFERENCE: @[APPROVED STILL TITLE]{STILL NODE ID} is the approved look of this shot; the video starts from this exact look and keeps its light, colour, skin tone, sharpness and sky for the whole take.
 
