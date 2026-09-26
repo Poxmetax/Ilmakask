@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.21",
-  "updated_at": "2026-09-26T14:16:14+03:00",
+  "version": "1.0.22",
+  "updated_at": "2026-09-26T14:44:48+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -424,7 +424,7 @@
       "queue": "2026-10-02_reel_nomme-lit-loop",
       "script": "This loop stays lit all night. So too dark isn't a reason anymore. Walk it if running feels like a fight.",
       "tip": "lit trails remove the dark excuse",
-      "status": "REVIEW: still A (2 x 4K, text-described trail) waiting for the user's pick; then video 8 s (1,440 credits)",
+      "status": "REVIEW: video from still A v1 (3332651d); timing PASS; waiting for the user's eyes",
       "melius": {
         "seedance": "3e69a9cc-dbbb-4992-b3e2-15b492f93d36",
         "vo": "aa197573-1f14-4ee5-9c29-63c2d1d3e1a8",
@@ -439,7 +439,16 @@
             "17dce942-b86c-4d81-b34f-399a78acef1d"
           ],
           "credits": 134,
-          "place_facts": "pine forest; 5 km loop lit all night, Harku ring lit until 23:00 (terviserajad.ee, checked 2026-09-26)"
+          "place_facts": "pine forest; 5 km loop lit all night, Harku ring lit until 23:00 (terviserajad.ee, checked 2026-09-26)",
+          "user_pick": "v1 75d58557 (USER: lamp light more realistic, person closer to the profile photo; face a bit brighter than the scene is fine because it is not fully dark yet)"
+        },
+        "video_still_a": {
+          "version": "3332651d-3b15-4f0a-b715-6937fc8d8503",
+          "run": "636875a6-a471-46f1-95db-2f134dde4517",
+          "inputs": "face anchor + still A v1 (reference_image), VO aa197573 (audio), quality lock",
+          "duration_s": 8,
+          "credits": 1440,
+          "qc_gemini": "TIMING PASS 9: voice 0.1-7.5 s, lips 0.0-7.7 s, no lips-without-voice, 'fight' complete, ~0.3 s closed hold; flags her sharper than a blurred background; no big problems"
         }
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 8-second take, photorealistic, flagship phone night mode, phone held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Mild natural noise only in the dark sky; real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, in a high ponytail with a thin plain headband, ears uncovered; small plain silver stud earrings; minimal natural makeup.\nOutfit visible in frame: plain dark olive shell zipped over a plain charcoal fleece, a thin plain reflective strip on the shoulder. No logos, no text.\n\nPLACE: the lit Nõmme–Harku health trail in Tallinn, Estonia: a wide packed-gravel path through tall straight Scots pines on sandy ground, slim trail lamps on poles along one side, the trail curving away into the dark trees behind her. Dusk: deep blue sky with a little light low behind the pines; the trail lamps are ON. About 8°C, no breath vapour. No signs, no text.\n\nACTION: she walks briskly, head and shoulders dipping with each step, ponytail swinging; lamplight slides across her face as she passes a lamp. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: key from the trail lamp at frame-right lighting her face from the side and front; cool blue dusk fill; never brighter than the environment; dusk constant, no time-lapse.\n\nBACKGROUND LIFE: one tiny distant runner with a headlamp far behind, fading into the trees.\n\nAmbient sound: gravel footsteps, breeze in the pines, ducked under her voice.\n\nTIMING (the take is exactly 8 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 7.5 s. Between sentences the mouth pauses with the voice. From 7.5 s to 8.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.8 s: says \"This loop stays lit all night.\" and glances up at the lamp.\n2.1-4.8 s: says \"So too dark isn't a reason anymore.\" with a small raised-eyebrow look at the lens.\n5.1-7.5 s: says \"Walk it if running feels like a fight.\" with an easy laugh in the eyes.\n7.5-8.0 s: silent: lips closed and still, relaxed closed-mouth smile, she keeps walking.",
@@ -714,7 +723,8 @@
     "2026-09-26 USER: background people standing still is natural (people stop to talk); not a defect",
     "2026-09-26 AI checkers claimed a garbled sign and sliding pigeons in the Town Hall clip; the user saw neither. Checkers over-report small defects; only fix what the user sees",
     "2026-09-26 USER: in a 7 s reel, minor details most viewers only catch when pausing are not worth a re-render; fix identity, sharpness, light and lip sync",
-    "2026-09-26 Mechanics: a Seedance node's playable MP4 URL is not in canvas_content; display_canvas returns nodes[].mediaUrl (signed cdn.melius.com .mp4) which Metricool accepts and copies into its own storage"
+    "2026-09-26 Mechanics: a Seedance node's playable MP4 URL is not in canvas_content; display_canvas returns nodes[].mediaUrl (signed cdn.melius.com .mp4) which Metricool accepts and copies into its own storage",
+    "2026-09-26 Mechanics: running a QC text node that consumes a video returns inputs[].url = the video's direct signed .mp4 link (same as display_canvas mediaUrl) - handy for review links and Metricool"
   ],
   "changelog": [
     {
@@ -1182,6 +1192,22 @@
       "result": "needs review",
       "next": [
         "User picks a still; then wire it into video 3e69a9cc with the new identity prompt and render 8 s"
+      ]
+    },
+    {
+      "when": "2026-09-26T14:44:48+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Clip 3 Nõmme: video rendered from user-picked still A v1",
+      "changed": [
+        "3e69a9cc version 3332651d (8 s, 720p), prompt with photo-only identity + look reference",
+        "QC node b2ea48a1 Gemini: TIMING PASS 9"
+      ],
+      "ids": {},
+      "credits_spent": 1449,
+      "result": "needs review",
+      "next": [
+        "User reviews; if approved, check Metricool and schedule 2 Oct 10:00"
       ]
     }
   ],
