@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.25",
-  "updated_at": "2026-09-26T15:13:49+03:00",
+  "version": "1.0.26",
+  "updated_at": "2026-09-26T15:31:18+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -481,7 +481,7 @@
       "queue": "2026-10-10_reel_viru-bog",
       "script": "Easy most days, long once a week. The bog doesn't care about your pace.",
       "tip": "easy most days, long once a week",
-      "status": "REVIEW: still B (v2 edited: sunrise + earrings) waiting for the user; then video 6 s (1,080 credits)",
+      "status": "REVIEW: video from still B v1 (647577c6); timing PASS; waiting for the user's eyes",
       "melius": {
         "seedance": "6cf45b2f-d4c4-498d-92a0-b553b805b627",
         "vo": "212e04f5-4669-4b0d-865c-4b8ea6280bd5",
@@ -506,7 +506,16 @@
           "versions": [
             "14014cee-f094-44cf-a6d4-bb4c2f9a26b0",
             "f18104e0-1a63-49a0-9bff-e71942eb08aa"
-          ]
+          ],
+          "user_pick": "v1 14014cee (USER: sunlight from behind gives a realistic golden edge; enough light for that in real life)"
+        },
+        "video_still_b": {
+          "version": "647577c6-9307-4bda-b577-2636cf2c9610",
+          "run": "7399f5a9-2aa1-46c1-8c7b-181075279c5c",
+          "inputs": "face anchor + still B v1 (plate edge removed: the edited still is the only place reference, so the old dimmer sun cannot come back), VO 212e04f5 (audio), quality lock",
+          "duration_s": 6,
+          "credits": 1080,
+          "qc_gemini": "TIMING PASS 10: lips follow the voice, none without voice, 'pace' complete, closed-mouth smile hold to the end (checker estimate 1.4 s; VO is 5.43 s so the real hold is ~0.6 s), face, hair and light stable"
         }
       },
       "prompt": "Vertical 9:16 handheld phone video, one continuous 6-second take, photorealistic, modern flagship phone held by a friend walking backward a step ahead of her (phone and hands out of frame). Tight framing from mid-chest up. Real skin with visible pores exactly as in her identity photo, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): Adult Estonian woman in her mid-twenties, exactly as in her identity photo: light skin with a warm peach undertone and real texture, NO freckles, tiny beauty marks only as faint as in the photo; high prominent cheekbones, defined jaw, slightly rounded chin; straight narrow nose with a slightly rounded tip; medium-full soft pink lips, fuller lower lip; light blue almond-shaped eyes, slightly hooded; thick straight dark-blonde brows brushed up, clearly darker than her hair; long straight fine platinum white-blonde hair, never golden or yellow, loose over her shoulders under the beanie, one side tucked behind her ear; small plain thin gold huggie hoop earrings; no makeup.\nOutfit visible in frame: plain moss-green waterproof shell zipped to the collarbone over a plain grey merino base layer, plain rust knit beanie. No logos, no text.\n\nPLACE (from @[1280px-Päikesetõus_Viru_rabas]{5477f5be-232b-4b81-b9ad-9e0ec7dacfb8}): the wooden boardwalk across Viru bog, Lahemaa National Park, Estonia, behind her: grey planks leading into the bog, low pines, dark mirror-still bog pools reflecting the sky, soft morning mist drifting slowly left. Early morning, low sun. No other people. No signs.\n\nACTION: she walks slowly along the boardwalk toward the camera, head and shoulders dipping gently with each relaxed step. Gestures follow the SHOT BREAKDOWN below. Natural blinks. Loose strands move with the same light breeze that moves the mist.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low early sun behind her left shoulder, gold rim light on the beanie and shoulders; fill: pale morning sky; bounce: rust-red from the autumn bog moss onto her jaw. Light constant.\n\nAmbient sound: slow hollow footsteps on wooden planks, soft wind in heather, one distant bird call, all ducked well under her voice.\n\nTIMING (the take is exactly 6 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 5.3 s. Between sentences the mouth pauses with the voice. From 5.3 s to 6.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-2.7 s: says \"Easy most days, long once a week.\" with one easy nod on \"long once a week\".\n3.0-5.3 s: says \"The bog doesn't care about your pace.\" with a glance out over the pools, then a soft smile back to the lens.\n5.3-6.0 s: silent: lips closed and still, calm closed-mouth smile, she keeps walking.",
@@ -1281,6 +1290,22 @@
       "result": "needs review",
       "next": [
         "User reviews still B"
+      ]
+    },
+    {
+      "when": "2026-09-26T15:31:18+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Clip 5 Viru bog: video from still B v1",
+      "changed": [
+        "6cf45b2f version 647577c6 (6 s, 720p)",
+        "QC node 0fe5b3c5: TIMING PASS 10"
+      ],
+      "ids": {},
+      "credits_spent": 1089,
+      "result": "needs review",
+      "next": [
+        "User reviews; if approved schedule 10 Oct 10:00"
       ]
     }
   ],
