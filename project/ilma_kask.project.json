@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.32",
-  "updated_at": "2026-09-26T18:14:29+03:00",
+  "version": "1.0.33",
+  "updated_at": "2026-09-26T18:45:26+03:00",
   "updated_by": "Claude",
   "project": {
     "name": "Ilma Kask",
@@ -408,7 +408,7 @@
       "queue": "2026-10-06_reel_patkuli-stairs",
       "script": "Stair repeats: strong going up, easy coming down. The walk down is your rest. Don't rush it.",
       "tip": "stair intervals",
-      "status": "APPROVED + SCHEDULED (Metricool 381959592)",
+      "status": "REMAKE IN PROGRESS: selfie still waiting for the user's pick; old reel stays scheduled (Metricool 381959592) until the new one is approved",
       "melius": {
         "seedance": "e7396821-1ec6-44d5-a40e-485927a32c10",
         "final_stitch": "0da7cb40-83f2-4ca9-b639-88f70817bd07",
@@ -416,7 +416,26 @@
         "fix_note": "b4919227-c8a1-4cf5-a3eb-45f4577a14ee"
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous take, photorealistic, clean modern flagship phone front camera held at arm's length (phone and fingers out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nTOP PRIORITY: 1. Face and identity match the reference 100% for the entire take. 2. Lip-sync exactly to the provided audio; English only. 3. Light logic: she faces south toward the phone; low late-afternoon sun from the south-west lights her face from frame-left; the Old Town roofs and the harbour behind her (north) catch the same sun. 4. She has just done stair repeats: slightly faster breathing, light flush on her cheeks. 5. Two or three tourists at the far railing, tiny and soft-focus, faces never visible.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, in a high ponytail with platinum strands loose at the temples, ears uncovered; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain charcoal zip-neck fleece under an open plain dark olive shell jacket. No logos, no text.\n\nPLACE (from @[1920px-Vanalinn_Patkuli_platvormilt_2013]{14ec1c30-9904-4026-be96-558a5a6fcc25}): the Patkuli viewing platform on Toompea hill, Tallinn, Estonia. Behind her, far below: the real view north over red-tiled Old Town roofs, medieval stone towers, a tall church spire and the harbour. Late October afternoon. No readable signs, no text.\n\nACTING (unspoken direction): stop someone from wrecking their knees trying to look tough; she used to sprint the downs and paid for it; make \"easy down\" feel like the smart move, not the lazy one; breath still high, so keep it light, a friend who learned the hard way, not a coach barking; eyes check the lens.\nShe stands at the parapet (not walking), small breathing bob. «Stair repeats:» a breath, small nod. «strong going up, easy coming down.» her eyes and chin rise then dip in time with the words. «The walk down is your rest.» the phone lowers slightly so more of the roofs and spire appear behind her. «Don't rush it.» warm smile, one slow nod. After the last word her lips close and she holds. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, perfectly lip-synced. Delivery warm, a little breathless at the start, settling. No other speech, no music.\n\nRELIGHT: discard reference lighting. Key: low warm sun from frame-left at face height. Fill: cool autumn sky from above. Bounce: warm terracotta from the stone parapet onto her jaw. Never brighter than the environment; light constant.\nPhysics: chest rises visibly for the first two seconds then settles; steady wind from behind her lifts the ponytail and loose strands forward past her cheek.\nComposition: face upper-middle third, spire and roofs behind her right shoulder. Single take, no on-screen text.\nAudio: the provided voice plus ducked wind, distant gulls, faint city hum. No music.\nShot breakdown: 0-3 s rule and nod; 3-5.5 s the phone lowers, the view on \"your rest\"; 5.5-9 s \"Don't rush it\", slow nod, hold.",
-      "fix_note": "FIX FOR THIS TAKE (highest priority): the charcoal fleece and the olive shell jacket are completely unbranded: no chest logo, no small white logo, no emblem, no patch, no print anywhere on either garment. Her fingers and the phone never enter the frame, including the very first second."
+      "fix_note": "FIX FOR THIS TAKE (highest priority): the charcoal fleece and the olive shell jacket are completely unbranded: no chest logo, no small white logo, no emblem, no patch, no print anywhere on either garment. Her fingers and the phone never enter the frame, including the very first second.",
+      "remake_2026_09_26": {
+        "why": "USER: remake with the new settings; keep the background prompt; ponytail is fine",
+        "vo": {
+          "node": "40f05dbf-41d4-4cf1-8209-e6a853eaf97f",
+          "ms": 7576,
+          "clip_s": 8,
+          "tail_s": 0.42
+        },
+        "still_a": {
+          "node": "35890aa7-55d5-481c-9601-c9e78f054f40",
+          "inputs": "face anchor + Patkuli plate 14ec1c30",
+          "styling": "ecru quilted jacket open over black thermal half-zip; high ponytail; small gold hoops",
+          "versions": [
+            "b4f8540a-b140-47ec-962c-815503631571",
+            "e36171a2-b003-49b7-b333-5102961d9908"
+          ],
+          "credits": 134
+        }
+      }
     },
     {
       "id": 3,
@@ -1465,6 +1484,21 @@
       "next": [
         "Review the three old-settings reels (Patkuli, Noblessner, market) one by one"
       ]
+    },
+    {
+      "when": "2026-09-26T18:45:26+03:00",
+      "agent": "Claude",
+      "app": "melius",
+      "task": "Patkuli remake: selfie stills",
+      "changed": [
+        "node 35890aa7 still A, 2 variants"
+      ],
+      "ids": {},
+      "credits_spent": 134,
+      "result": "needs review",
+      "next": [
+        "User picks; render 8 s selfie video from VO 40f05dbf (7.576 s)"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -1627,11 +1661,12 @@
       "1 Town Hall 30 Sep": "camel double-breasted coat + cream chunky knit; hair down; earrings as in still C",
       "3 Nõmme 2 Oct": "dark olive shell + charcoal fleece; high ponytail + thin headband; silver studs",
       "8 Pirita 4 Oct": "dark olive windproof jacket + cream knit collar; hair down in wind",
-      "2 Patkuli 6 Oct (old settings)": "open dark olive shell + charcoal zip fleece; high ponytail",
+      "2 Patkuli 6 Oct (old settings)": "(being replaced) open dark olive shell + charcoal zip fleece; high ponytail",
       "6 Noblessner 8 Oct (old settings)": "long dark padded coat; hair loose",
       "5 Viru bog 10 Oct": "moss-green waterproof shell + grey merino; rust knit beanie; hair loose under the beanie; thin gold huggies",
       "4 market 12 Oct (old settings)": "camel overcoat + cream sweater; paper bag prop",
-      "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar; single low braid over one shoulder with front strands out of the hood; thin silver hoops"
+      "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar; single low braid over one shoulder with front strands out of the hood; thin silver hoops",
+      "2 Patkuli 6 Oct remake": "ecru quilted jacket open over black thermal half-zip; high ponytail with loose temple strands; small gold hoops"
     },
     "repeats_found_2026_09_26": [
       "dark olive jacket in 3 consecutive posts (Nõmme 2 Oct, Pirita 4 Oct, Patkuli 6 Oct); Patkuli is almost the same outfit as Nõmme",
