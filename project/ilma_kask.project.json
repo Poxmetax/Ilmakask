@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.53",
-  "updated_at": "2026-09-27T20:31:32+03:00",
+  "version": "1.0.54",
+  "updated_at": "2026-09-27T20:39:54+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -836,7 +836,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character. Everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: user approved the look; waiting for the end trim (12.6 s), then new near-field ambience + final mix",
+      "status": "final v4 ready (full length, near-field ambience); waiting for the user's listen before scheduling the Reel 28 Sep 10:00",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -985,9 +985,16 @@
         "user_verdict_2026_09_27": "clip on point (background live, light, voice, lip sync); ends on half-closed eyes (last blink starts ~12.75 s per checker ea871390); ambience must not carry far-away footsteps; nose shadow unrealistic (rule noted, no redo asked)"
       },
       "fix_v4": {
-        "trim_stitch": "3bd261da-a366-4ca9-8786-4c0fae4807f9 (user sets clip end trim to 12.6 s in Melius; MCP cannot set stitchClipTrims)",
-        "ambience": "47a99178-c65f-4d38-88ed-96f35d6c2980 (sonilo-video-sfx on the trimmed stitch; near-field only)",
-        "final": "25a91f6a-2320-4e5b-804b-3da322a633fe (trimmed clip + ambience, mute off)"
+        "decision_user_2026_09_27": "no trim: the clip stays full length (13.1 s)",
+        "ambience": "47a99178-c65f-4d38-88ed-96f35d6c2980 (sonilo-video-sfx on video 2c6f7132, near-field only)",
+        "final": {
+          "node": "25a91f6a-2320-4e5b-804b-3da322a633fe",
+          "version": "5517e8cc-8043-4638-a20f-77744abf1d2c",
+          "duration_ms": 13097,
+          "muteSourceAudio": false
+        },
+        "qc_gemini": "361f2875: no footsteps/voices; quiet steady breeze/hum; one clear voice, louder than background; nothing far-away audible",
+        "trim_stitch_unused": "3bd261da-a366-4ca9-8786-4c0fae4807f9"
       }
     }
   ],
@@ -2269,6 +2276,26 @@
       "result": "on hold by user",
       "next": [
         "When the user says so: trim at 12.6 s in the Melius app, then ambience v4 and final v4, then schedule the Reel in Metricool"
+      ]
+    },
+    {
+      "when": "2026-09-27T20:39:54+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "clip0 intro final v4 (no trim)",
+      "changed": [
+        "User chose no trim; ambience v4 and final v4 rewired to the full-length video 2c6f7132 and rendered; QC finds no distant footsteps or voices"
+      ],
+      "ids": {
+        "ambience": "47a99178",
+        "final": "25a91f6a",
+        "final_version": "5517e8cc",
+        "qc": "361f2875"
+      },
+      "credits_spent": 153,
+      "result": "final v4 ready for the user's listen",
+      "next": [
+        "After the user's OK: Metricool duplicate check 28 Sep, create REEL 10:00 with the intro caption, delete photo post 381701239"
       ]
     }
   ],
