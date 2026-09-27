@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.43",
-  "updated_at": "2026-09-27T14:27:03+03:00",
+  "version": "1.0.44",
+  "updated_at": "2026-09-27T14:54:17+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -800,6 +800,34 @@
       },
       "prompt": "Vertical 9:16 handheld phone selfie video, one continuous 7-second take, photorealistic, modern flagship phone front camera held at arm's length (phone and arm out of frame). Tight framing from mid-chest up. Real skin with visible pores and freckles, no smoothing.\n\nWOMAN (identity from @[ilma_face_anchor_ref]{42fc7de6-dfee-4a99-aa2a-57c125a3b664}; match her face exactly for the whole take; identity only, never its lighting): European Estonian woman, 27, fair light skin with scattered light-brown freckles across the nose bridge and upper cheeks; soft oval face, high rounded cheekbones, gently tapered jaw; straight nose with a softly rounded tip; naturally full rose-nude lips; light blue-grey eyes, muted, NOT saturated; straight thick ash-brown brows clearly DARKER than her hair; very long straight COOL PLATINUM ice-blonde hair, NOT golden, NOT yellow, down and blowing in the wind, one side tucked behind her ear; exactly ONE small plain gold hoop earring in each ear; minimal natural makeup.\nOutfit visible in frame: plain dark olive windproof jacket zipped up, plain cream knit collar showing. No logos, no text.\n\nPLACE (from @[1280px-EU-EE-Tallinn-Pirita-Pirita_beach_in_autumn]{0b007f0b-91c9-410b-b260-e9211ca606a8}): the seaside promenade at Pirita beach, Tallinn, Estonia, behind her: pale sand, the grey-blue Baltic Sea with steady waves, the Tallinn skyline small and far across the bay. Windy autumn afternoon, bright overcast sky with a brighter patch over the sea. Nothing in the sky: no paragliders, no aircraft, no birds close by. No readable signs.\n\nACTION: she walks along the promenade into the wind, head and shoulders dipping gently with each step. Strong steady wind from the sea at frame-left: her hair streams to frame-right, same direction throughout. Gestures follow the SHOT BREAKDOWN below. Natural blinks.\n\nLIP SYNC: she speaks ONLY the provided audio track, in English, perfectly lip-synced, in exactly that voice. No other speech, no music.\n\nLIGHT: bright overcast key with a brighter patch over the sea at frame-left; cool silver bounce from the sea. Light constant.\n\nBACKGROUND LIFE: two tiny distant walkers with a dog far behind, soft focus.\n\nAmbient sound: wind on the mic, waves, ducked well under her voice.\n\nTIMING (the take is exactly 7 s and follows the audio track): her lips move ONLY while her words are heard, from about 0.2 s to 6.4 s. Between sentences the mouth pauses with the voice. From 6.4 s to 7.0 s there is no speech: lips closed and still until the last frame.\n\nSHOT BREAKDOWN:\n0.0-0.2 s: silent, lips closed, walking, eyes on the lens.\n0.2-1.8 s: says \"Sunday night, ten minutes:\" with eyebrows up, friendly.\n2.0-3.0 s: says \"fill next week's board.\" with a small nod.\n3.3-4.9 s: says \"Empty boxes are decisions.\" with a slight reassuring tilt of the head.\n5.2-6.4 s: says \"The board's in my bio.\" with a half-smile and a quick glance down toward the phone and back.\n6.4-7.0 s: silent: lips closed and still, soft closed-mouth smile, she keeps walking into the wind.",
       "prompt_timed_to_vo": true
+    },
+    {
+      "id": 0,
+      "date": "2026-09-28",
+      "place_id": "kadriorg_palace",
+      "queue": "2026-09-28_reel_intro-kadriorg",
+      "script": "Hi, I'm Ilma. I'm an AI-generated character, and everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
+      "tip": "intro / disclosure",
+      "status": "IN PRODUCTION: stills awaiting user pick",
+      "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
+      "melius": {
+        "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
+        "vo_ms": 11259,
+        "clip_s": 12,
+        "voice_check": {
+          "stitch": "2ef740ae-dcb3-4560-a79d-0528d6e173f6",
+          "qc": "e6dc7882",
+          "score": "10/10 same speaker"
+        },
+        "plate": "a15558bf-7eb2-49a8-a131-ee6e1d93ea0a (Commons: Tallinn_asv2022-04_img55_Kadriorg_Palace.jpg, licence VERIFY)",
+        "still": {
+          "node": "2a6833a3-07c5-472d-9f10-f48a02df50ae",
+          "run": "d70ff93e",
+          "v1": "978b9b34-9346-4408-b5b0-aba93326f712",
+          "v2": "dddd5158-6247-4023-b16f-b0cf1e971656"
+        }
+      },
+      "wardrobe": "tailored long black wool coat open over emerald-green silk blouse; sleek low chignon, centre part, face-framing strands; small gold drop earrings; soft realistic evening makeup"
     }
   ],
   "apps": {
@@ -1881,6 +1909,28 @@
       "next": [
         "offer: add barely-heard ambience to the other approved reels without re-rendering the picture"
       ]
+    },
+    {
+      "when": "2026-09-27T14:54:17+03:00",
+      "agent": "claude",
+      "app": "metricool",
+      "task": "Carousel fix + intro clip prep",
+      "changed": [
+        "carousel slide 1: frame no longer crosses photo, freckles reduced locally; caption CTA link in bio only",
+        "Pirita caption: Comment BOARD -> link in bio",
+        "intro VO (11.26 s, voice match 10/10), Kadriorg plate, 2 glam stills"
+      ],
+      "ids": {
+        "carousel_new": 382842848,
+        "pirita_new": 382842994,
+        "vo": "ad391eac",
+        "still": "2a6833a3"
+      },
+      "credits_spent": 266,
+      "result": "stills awaiting user pick",
+      "next": [
+        "user picks intro still; 12 s video (2160) + ambience; schedule 28 Sep 10:00 reel; delete photo post 381701239"
+      ]
     }
   ],
   "qc_audit_2026_09_26": {
@@ -2048,7 +2098,8 @@
       "7 Kalamaja 14 Oct": "navy waxed rain jacket, hood up; knit collar; single low braid over one shoulder with front strands out of the hood; thin silver hoops",
       "2 Patkuli 6 Oct remake": "ecru quilted jacket open over black thermal half-zip; high ponytail with loose temple strands; small gold hoops",
       "6 Noblessner 8 Oct remake": "plain burgundy wool coat, buttoned, collar up; nothing around the neck; damp loose low bun with damp temple strands; small pearl studs; no headwear",
-      "4 market 12 Oct remake": "camel overcoat open over cream sweater (kept by user: do not change the prompt); hair down tucked behind left ear; small gold hoops; paper bag with rye loaf; light natural foundation"
+      "4 market 12 Oct remake": "camel overcoat open over cream sweater (kept by user: do not change the prompt); hair down tucked behind left ear; small gold hoops; paper bag with rye loaf; light natural foundation",
+      "0 intro Kadriorg 28 Sep": "black wool coat + emerald silk blouse; sleek low chignon; gold drop earrings; soft evening makeup"
     },
     "repeats_found_2026_09_26": [
       "dark olive jacket in 3 consecutive posts (Nõmme 2 Oct, Pirita 4 Oct, Patkuli 6 Oct); Patkuli is almost the same outfit as Nõmme",
