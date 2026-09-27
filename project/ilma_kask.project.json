@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.41",
-  "updated_at": "2026-09-27T13:55:32+03:00",
+  "version": "1.0.42",
+  "updated_at": "2026-09-27T14:20:13+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -562,8 +562,24 @@
             "v2": "2dd01cb8 (not checked)"
           },
           "credits": 295,
-          "status": "awaiting user pick"
-        }
+          "status": "picked",
+          "user_pick": "2dd01cb8-cd63-4b8f-ba20-27e1e203441d (round 2 variation B; user: more natural and real, faint freckles are natural and hardly noticeable)"
+        },
+        "video": {
+          "node": "88048a7a-7294-43f3-8557-9efb76bd3573",
+          "run": "23c51230-e4b3-4569-961d-abd89529dae8",
+          "credits": 1620,
+          "blinks_planned": "5 at 1.3/2.8/4.9/6.9/8.5 s",
+          "temperature": "indoors ~12 C, no visible breath",
+          "qc_gemini": "lips closed during first sentence 0-2.5 s (FAIL), 4 blinks uneven, no head turn, some shoppers walk but stallholder + far figures frozen, bag stable, garbled unreadable signs, one-scene PASS, freckles 'clearly visible'",
+          "qc_qwen": "first sentence lip sync PASS (lips open 0.2/1.2 s, close for 'm' at 2.2 s); no other voice-with-closed-mouth moment"
+        },
+        "ambience": {
+          "sfx": "a37f4ce5-3d25-408a-9eb1-224c055322b5 (sonilo-video-sfx, 99 credits)",
+          "stitch": "e57b7749-3c65-4fd6-a22e-3bf3385e06b9",
+          "qc": "AMBIENCE PASS: low murmur, paper crinkles, no seams, 9 s no black"
+        },
+        "status": "awaiting user review"
       }
     },
     {
@@ -973,7 +989,8 @@
     "2026-09-26 Noblessner stills: freckles came back when the still prompt paraphrased identity ('copy her face') instead of pasting the anchor paragraph verbatim and said 'no makeup'; with blue-hour night grain the model reads texture as freckles. Always paste the anchor paragraph verbatim, keep 'minimal natural makeup', add an approved clear-skin still as a second face reference, and run the skin checker on each variation (edge passes only the active version: switch versions to check both).",
     "2026-09-26 ambience: two overlapping sfx pieces create an audible seam; for clip lengths sonilo-sfx cannot hit (e.g. 9 s), use one track: sonilo-video-sfx (length = video) or plan clip length to a sonilo duration (8/10 s).",
     "2026-09-27 Noblessner approved by the user although the checker failed timing/background/realism: checker video verdicts remain a weak second opinion; the user's eyes decide.",
-    "2026-09-27 skin checker is inconsistent: on the same identity photo it once says the portrait has natural freckles and once says it is clear; use it only to rank variations, the user's eyes decide."
+    "2026-09-27 skin checker is inconsistent: on the same identity photo it once says the portrait has natural freckles and once says it is clear; use it only to rank variations, the user's eyes decide.",
+    "2026-09-27 user: very faint natural freckle-like texture that is hardly noticeable is acceptable; the no-freckles rule targets clearly visible freckle patterns."
   ],
   "changelog": [
     {
@@ -1807,6 +1824,32 @@
       "result": "awaiting user pick",
       "next": [
         "user picks market still; then 9 s video (1620) + one-track ambience"
+      ]
+    },
+    {
+      "when": "2026-09-27T14:20:13+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Market remake video + ambience",
+      "changed": [
+        "9 s video from user-picked still B, voice master unchanged",
+        "one-track market ambience mixed (PASS)"
+      ],
+      "ids": {
+        "video": "88048a7a",
+        "run": "23c51230",
+        "sfx": "a37f4ce5",
+        "mix": "e57b7749",
+        "qc": [
+          "e14c1c2e",
+          "7d1caec0",
+          "8939274e"
+        ]
+      },
+      "credits_spent": 1755,
+      "result": "checkers disagree on first-sentence lip sync (Gemini FAIL, Qwen PASS); awaiting user review",
+      "next": [
+        "user reviews market remake; if approved update Metricool 381959728"
       ]
     }
   ],
