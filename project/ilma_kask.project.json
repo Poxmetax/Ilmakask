@@ -73,7 +73,8 @@
     },
     "product_visibility_rule_user_2026_09_27": {
       "verbatim": "Toode ise ei ole mõeldud avalikustamiseks instagrami kontol ja toode ise on stan storeis, instagram võib seda ainult kirjeldada mida see sisaldab, aga mitte näidata toodet ja selle täielikku sisu(kui see pol vajalik, siis me seda ei tee)....instagrami läheb ainult free week näidisleht mis on kõigile tasuta.",
-      "applied_as": "Instagram never shows pages of the paid product (no page mockups, no contents page). Posts only describe what it contains in text. The only product page shown is the free First Seven page. Selling posts start with 'Ad · my own product.' and every slide footer carries 'AD'."
+      "applied_as": "A product introduction (cover, contents, a few sample pages, price) is NOT the product and is posted on Instagram so people know what they buy. The full product with all remaining details stays in Stan Store only; the free First Seven is the only complete part given away. The product intro goes on a day with no clip (Reel), between the first and second clip posts. Selling posts start with 'Ad · my own product.'",
+      "correction_user_2026_09_27_verbatim": "see mille sa ära kustutasid oli toote tutvustus mitte toode ise ja see peaks olema instagramis nähtaval, et inimesed teaksid mida nad ostavad...täielik toode koos ülejäänud detailidega jääb stan store. Tootetutvustust ei tohiks pidada tooteks(jäta see enale tulevikuks meelde) ja tootetutvustus tuleks ikkagi plaanikohaselt instagrammi postitada. Aga tootetutvustus tee sellisel päeval kui clip ise ei postitata ja tee seda peale esimese ja teise clipi postituse vahel."
     },
     "ad_marker": {
       "caption_start": "Ad · my own product.",
