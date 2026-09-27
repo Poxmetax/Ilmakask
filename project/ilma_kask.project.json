@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.50",
-  "updated_at": "2026-09-27T19:24:26+03:00",
+  "version": "1.0.51",
+  "updated_at": "2026-09-27T19:45:52+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -830,7 +830,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character. Everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: VO = set B take 1 (user pick); rendering video",
+      "status": "IN PRODUCTION: attempt 3 final mix awaiting user review (checkers agree on a layered look)",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -955,6 +955,27 @@
         },
         "credits": "~480",
         "user_verdict": "REJECTED by user: rewritten text is a no-go (words must not change without the user)"
+      },
+      "attempt3": {
+        "video": {
+          "node": "2c6f7132-b94e-4e1f-b969-4c1caf6d5503",
+          "version": "a809666d-d601-49f0-8256-ce4be5d70182",
+          "run": "d4fccd80-06df-44a7-8934-4587affadbe0",
+          "credits": 2340,
+          "vo": "b734ef61 set B take 1 (16170288)",
+          "stt": "7a08867a: all words present"
+        },
+        "ambience": "e3fd7730-034a-4cb2-b259-d008b5e1ed5f",
+        "final_mix": {
+          "node": "286d827c-31a5-4dce-94fc-4a46d2daa98c",
+          "version": "8e50706c-2c95-4796-896e-54b92f227bd3",
+          "muteSourceAudio": false,
+          "duration_ms": 13097
+        },
+        "qc_gemini": "c5c298bb: natural voice PASS; lips close ~0.4 s before 'dark' ends (FAIL); pasted look FAIL (no parallax, face evenly lit vs hard sun on background); a figure appears near the left lamp post 3.5-5.0 s; one far-left person frozen; 4 blinks",
+        "qc_qwen": "ef66ae4b: lip sync PASS; natural voice PASS; pasted look FAIL; background people frozen (keyframe sampling); 0 blinks (keyframes)",
+        "both_agree": "pasted/layered look (3rd attempt in a row) -> likely rooted in the still: face lighting does not match the hard sun on the palace",
+        "credits_total": 2503
       }
     }
   ],
@@ -2176,6 +2197,26 @@
       "result": "ok",
       "next": [
         "STT set B take 1; render clip 0 attempt 3 (13 s)"
+      ]
+    },
+    {
+      "when": "2026-09-27T19:45:52+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Intro attempt 3 rendered with set B take 1 (video's own voice + ambience)",
+      "changed": [
+        "video 13 s; ambience; stitch mute off; 2 QC"
+      ],
+      "ids": {
+        "video": "2c6f7132-b94e-4e1f-b969-4c1caf6d5503",
+        "final_mix": "286d827c-31a5-4dce-94fc-4a46d2daa98c",
+        "qc_gemini": "c5c298bb-383d-4f24-b854-880ee0784689",
+        "qc_qwen": "ef66ae4b-5291-49e4-aedc-0a5de646a293"
+      },
+      "credits_spent": 2503,
+      "result": "needs review",
+      "next": [
+        "user reviews; if pasted look confirmed: rebuild the still with matched sun on her face before any new video"
       ]
     }
   ],
