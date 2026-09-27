@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.44",
-  "updated_at": "2026-09-27T14:54:17+03:00",
+  "version": "1.0.45",
+  "updated_at": "2026-09-27T15:25:05+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -808,7 +808,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character, and everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: stills awaiting user pick",
+      "status": "IN PRODUCTION: video + mix awaiting user review",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -817,14 +817,28 @@
         "voice_check": {
           "stitch": "2ef740ae-dcb3-4560-a79d-0528d6e173f6",
           "qc": "e6dc7882",
-          "score": "10/10 same speaker"
+          "score": "10/10 same speaker",
+          "note": "test stitch 2ef740ae renamed TEST ONLY; user mistook it for the clip — never show audio-only tests without saying clearly it is a test"
         },
         "plate": "a15558bf-7eb2-49a8-a131-ee6e1d93ea0a (Commons: Tallinn_asv2022-04_img55_Kadriorg_Palace.jpg, licence VERIFY)",
         "still": {
           "node": "2a6833a3-07c5-472d-9f10-f48a02df50ae",
           "run": "d70ff93e",
           "v1": "978b9b34-9346-4408-b5b0-aba93326f712",
-          "v2": "dddd5158-6247-4023-b16f-b0cf1e971656"
+          "v2": "dddd5158-6247-4023-b16f-b0cf1e971656",
+          "user_pick": "dddd5158-6247-4023-b16f-b0cf1e971656 (variation 2)"
+        },
+        "video": {
+          "node": "66074638-7895-458c-ae9e-e0323e56d1f6",
+          "run": "2ae88982-4456-4cee-91b1-f2cf50d1cec9",
+          "credits": 2160,
+          "qc_gemini": "TIMING PASS (speaks every sentence, 1.0 s closed hold); 5 blinks uneven, first blink at 3.1 s; no head turn; background couple 'freezes' after 2 s, leaves static; face/chignon/earrings/makeup stable; one scene PASS; no text",
+          "qc_qwen": "LIP SYNC FAIL: mouth closed/static around 5-6 s and 8 s"
+        },
+        "ambience": {
+          "sfx": "221b2208-adbe-4573-9d14-e70193bee323 (sonilo-video-sfx)",
+          "stitch": "da3110de-7e4c-4452-b6e3-2901be48a39f",
+          "qc": "AMBIENCE PASS: faint breeze/leaves, barely audible, no seams"
         }
       },
       "wardrobe": "tailored long black wool coat open over emerald-green silk blouse; sleek low chignon, centre part, face-framing strands; small gold drop earrings; soft realistic evening makeup"
@@ -1028,7 +1042,8 @@
     "2026-09-27 Noblessner approved by the user although the checker failed timing/background/realism: checker video verdicts remain a weak second opinion; the user's eyes decide.",
     "2026-09-27 skin checker is inconsistent: on the same identity photo it once says the portrait has natural freckles and once says it is clear; use it only to rank variations, the user's eyes decide.",
     "2026-09-27 user: very faint natural freckle-like texture that is hardly noticeable is acceptable; the no-freckles rule targets clearly visible freckle patterns.",
-    "2026-09-27 market remake: Gemini claimed lips closed for the whole first sentence, Qwen said lip sync fine, the user confirmed lips move with every sentence and no frozen figures. For a serious checker flag, get a second model's opinion before re-rendering; the user decides."
+    "2026-09-27 market remake: Gemini claimed lips closed for the whole first sentence, Qwen said lip sync fine, the user confirmed lips move with every sentence and no frozen figures. For a serious checker flag, get a second model's opinion before re-rendering; the user decides.",
+    "2026-09-27 user mistook the voice-comparison test (new VO over black after the market clip) for the actual clip and heard it as an AI narrator. Don't send audio-only test links as if they were deliverables; describe test artefacts explicitly or keep them internal."
   ],
   "changelog": [
     {
@@ -1930,6 +1945,32 @@
       "result": "stills awaiting user pick",
       "next": [
         "user picks intro still; 12 s video (2160) + ambience; schedule 28 Sep 10:00 reel; delete photo post 381701239"
+      ]
+    },
+    {
+      "when": "2026-09-27T15:25:05+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Intro clip video + ambience",
+      "changed": [
+        "12 s intro video from user-picked still 2, voice line lip-synced",
+        "palace-garden ambience mixed (PASS)"
+      ],
+      "ids": {
+        "video": "66074638",
+        "run": "2ae88982",
+        "sfx": "221b2208",
+        "mix": "da3110de",
+        "qc": [
+          "de03e6b3",
+          "7d1caec0",
+          "bb445a5f"
+        ]
+      },
+      "credits_spent": 2294,
+      "result": "awaiting user review; checkers disagree on lip sync 5-8 s and flag background people freezing",
+      "next": [
+        "user approves intro clip -> create 28 Sep 10:00 reel, delete photo post 381701239"
       ]
     }
   ],
