@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.46",
-  "updated_at": "2026-09-27T16:02:22+03:00",
+  "version": "1.0.47",
+  "updated_at": "2026-09-27T16:39:24+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -57,7 +57,8 @@
       "lead_magnet": "The First Seven (free)",
       "autodm_keyword": null,
       "cta_rule_user_2026_09_27": "No DMs to anyone; every CTA points to the link in bio."
-    }
+    },
+    "consistency_contract_user_2026_09_27": "One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. Any pipeline setting change applies to every future clip or to none."
   },
   "identity": {
     "locked": true,
@@ -154,11 +155,17 @@
     "rejected": [
       "eleven_multilingual_v2 (user: did not match)",
       "trailing <break> padding (adds unpredictable length)",
-      "letting a video model invent the voice without an audio reference"
+      "letting a video model invent the voice without an audio reference",
+      "muting the Seedance audio and overlaying the raw TTS take (intro attempt 2, 27 Sep 2026; user: she does not sound like the rest of the clips)",
+      "passing a take on a listener model's same-speaker score alone",
+      "single-roll takes for a new line (always 4 variations, user picks)"
     ],
     "take_selection": [
-      "v3 varies take to take: generate, then check duration fits the planned clip (vo + 0.4 s <= clip length)",
-      "same-speaker check: stitch [market clip + new clip] and ask a listener model for a 1-10 similarity score; keep only 9-10, re-roll otherwise (a re-roll costs ~120 credits)"
+      "Write the line in the master's rhythm: short plain sentences, about 2.0-2.4 spoken words per second (master: 16 words in 8.07 s); no long run-on sentences (they push v3 into a narrator voice)",
+      "Generate 4 variations in one call; drop takes that do not fit the clip (take + 0.4 s <= clip length; tail <= 1.2 s)",
+      "USER PICKS BY EAR: give the raw master take (VO 9b652063 version 4d257bf8) plus the remaining raw takes, labelled 'voice takes, audio only, not the clip'; compare raw to raw",
+      "Confirm the picked take's words with scribe_v2 speech-to-text; then render the video with it",
+      "Listener-model same-speaker scores may pre-filter obvious misses but never pass a take (a checker gave 10/10 to take ad391eac, which the user rejected by ear)"
     ],
     "pronunciation": {
       "Hüva leili": "caption only, never spoken",
@@ -180,7 +187,8 @@
         "the ElevenLabs workspace has no Agents and no knowledge-base documents"
       ],
       "decision": "keep Veda Sky + eleven_v3 Natural (switching voice or model would break match with the 3 approved reels); generate 4 variations per call and keep the one that passes duration + same-speaker checks"
-    }
+    },
+    "chain_rule_user_2026_09_27": "ONE VOICE CHAIN for every clip: eleven_v3 + Veda Sky (625jGFaa0zTLtQfxwc6Q) default settings, plain script -> the take is the Seedance audio input -> PUBLISH THE SEEDANCE OUTPUT AUDIO (as in every approved clip), with only a quiet ambience overlay on a stitch (muteSourceAudio OFF). Never mute the video and overlay the raw TTS file; never process one clip's voice differently. A chain change applies to all future clips and needs one approved test clip first."
   },
   "timing": {
     "why": "Every lip-sync failure so far came from footage and voice being made for different recordings. The mouth must be generated FROM the final voice file.",
@@ -808,7 +816,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character, and everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: attempt 2 final mix awaiting user review",
+      "status": "IN PRODUCTION: attempt 2 voice rejected by user; new VO takes (set B) awaiting the user's pick by ear",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -862,8 +870,37 @@
         "qc_gemini_raw": "a4f7c047: lip sync PASS; one-scene FAIL (says no parallax, outline around hair/shoulders); nothing pops PASS; background people move; says a bird flies upper-left; 4 blinks",
         "qc_qwen_raw": "d2a1f9dd: lip sync PASS; one-scene PASS (parallax, no outline); nothing pops PASS; right-edge pair nearly static; 0 blinks (sampled frames)",
         "voice_check": "test stitch c0feb672 (TEST ONLY) + QC 43fea9df: VOICE MATCH 10/10 with market master; lip sync ~0.1 s audio late on s1-2; claims 'dark' missing (contradicted by durations: VO 11.26 s inside 12.1 s mix; treat as checker error)",
-        "credits_total": 2332
-      }
+        "credits_total": 2332,
+        "user_verdict_2026_09_27": "REJECTED: she does not sound like the rest of the clips (raw TTS over muted video broke the voice chain); stitch 63103a9a renamed REJECTED"
+      },
+      "vo_set_b": {
+        "node": "b734ef61-9eba-44c0-af11-5b11ac31f92f",
+        "text": "Hi, I'm Ilma. I'm an AI-generated character. Everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
+        "takes": {
+          "1": {
+            "version": "16170288-f2ac-4398-9b70-730470ad918f",
+            "ms": 12539,
+            "clip_s": 13
+          },
+          "2": {
+            "version": "2ffca3ed-16a2-4deb-99da-c66a5af3ecec",
+            "ms": 12069,
+            "clip_s": 13
+          },
+          "3": {
+            "version": "70e9c363-6990-4a44-93db-627c04fee6c8",
+            "ms": 11494,
+            "clip_s": 12
+          },
+          "4": {
+            "version": "80f59629-eadd-4731-b146-ee2765020e74",
+            "ms": 10945,
+            "clip_s": 12
+          }
+        },
+        "credits": "~480"
+      },
+      "plan_after_pick": "STT check -> re-render video node with attempt-2 prompt (visuals kept) retimed to the picked take -> sonilo ambience -> stitch with muteSourceAudio OFF (Seedance voice + ambience) -> user review"
     }
   ],
   "apps": {
@@ -2017,6 +2054,24 @@
       "result": "needs review",
       "next": [
         "user reviews final mix 63103a9a; on approval schedule REEL 28 Sep 10:00 and delete photo post 381701239"
+      ]
+    },
+    {
+      "when": "2026-09-27T16:39:24+03:00",
+      "agent": "claude",
+      "app": "melius",
+      "task": "Voice chain fix after user rejection of intro attempt 2",
+      "changed": [
+        "voice.chain_rule + take_selection (user picks by ear, 4 variations, master rhythm) + rejected list; project consistency contract; Melius brief voice section; 4 new intro VO takes"
+      ],
+      "ids": {
+        "vo_set_b": "b734ef61-9eba-44c0-af11-5b11ac31f92f",
+        "rejected_mix": "63103a9a-0714-4787-ac6c-0385df161c48"
+      },
+      "credits_spent": 480,
+      "result": "needs review",
+      "next": [
+        "user picks a take; then render with Seedance voice published (no mute)"
       ]
     }
   ],

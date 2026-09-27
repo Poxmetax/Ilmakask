@@ -38,7 +38,8 @@ https://raw.githubusercontent.com/Poxmetax/Ilmakask/main/project/ilma_kask.proje
 - Master voice = the approved Balti Jaama Turg market reel (clip 4, video node `9385d68b…`, VO node `9b652063…` version `4d257bf8…`). Every reel must sound like this.
 - Recipe for every line: ElevenLabs **eleven_v3**, voice **Veda Sky – Friendly, Warm and Clear** (`625jGFaa0zTLtQfxwc6Q`), platform default settings, the plain script line only (no audio tags, no <break>, no voice description, no stage directions).
 - Rejected (do not use): eleven_multilingual_v2, trailing <break> padding, letting the video model invent a voice without an audio reference.
-- A take is accepted when (a) its length fits the planned clip (VO + 0.4 s ≤ clip length) and (b) a same-speaker check against the market clip scores 9–10/10 (stitch [market clip, new clip] and ask a listener model). Otherwise re-roll the TTS (~120 credits), never the video.
+- ONE VOICE CHAIN (user rule 27 Sep 2026): the take goes into the Seedance node's audio input and the Seedance output audio is what gets published, exactly as in every approved clip; ambience is only a quiet overlay on a stitch with muteSourceAudio OFF. Never mute the video and lay the raw TTS file over it; never process one clip's voice differently.
+- Takes: write the line in the master's rhythm (short plain sentences, about 2.0-2.4 words per second), generate 4 variations, drop any that do not fit the clip (VO + 0.4 s ≤ clip length, tail ≤ 1.2 s), then the USER picks by ear, raw take against the raw master take (VO 9b652063 version 4d257bf8), labelled "voice takes, audio only, not the clip". Listener-model scores never pass a take on their own. Re-roll the TTS (cheap), never the video.
 
 ## 4. Lip-sync timing (PROVEN 26 Sep 2026 on clips 8, 1 and 3: the user saw the lips land exactly on the voice)
 
@@ -165,3 +166,6 @@ Makeup is allowed and may vary by scene, always realistic and natural-looking. F
 
 ## Breath and temperature (user rule 2026-09-27)
 State the temperature in every prompt. Her breath is visible only when it is frosty (around 0°C or colder); above freezing there is no visible breath and no vapour from her mouth or nose.
+
+## Consistency contract (user rule 2026-09-27)
+One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. A clip that looks, sounds or moves differently from the approved clips fails, however pretty. Any pipeline change (model, voice, mixing, muting, camera, references) applies to every future clip or to none.
