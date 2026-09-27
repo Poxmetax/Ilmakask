@@ -6,12 +6,14 @@
   "clip": 4,
   "ai_label": true,
   "status": "scheduled",
-  "melius_node": "9385d68b-35ff-497a-803b-4d3ae63678c9",
-  "duration_s": 9.1,
-  "resolution": "720x1280",
-  "voice": "market master voice (eleven_v3 Veda Sky, plain text); original clip, untouched",
+  "melius_node": "e57b7749-3c65-4fd6-a22e-3bf3385e06b9",
+  "duration_s": 9.0,
+  "resolution": "1080x1920 (stitch output)",
+  "voice": "VOICE MASTER VO 9b652063 (eleven_v3 Veda Sky, plain text); seedance-2.0 native lip sync; sonilo-video-sfx ambience a37f4ce5 mixed via stitch",
   "scheduler": "metricool",
-  "metricool_post_id": 381959728,
-  "approved_by_user": "2026-09-25",
-  "video": "signed Melius link kept privately (expires 2026-10-26); see melius_node"
+  "metricool_post_id": 382835980,
+  "approved_by_user": "2026-09-27 (remake)",
+  "video": "Metricool copy on static.metricool.com; Melius source = stitch node",
+  "metricool_uuid": "3521325654990734066",
+  "replaced": "2026-09-27: old post 381959728 (portrait-mode version) updated in place with the selfie remake"
 }
