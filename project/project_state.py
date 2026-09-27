@@ -249,18 +249,15 @@ def cmd_log(a, data):
 
 
 def cmd_pace(a, data):
+    """Reference only (user rule 27 Sep 2026): pace is picked per clip for what is natural in the scene and activity;
+    this never rejects a take. It shows the take's pace next to her approved clips."""
     ref = approved_paces(data)
-    if not ref:
-        sys.exit("no approved clips with a VO length in the passport")
-    ov = sorted(r[2] for r in ref); sp = sorted(r[3] for r in ref)
-    lo, hi, med = ov[0], ov[-1], ov[len(ov) // 2]
-    print(f"Her approved pace ({len(ref)} clips): {lo}-{hi} syllables/s over the take (median {med}); "
-          f"{sp[0]}-{sp[-1]} over speech only (median {sp[len(sp) // 2]})")
     syl, o, s_, n = pace(a.text, a.duration_ms)
-    ok = lo <= o <= hi
-    print(f"This take: {syl} syllables, {n} phrases, {o} /s over the take, {s_} /s over speech -> {'IN her range' if ok else 'OUT of her range'}")
-    print(f"A take of this line at her median pace would last about {syl / med:.1f} s")
-    sys.exit(0 if ok else 2)
+    print(f"This take: {syl} syllables, {n} phrases, {o} /s over the take, {s_} /s over speech")
+    if ref:
+        ov = sorted(r[2] for r in ref)
+        print(f"Reference, her approved clips ({len(ref)}): {ov[0]}-{ov[-1]} /s over the take (calm talking-to-camera clips)")
+    print("Reference only: the natural pace depends on the scene and activity; the user's ear decides.")
 
 
 def main():

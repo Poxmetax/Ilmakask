@@ -171,6 +171,7 @@ State the temperature in every prompt. Her breath is visible only when it is fro
 One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. A clip that looks, sounds or moves differently from the approved clips fails, however pretty. Any pipeline change (model, voice, mixing, muting, camera, references) applies to every future clip or to none.
 
 ## Character lock, pace and blending (user rule 2026-09-27, mandatory for every clip)
-- She is one person: face, skin, body, voice and speaking pace never change; only hairstyle, earrings, clothing and makeup may change.
-- Pace: a take must fall inside her approved range (about 2.35-3.36 syllables per second over the take, median ~2.9). Write short plain sentences; budget about 2.9 x (clip length - 0.9 s) syllables. Shorten a long line, never rush it.
+- She is one person: face, skin, body and voice never change; only hairstyle, earrings, clothing and makeup may change. She looks, sounds and behaves like a real, natural person.
+- Pace is NEVER hardcoded: pick the pace a real person would have in that scene and activity (calm talk relaxed; after training quicker with breaths; sauna/night softer). The user's ear decides. The approved clips' pace is only a reference for calm talking clips.
+- Never change the words of the post or an approved script without the user; optimize the clip around the text; if it does not fit, ask the user.
 - Blend, never paste: still first from the real plate with her at a real spot (nearer objects, mid-ground, background); one light (plate direction, colour, softness), one lens (same sharpness, grain, colour; parallax with the handshake), one world (wind, weather, temperature, gravity); background people toward the edges, present first frame to last, never behind her head; nothing appears, vanishes or flies. The user's eye decides the pasted look.

@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.49",
-  "updated_at": "2026-09-27T19:02:42+03:00",
+  "version": "1.0.50",
+  "updated_at": "2026-09-27T19:24:26+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -60,10 +60,11 @@
     },
     "consistency_contract_user_2026_09_27": "One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. Any pipeline setting change applies to every future clip or to none.",
     "character_lock_user_2026_09_27": {
-      "rule": "MANDATORY for every clip now and in the future. She is one person: face, skin, body, voice timbre and speaking pace are identical in every clip and are never changed, re-described or invented. Only hairstyle, earrings, clothing and makeup (realistic) may change.",
+      "rule": "MANDATORY for every clip now and in the future. She is one person: face, skin, body and voice timbre are identical in every clip and are never changed, re-described or invented. Only hairstyle, earrings, clothing and makeup (realistic) may change. She must look, sound, speak, act and behave like a real, natural, authentic person; her speaking pace and energy follow the scene and activity (never hardcoded).",
       "scene": "Every clip must look filmed at the real location: light, shadows, gravity, wind, weather, temperature and physics on her match the background; she is blended into the scene, never pasted as a second layer.",
       "process": "Same settings, checks and signal chain for every clip; a rule change applies to all future clips and is approved on one test clip first."
-    }
+    },
+    "text_rule_user_2026_09_27": "Never change the words of the post or an approved script unless the user says so; optimize the clip around the text; if it does not fit, ask the user instead of inventing a new line."
   },
   "identity": {
     "locked": true,
@@ -166,9 +167,10 @@
       "single-roll takes for a new line (always 4 variations, user picks)"
     ],
     "take_selection": [
+      "Keep the post's / approved script's words unchanged; never rewrite or shorten them without the user. If the text does not fit one clip, ask the user.",
+      "Plan the natural pace for the scene and activity; drop takes that sound rushed or unnatural for that scene; the user's ear decides",
       "Write the line in the master's rhythm: short plain sentences, about 2.0-2.4 spoken words per second (master: 16 words in 8.07 s); no long run-on sentences (they push v3 into a narrator voice)",
       "Generate 4 variations in one call; drop takes that do not fit the clip (take + 0.4 s <= clip length; tail <= 1.2 s)",
-      "Pace gate: drop takes outside her approved pace range (project_state.py pace)",
       "USER PICKS BY EAR: give the raw master take (VO 9b652063 version 4d257bf8) plus the remaining raw takes, labelled 'voice takes, audio only, not the clip'; compare raw to raw",
       "Confirm the picked take's words with scribe_v2 speech-to-text; then render the video with it",
       "Listener-model same-speaker scores may pre-filter obvious misses but never pass a take (a checker gave 10/10 to take ad391eac, which the user rejected by ear)"
@@ -196,10 +198,10 @@
     },
     "chain_rule_user_2026_09_27": "ONE VOICE CHAIN for every clip: eleven_v3 + Veda Sky (625jGFaa0zTLtQfxwc6Q) default settings, plain script -> the take is the Seedance audio input -> PUBLISH THE SEEDANCE OUTPUT AUDIO (as in every approved clip), with only a quiet ambience overlay on a stitch (muteSourceAudio OFF). Never mute the video and overlay the raw TTS file; never process one clip's voice differently. A chain change applies to all future clips and needs one approved test clip first.",
     "pace_rule_user_2026_09_27": {
-      "measure": "syllables per second over the whole take: python3 project/project_state.py pace --text \"...\" --duration-ms D",
-      "approved_range": "2.35-3.36 syl/s over the take (median ~2.94), from the 8 approved clips on 27 Sep 2026",
-      "rule": "every new take must fall inside the approved range, close to the median; write lines as short plain sentences with a syllable budget of about 2.9 x (clip length - 0.9 s); shorten, never rush",
-      "evidence": "rejected intro take ad391eac ran at 4.09 syl/s; set-B take 2 runs at 3.73 (above every approved clip)"
+      "rule": "NATURAL PACE, never hardcoded: pick the pace per clip for what a real person would sound like in that moment and activity (calm talk = relaxed; after sprints/stairs = quicker, choppier, breaths; sauna/night = softer, slower). Plan it in the clip plan; the user's ear confirms it on the takes.",
+      "reference_tool": "python3 project/project_state.py pace --text \"...\" --duration-ms D (reference against approved clips; never a gate)",
+      "reference_calm_clips": "approved calm talking-to-camera clips 2.35-3.36 syl/s; intro take the user called perfect: 3.59",
+      "superseded": "an earlier fixed-range pace gate (27 Sep 2026) was wrong per the user and is removed"
     }
   },
   "timing": {
@@ -826,9 +828,9 @@
       "date": "2026-09-28",
       "place_id": "kadriorg_palace",
       "queue": "2026-09-28_reel_intro-kadriorg",
-      "script": "Hi, I'm Ilma. I'm an AI-generated character, and everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
+      "script": "Hi, I'm Ilma. I'm an AI-generated character. Everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: user chose rewrite in her pace; set C takes 1 and 3 offered for the user's pick",
+      "status": "IN PRODUCTION: VO = set B take 1 (user pick); rendering video",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -911,11 +913,10 @@
           }
         },
         "credits": "~480",
-        "user_pick": "take 2 (2ffca3ed-16a2-4deb-99da-c66a5af3ecec, 12069 ms): user: sounds the best",
+        "user_pick": "take 1 (16170288-f2ac-4398-9b70-730470ad918f, 12539 ms): user: perfect pace for this clip (replaces the earlier take 2 pick)",
         "pace_check": "take 2 = 3.73 syl/s over the take, above every approved clip (2.35-3.36); pending user decision: use take 2 or rewrite the line in her pace"
       },
       "plan_after_pick": "STT check -> re-render video node with attempt-2 prompt (visuals kept) retimed to the picked take -> sonilo ambience -> stitch with muteSourceAudio OFF (Seedance voice + ambience) -> user review",
-      "script_v2_user_approved_rewrite": "Hi, I'm Ilma. I'm AI-generated. Every place is real, right here in Estonia. Honest training tips. For when the north goes dark.",
       "vo_set_c": {
         "node": "5b029c29-cbd0-4e93-866a-cfed23847acb",
         "takes": {
@@ -952,7 +953,8 @@
             "status": "dropped: tail over 1.2 s"
           }
         },
-        "credits": "~480"
+        "credits": "~480",
+        "user_verdict": "REJECTED by user: rewritten text is a no-go (words must not change without the user)"
       }
     }
   ],
@@ -2159,6 +2161,21 @@
       "result": "needs review",
       "next": [
         "user picks take 1 or 3; STT; render"
+      ]
+    },
+    {
+      "when": "2026-09-27T19:24:26+03:00",
+      "agent": "claude",
+      "app": "claude",
+      "task": "Pace is natural per scene (not hardcoded); post words never changed without the user; intro VO = set B take 1",
+      "changed": [
+        "voice.pace_rule rewritten (reference only); project.text_rule; take_selection; pace command no longer a gate; Melius brief; clip 0 script back to original words; set C rejected"
+      ],
+      "ids": {},
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "STT set B take 1; render clip 0 attempt 3 (13 s)"
       ]
     }
   ],
