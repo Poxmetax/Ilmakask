@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.47",
-  "updated_at": "2026-09-27T16:39:24+03:00",
+  "version": "1.0.48",
+  "updated_at": "2026-09-27T18:45:45+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -58,7 +58,12 @@
       "autodm_keyword": null,
       "cta_rule_user_2026_09_27": "No DMs to anyone; every CTA points to the link in bio."
     },
-    "consistency_contract_user_2026_09_27": "One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. Any pipeline setting change applies to every future clip or to none."
+    "consistency_contract_user_2026_09_27": "One person, one voice, one camera, matching lighting, live background = consistent, realistic, lifelike, quality clip. Any pipeline setting change applies to every future clip or to none.",
+    "character_lock_user_2026_09_27": {
+      "rule": "MANDATORY for every clip now and in the future. She is one person: face, skin, body, voice timbre and speaking pace are identical in every clip and are never changed, re-described or invented. Only hairstyle, earrings, clothing and makeup (realistic) may change.",
+      "scene": "Every clip must look filmed at the real location: light, shadows, gravity, wind, weather, temperature and physics on her match the background; she is blended into the scene, never pasted as a second layer.",
+      "process": "Same settings, checks and signal chain for every clip; a rule change applies to all future clips and is approved on one test clip first."
+    }
   },
   "identity": {
     "locked": true,
@@ -163,6 +168,7 @@
     "take_selection": [
       "Write the line in the master's rhythm: short plain sentences, about 2.0-2.4 spoken words per second (master: 16 words in 8.07 s); no long run-on sentences (they push v3 into a narrator voice)",
       "Generate 4 variations in one call; drop takes that do not fit the clip (take + 0.4 s <= clip length; tail <= 1.2 s)",
+      "Pace gate: drop takes outside her approved pace range (project_state.py pace)",
       "USER PICKS BY EAR: give the raw master take (VO 9b652063 version 4d257bf8) plus the remaining raw takes, labelled 'voice takes, audio only, not the clip'; compare raw to raw",
       "Confirm the picked take's words with scribe_v2 speech-to-text; then render the video with it",
       "Listener-model same-speaker scores may pre-filter obvious misses but never pass a take (a checker gave 10/10 to take ad391eac, which the user rejected by ear)"
@@ -188,7 +194,13 @@
       ],
       "decision": "keep Veda Sky + eleven_v3 Natural (switching voice or model would break match with the 3 approved reels); generate 4 variations per call and keep the one that passes duration + same-speaker checks"
     },
-    "chain_rule_user_2026_09_27": "ONE VOICE CHAIN for every clip: eleven_v3 + Veda Sky (625jGFaa0zTLtQfxwc6Q) default settings, plain script -> the take is the Seedance audio input -> PUBLISH THE SEEDANCE OUTPUT AUDIO (as in every approved clip), with only a quiet ambience overlay on a stitch (muteSourceAudio OFF). Never mute the video and overlay the raw TTS file; never process one clip's voice differently. A chain change applies to all future clips and needs one approved test clip first."
+    "chain_rule_user_2026_09_27": "ONE VOICE CHAIN for every clip: eleven_v3 + Veda Sky (625jGFaa0zTLtQfxwc6Q) default settings, plain script -> the take is the Seedance audio input -> PUBLISH THE SEEDANCE OUTPUT AUDIO (as in every approved clip), with only a quiet ambience overlay on a stitch (muteSourceAudio OFF). Never mute the video and overlay the raw TTS file; never process one clip's voice differently. A chain change applies to all future clips and needs one approved test clip first.",
+    "pace_rule_user_2026_09_27": {
+      "measure": "syllables per second over the whole take: python3 project/project_state.py pace --text \"...\" --duration-ms D",
+      "approved_range": "2.35-3.36 syl/s over the take (median ~2.94), from the 8 approved clips on 27 Sep 2026",
+      "rule": "every new take must fall inside the approved range, close to the median; write lines as short plain sentences with a syllable budget of about 2.9 x (clip length - 0.9 s); shorten, never rush",
+      "evidence": "rejected intro take ad391eac ran at 4.09 syl/s; set-B take 2 runs at 3.73 (above every approved clip)"
+    }
   },
   "timing": {
     "why": "Every lip-sync failure so far came from footage and voice being made for different recordings. The mouth must be generated FROM the final voice file.",
@@ -263,7 +275,7 @@
   },
   "quality_lock": {
     "melius_node": "ead3f832-bf83-49ff-b0cf-82487abd3f3d",
-    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. Temperature logic: her breath is visible only when the scene is frosty (around 0°C or colder); in any milder air her breath is never visible, no steam or vapour comes from her mouth or nose. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Head turns: whenever she looks away (over her shoulder, at something that caught her attention, a thinking pause), the turn happens only in a real pause in the audio: she stops talking, turns her head at a natural, unhurried speed, holds her look there for a moment, turns back, and starts the next sentence only once her eyes are back on the lens. Never a quick flick timed to squeeze into a short gap.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
+    "text": "QUALITY LOCK (applies to the whole take and overrides anything above that conflicts with it):\n- Camera (same phone every clip): a front-camera selfie on her own phone, wide lens, held at arm's length slightly above eye level, tight framing from mid-chest up with her head in the upper third, light natural handheld shake, the same natural phone colour. She and the place are one single image through one lens: the background has the same wide-angle perspective as her face and moves together with her and the hand shake. No zoom, no dolly zoom, no background scaling or sliding separately from her, no layered or pasted look. Not a gimbal, not a tripod, not filmed by someone else.\n- Identity: her face comes ONLY from her identity photo (the face reference). Copy her face shape, skin, eyes, brows, lips, hair colour and hair texture exactly as in that photo and add nothing that is not in it: no freckles, no extra moles or marks (tiny beauty marks only as faint as in the photo), no change of hair colour. Earrings, makeup, clothing, headwear and hair styling follow the scene description above; if it names no earrings, she wears none. Only the light on her changes to the light of the place. Her face stays identical from the first to the last frame; no morphing.\n- One scene, one exposure: the whole frame has the same sharpness, the same level of detail, the same fine sensor grain and the same colour, contrast and white balance on her and on the background. Phone focus: her face and the background are in focus together; no shallow depth of field, no blurred background, no sharper subject on a softer background, no cut-out edges, no halo, no glow.\n- Light and shadow: she is lit only by the light of the place, from the same direction, with the same softness and brightness as the surfaces around her; her face is never brighter than the scene; every shadow on her and under her falls the same way as the shadows in the scene; contact shadows where clothing, hair and props touch.\n- Gravity and physics for every visible detail: clothing, hair, braids and props have real weight and hang and move with gravity; hair and loose strands move only with the scene's wind; held objects pull down on the arm; walking has heel-to-toe weight transfer with no gliding. Water obeys gravity: raindrops land, bead on waterproof fabric, grow, merge and run DOWN along creases and seams and drip off edges; wet surfaces shine and reflect; nothing floats, freezes in mid-air or moves against gravity. Temperature logic: her breath is visible only when the scene is frosty (around 0°C or colder); in any milder air her breath is never visible, no steam or vapour comes from her mouth or nose. The background is live: background people keep walking, turning and gesturing through the whole take (nobody stands frozen like a statue), birds, smoke, leaves, water and traffic move naturally; never a still photo; buildings and walls stay rigid and straight.\n- Blended into the place, never pasted: she physically stands at a real spot in this location, with nearer objects around her, a mid-ground and the far background; the bright background wraps softly around the edges of her hair and shoulders; no outline, halo or cut-out edge; nearer things shift slightly more than far ones as the phone moves (real parallax). Background people and moving things stay toward the frame edges where her head never hides or reveals them, are there from the first frame to the last and keep moving; nothing appears, vanishes or flickers mid-frame, and anything that moves through the air (a bird, a leaf) stays visible along its whole path, obeys gravity and wind, and leaves only across the frame edge.\n- Same person every clip: her face, skin and body are identical to her identity photo and her other clips; only her hairstyle, earrings, clothing and makeup follow the scene description.\n- Eyes: natural, relaxed blinks at random, unpredictable moments, never on a rhythm or a fixed interval: somewhere between about 3 and 7 blinks in the take (at most 8), with uneven gaps (sometimes two blinks close together, sometimes a longer gap, sometimes mid-phrase, sometimes in a pause, sometimes a slower blink when she glances away); she never stares into the lens for more than about 2 to 3 seconds without blinking.\n- Head turns: whenever she looks away (over her shoulder, at something that caught her attention, a thinking pause), the turn happens only in a real pause in the audio: she stops talking, turns her head at a natural, unhurried speed, holds her look there for a moment, turns back, and starts the next sentence only once her eyes are back on the lens. Never a quick flick timed to squeeze into a short gap.\n- Framing: her fingers, the phone and her feet are never in frame unless the action says so.\n- Skin: unretouched phone footage with real skin texture and pores exactly as in her identity photo; no smoothing, no beauty filter, no waxy look.\n- Mouth and timing: the provided audio is her whole performance. Her lips move precisely with every word of it, from the first word to the last, and ONLY while a word is being spoken. In any silence (before the first word, in pauses, and after the last word) her lips are closed and still. After the last word her mouth closes softly and stays closed until the end of the clip; she may only smile gently with closed lips. Her voice is exactly the voice in the provided audio, same timbre, pitch and pace; never re-voiced, never faster or slower.\n- Clothing and background: all clothing is completely plain, with no text, letters, logos, badges or labels anywhere. Background people stay small and far away, with stable bodies that never merge into walls or objects.",
     "rule": "wire as a text input into every video node (Melius appends it to the prompt)",
     "rewritten": "2026-09-26: identity only from the profile photo; one scene/one camera (matching sharpness, grain, colour; deep phone focus); light and shadow from the place; gravity and movement; 2026-09-26 camera line added (same phone, selfie, one image through one lens); 2026-09-26 gravity/physics for every visible detail incl. raindrops (user); 2026-09-26 eyes: 2-3 natural blinks per clip (user)"
   },
@@ -816,7 +828,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character, and everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "IN PRODUCTION: attempt 2 voice rejected by user; new VO takes (set B) awaiting the user's pick by ear",
+      "status": "IN PRODUCTION: take 2 picked; pace outside her range -> user decides take 2 vs pace-fitted rewrite before the video render",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -898,7 +910,9 @@
             "clip_s": 12
           }
         },
-        "credits": "~480"
+        "credits": "~480",
+        "user_pick": "take 2 (2ffca3ed-16a2-4deb-99da-c66a5af3ecec, 12069 ms): user: sounds the best",
+        "pace_check": "take 2 = 3.73 syl/s over the take, above every approved clip (2.35-3.36); pending user decision: use take 2 or rewrite the line in her pace"
       },
       "plan_after_pick": "STT check -> re-render video node with attempt-2 prompt (visuals kept) retimed to the picked take -> sonilo ambience -> stitch with muteSourceAudio OFF (Seedance voice + ambience) -> user review"
     }
@@ -2072,6 +2086,23 @@
       "result": "needs review",
       "next": [
         "user picks a take; then render with Seedance voice published (no mute)"
+      ]
+    },
+    {
+      "when": "2026-09-27T18:45:45+03:00",
+      "agent": "claude",
+      "app": "claude",
+      "task": "Character lock + pace + blend rules made mandatory (user 27 Sep)",
+      "changed": [
+        "project.character_lock_user_2026_09_27; voice.pace_rule_user_2026_09_27 + pace gate; quality lock: blended-not-pasted + same-person lines (node + passport); project_state.py pace command; Melius brief section; clip 0 take 2 picked"
+      ],
+      "ids": {
+        "quality_lock": "ead3f832-bf83-49ff-b0cf-82487abd3f3d"
+      },
+      "credits_spent": 0,
+      "result": "ok",
+      "next": [
+        "user: take 2 as is or pace-fitted rewrite; then render clip 0"
       ]
     }
   ],

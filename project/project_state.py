@@ -116,6 +116,33 @@ def beats(text, duration_ms, lead=0.20, trail=0.12):
     return rows, clip, round(clip - D, 2)
 
 
+def pace(text, duration_ms, lead=0.20, trail=0.12):
+    """Speaking pace of a take: syllables per second over the whole take, and over speech time only
+    (take minus lead-in, tail and punctuation pauses). Returns (syllables, overall, speech_only, phrases)."""
+    D = duration_ms / 1000
+    phrases = [p.strip() for p in re.split(r"(?<=[.?!:;,])\s+", text) if p.strip()]
+    pauses = [PAUSES.get(p[-1], 0.0) for p in phrases]
+    pauses[-1] = 0.0
+    syl = sum(syllables(w) for w in text.split())
+    speech = max(0.1, D - lead - trail - sum(pauses))
+    return syl, round(syl / D, 2), round(syl / speech, 2), len(phrases)
+
+
+def approved_paces(data):
+    """Pace of every APPROVED clip's final VO (the character's real pace)."""
+    out = []
+    for c in data["clips"]:
+        if not c.get("status", "").startswith("APPROVED"):
+            continue
+        vo = c.get("melius", {}).get("vo_ms")
+        for k, v in c.items():
+            if k.startswith("remake") and isinstance(v, dict) and isinstance(v.get("vo"), dict):
+                vo = v["vo"].get("ms") or v["vo"].get("duration_ms") or vo
+        if vo:
+            out.append((c["id"], *pace(c["script"], vo)))
+    return out
+
+
 def cmd_show(a, data):
     print(f"{data['project']['name']}  v{data['version']}  updated {data['updated_at']} by {data['updated_by']}\n")
     print("PROTOCOL (start):"); [print("  -", s) for s in data["_protocol"]["at_task_start"]]
@@ -221,6 +248,21 @@ def cmd_log(a, data):
     print(f"logged; version {data['version']}")
 
 
+def cmd_pace(a, data):
+    ref = approved_paces(data)
+    if not ref:
+        sys.exit("no approved clips with a VO length in the passport")
+    ov = sorted(r[2] for r in ref); sp = sorted(r[3] for r in ref)
+    lo, hi, med = ov[0], ov[-1], ov[len(ov) // 2]
+    print(f"Her approved pace ({len(ref)} clips): {lo}-{hi} syllables/s over the take (median {med}); "
+          f"{sp[0]}-{sp[-1]} over speech only (median {sp[len(sp) // 2]})")
+    syl, o, s_, n = pace(a.text, a.duration_ms)
+    ok = lo <= o <= hi
+    print(f"This take: {syl} syllables, {n} phrases, {o} /s over the take, {s_} /s over speech -> {'IN her range' if ok else 'OUT of her range'}")
+    print(f"A take of this line at her median pace would last about {syl / med:.1f} s")
+    sys.exit(0 if ok else 2)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--file", default=str(DEFAULT))
@@ -228,6 +270,7 @@ def main():
     s = sub.add_parser("show"); s.add_argument("--app"); s.add_argument("--last", type=int, default=10)
     s = sub.add_parser("brief"); s.add_argument("--app", required=True)
     s = sub.add_parser("beats"); s.add_argument("--clip", type=int); s.add_argument("--text"); s.add_argument("--duration-ms", type=int)
+    s = sub.add_parser("pace"); s.add_argument("--text", required=True); s.add_argument("--duration-ms", type=int, required=True)
     s = sub.add_parser("set"); s.add_argument("path"); s.add_argument("value"); s.add_argument("--agent", default="Claude"); s.add_argument("--app", default="claude")
     s = sub.add_parser("log")
     for k in ("agent", "app", "task", "ids", "from-json"):
@@ -242,7 +285,7 @@ def main():
         print("valid" if not p else "\n".join(p)); sys.exit(1 if p else 0)
     if a.cmd == "log" and not a.from_json and not (a.agent and a.app and a.task):
         sys.exit("log needs --agent, --app and --task (or --from-json)")
-    {"show": cmd_show, "brief": cmd_brief, "beats": cmd_beats, "set": cmd_set, "log": cmd_log}[a.cmd](a, data)
+    {"show": cmd_show, "brief": cmd_brief, "beats": cmd_beats, "pace": cmd_pace, "set": cmd_set, "log": cmd_log}[a.cmd](a, data)
 
 
 if __name__ == "__main__":
