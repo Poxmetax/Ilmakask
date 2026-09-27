@@ -55,7 +55,8 @@
       "store": "https://stan.store/Ilmakask",
       "price": "USD 10 launch until 2026-10-25, then USD 13 (manual change)",
       "lead_magnet": "The First Seven (free)",
-      "autodm_keyword": "BOARD"
+      "autodm_keyword": null,
+      "cta_rule_user_2026_09_27": "No DMs to anyone; every CTA points to the link in bio."
     }
   },
   "identity": {
