@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.56",
-  "updated_at": "2026-09-27T21:51:52+03:00",
+  "version": "1.0.57",
+  "updated_at": "2026-09-27T22:04:31+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -2365,6 +2365,24 @@
       "result": "3 carousels updated in Metricool, same dates and captions (launch caption only prefixed with the ad marker)",
       "next": [
         "5 Oct: review first-week results and try T6 (reach beyond Estonia)"
+      ]
+    },
+    {
+      "when": "2026-09-27T22:04:31+03:00",
+      "agent": "claude",
+      "app": "metricool",
+      "task": "product intro back, moved to 29 Sep",
+      "changed": [
+        "User: a product intro is not the product and belongs on Instagram. Original 6-slide intro restored (caption starts 'Ad · my own product.', alt texts on all slides) and moved to 29 Sep 10:00 (no-clip day between Reel 1 on 28 Sep and Reel 2 on 30 Sep); First Seven carousel moved to 29 Sep 19:00 (user choice); 5 Oct now empty"
+      ],
+      "ids": {
+        "product_intro_post": "383001641",
+        "first_seven_post": "383001720"
+      },
+      "credits_spent": 0,
+      "result": "29 Sep: product intro 10:00, First Seven 19:00",
+      "next": [
+        "5 Oct reminder T6"
       ]
     }
   ],
