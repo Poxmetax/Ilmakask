@@ -33,8 +33,8 @@
       ]
     }
   },
-  "version": "1.0.54",
-  "updated_at": "2026-09-27T20:39:54+03:00",
+  "version": "1.0.55",
+  "updated_at": "2026-09-27T20:51:15+03:00",
   "updated_by": "claude",
   "project": {
     "name": "Ilma Kask",
@@ -836,7 +836,7 @@
       "queue": "2026-09-28_reel_intro-kadriorg",
       "script": "Hi, I'm Ilma. I'm an AI-generated character. Everything I post happens in real Estonian places. Short, honest tips to keep your training alive when the north goes dark.",
       "tip": "intro / disclosure",
-      "status": "final v4 ready (full length, near-field ambience); waiting for the user's listen before scheduling the Reel 28 Sep 10:00",
+      "status": "scheduled: Reel 28 Sep 10:00 (final v4, user approved 'ideaalne')",
       "brief_user_2026_09_27": "replace the intro photo post with a phenomenal first clip; slightly glamorous formal outfit + hairstyle + light matching makeup; slightly glamorous real Estonian place picked by Claude; stills for approval first; then schedule 28 Sep 10:00 and remove the photo post",
       "melius": {
         "vo": "ad391eac-79c9-4ec7-8158-c9469aec2954",
@@ -995,6 +995,15 @@
         },
         "qc_gemini": "361f2875: no footsteps/voices; quiet steady breeze/hum; one clear voice, louder than background; nothing far-away audible",
         "trim_stitch_unused": "3bd261da-a366-4ca9-8786-4c0fae4807f9"
+      },
+      "metricool": {
+        "post_id": 382968979,
+        "uuid": "6170646688656410152",
+        "type": "REEL",
+        "publish": "2026-09-28T10:00 Europe/Tallinn",
+        "isAiGenerated": true,
+        "showReelOnFeed": true,
+        "note": "photo post 381701239 converted in place to the Reel (same uuid); caption unchanged; no other posts on 28 Sep"
       }
     }
   ],
@@ -2296,6 +2305,25 @@
       "result": "final v4 ready for the user's listen",
       "next": [
         "After the user's OK: Metricool duplicate check 28 Sep, create REEL 10:00 with the intro caption, delete photo post 381701239"
+      ]
+    },
+    {
+      "when": "2026-09-27T20:51:15+03:00",
+      "agent": "claude",
+      "app": "metricool",
+      "task": "schedule clip0 intro Reel",
+      "changed": [
+        "User approved final v4; the 28 Sep 10:00 photo post was converted in place into the Reel (final v4 video, same caption, AI label on); duplicate check: only this post on 28 Sep"
+      ],
+      "ids": {
+        "metricool_post": "382968979",
+        "uuid": "6170646688656410152",
+        "final": "25a91f6a"
+      },
+      "credits_spent": 0,
+      "result": "Reel scheduled 2026-09-28 10:00 Europe/Tallinn",
+      "next": [
+        "Next clip in the calendar; apply movement mix, near-field ambience, light-true shadows, no end blink"
       ]
     }
   ],
