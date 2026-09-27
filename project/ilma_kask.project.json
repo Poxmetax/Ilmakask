@@ -70,6 +70,15 @@
       "ambient_sound": "backround ambient sound should not catch the sound of the activities on the backround that are not in the close vicinity to her so the clip would actually be realistic(adding sounds from the backround from the activities far away is not realistic unless it's a very loud sound so peaople walking on the backround far away from our character should never be heard on the clip.",
       "movement": "do not make all the clips while she is still, use movent also(not on this clip, but in general and mix still and moveing clips where suited the best and technically available for the best realistic and natural outcome).",
       "shadows_physics": "the shadows should always be calculated and layed to the clip after the actual lighting of the clip not randomly, always use realistic cravity, physics and shadows and don't add them just to add them....if you do make it on point and actaully natural and realistic(only saying this because the shadow of her nose is layed on her face is abnormal and unrealistic if to see from where and how the light is actually come from and under which angle."
+    },
+    "product_visibility_rule_user_2026_09_27": {
+      "verbatim": "Toode ise ei ole mõeldud avalikustamiseks instagrami kontol ja toode ise on stan storeis, instagram võib seda ainult kirjeldada mida see sisaldab, aga mitte näidata toodet ja selle täielikku sisu(kui see pol vajalik, siis me seda ei tee)....instagrami läheb ainult free week näidisleht mis on kõigile tasuta.",
+      "applied_as": "Instagram never shows pages of the paid product (no page mockups, no contents page). Posts only describe what it contains in text. The only product page shown is the free First Seven page. Selling posts start with 'Ad · my own product.' and every slide footer carries 'AD'."
+    },
+    "ad_marker": {
+      "caption_start": "Ad · my own product.",
+      "slide_footer": "AD · ILMA KASK · AI-GENERATED CHARACTER",
+      "why": "TTJA social-media ad guideline: marker at the start; own product. Plain text, not a hashtag, so the 5-hashtag cap stays free."
     }
   },
   "identity": {
@@ -1161,6 +1170,17 @@
       "id": "T6",
       "task": "When each rework clip (3, 5, 7) is picked up: make its still-first 4K still, then copy the passport prompt (new identity text, per-scene earrings) into its Melius video node before rendering",
       "status": "open"
+    },
+    {
+      "id": "T6-reach-beyond-estonia",
+      "due": "2026-10-05",
+      "owner": "user + claude",
+      "status": "reminder: try after the first week of results (first post 2026-09-28)",
+      "text_verbatim": "3. Kuidas jõuda Eestist kaugemale\nKõik allolev on mõeldud ajaks pärast esimest nädalat, mil tulemused on käes.\n\n* Räägime kõigile põhjamaa inimestele, mitte ainult tallinlastele. Lühikeste päevade mure on sama Suurbritannias, Skandinaavias, Saksamaal, Kanadas ja USA põhjaosas. Tallinn jääb paigaks ja loo taustaks, aga pealkiri ja teema peavad olema universaalsed. Keel on juba inglise.\n* Winter Arc. See on 2024. aasta sügisel alanud trend, kus inimesed kasutavad talve enesearenguks (Essence https://www.essence.com/lifestyle/tiktok-winter-arc-trend/, nss magazine https://www.nssmag.com/en/lifestyle/38548/winter-arc-tiktok-trend-anti-seasonal-depression-self-care-drift). The Weather Week sobib sellega väga hästi. Kas trend on ka sel sügisel uuesti elus, tuleb rakenduses üle vaadata.\n* Postitusaeg. Kell 10 Tallinnas on Londonis kell 8 ja New Yorgis kell 3 öösel. Esimese nädala järel näitab Metricool, mis riikidest publik tuleb. Siis saame Reelid nihutada põhipubliku õhtusse.\n* Samad Reelid TikTokis, YouTube Shortsis ja Facebookis. Lisatööd see ei nõua: Metricool postitab samad klipid ning oskab TikTokis ja YouTube'is AI-märke ise panna. Praegu on Metricooliga ühendatud ainult Instagram ja Google Business. TikTok lubab AI-tegelasi, kui nad on märgistatud (Turrboo https://turrboo.com/blog/does-tiktok-allow-ai-influencers). Kontod pead looma ja ühendama sina.",
+      "notes": [
+        "Meta AI Reel translation (dubbing, 18 languages, >1000 followers per Social Media Today 14 Jul 2026) would use Meta's clone of her voice: conflicts with the one-voice rule; only with the user's OK.",
+        "Check first: did the 28 Sep Reel show Instagram's 'AI info' label when published via Metricool?"
+      ]
     }
   ],
   "learnings": [
