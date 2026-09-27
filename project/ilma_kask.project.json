@@ -2061,7 +2061,8 @@
     "rule": "Every talking clip gets a barely-heard background ambience that fits real activities in that scene (wind, distant gulls, far footsteps, city hum, rain on fabric, etc.). Nothing heavy; it only fills the silence under the voice.",
     "why": "Seedance reference-to-video with an audio input outputs ONLY the provided voice; everything else is digital silence (QC d2a5838e, 2026-09-26).",
     "pipeline": "text-to-sfx track (elevenlabs-sfx or sonilo-sfx, prompt says very quiet/distant/low level, no voices, no music) -> stitch node: the video as the clip source + the sfx wired to the stitch 'audio' handle as audioOverlays at 0 s -> QC that the voice is intact and clearly louder and the ambience is barely audible.",
-    "limits": "stitch has no volume control, so the level must come from the sfx prompt; the workspace cannot download Melius media (CDN blocked by the egress allowlist), so no local ffmpeg mix."
+    "limits": "stitch has no volume control, so the level must come from the sfx prompt; the workspace cannot download Melius media (CDN blocked by the egress allowlist), so no local ffmpeg mix.",
+    "approved_clips_decision_2026_09_27": "user: do not add ambience to already-approved clips (Town Hall, Nõmme, Pirita, Viru bog, Kalamaja); ambience applies to new clips and remakes only"
   },
   "physics_rule_user_2026_09_26_background": "Background people must visibly move for the whole take (user 2026-09-26: Patkuli v1 had frozen people). Name concrete motions per person in the prompt (strolls left to right, turns and points, lifts a phone and walks off) plus other live elements (gull, smoke, trees, traffic, water).",
   "head_turn_rule_user_2026_09_26": {
